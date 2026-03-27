@@ -1,4 +1,4 @@
-# Título do Projeto
+# VoluntariAI
 
 `CURSO`
 
@@ -10,16 +10,16 @@
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
-* Nome completo do aluno 5
-* Nome completo do aluno 6
+* Amanda Caroline Pedrosa Marques
+* Amanda Luiza Soares 
+* Bruno Pereira Gomes
+* Denilson Emanoel Emerichek de Souza
+* Rikelme da Silva de Souza
+* Thiago Menar de Sousa Moreira 
 
 ## Orientador
 
-* Nome completo do professor
+* Clóvis Lemos Tavares
 
 # Documentação
 
