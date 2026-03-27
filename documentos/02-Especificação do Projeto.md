@@ -2,20 +2,23 @@
 
 ## Perfis de Usuários
 
-[Enumere e faça o detalhamento dos perfis de usuários. Utilize o modelo de tabela abaixo para sintetizá-los.]
-
 <table>
 <tbody>
 <tr align=center>
-<th colspan="2">Perfil Nome </th>
+<th colspan="2">Perfil 01: Organizações Não Governamentais</th>
 </tr>
 <tr>
 <td width="150px"><b>Descrição</b></td>
-<td width="600px">...</td>
+<td width="600px">Instituições filantrópicas que apoiam causas sociais e buscam voluntários.</td>
 </tr>
 <tr>
 <td><b>Necessidades</b></td>
-<td>...</td>
+<td>1.	Contato diretos com voluntários;
+2.	Disponibilidade de indivíduos interessados;
+3.	Divulgação da organização;
+4.	Busca de voluntários alinhados com as causas da organização com facilidade;
+5.	Voluntários engajados.
+</td>
 </tr>
 </tbody>
 </table>
