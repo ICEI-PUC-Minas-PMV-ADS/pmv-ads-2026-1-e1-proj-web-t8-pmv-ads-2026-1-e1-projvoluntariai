@@ -33,5 +33,7 @@ Dessa forma, os dois exemplos apresentados demonstram, de maneira clara, a urgê
 Como a plataforma tem o objetivo a conexão entre organizações sociais e pessoas interessadas em desenvolver trabalhos voluntários, definimos o seguinte público alvo: 
 - Usuários interessados em fazer trabalhos voluntários, sendo a idade mínima permitida de 16 anos. Menores de idade mínima são admitidos com autorização formal de pais ou responsáveis. 
     - Instituições que oferecem oportunidade de voluntariado (instituições filantrópicas, associações, ONGs e demais entidades que desenvolvem projetos de caráter social). 
+
 Neste sentido, o público alvo são pessoas engajadas em causas sociais que tem o propósito contribuir com um mundo melhor sendo voluntário, mas que por vezes não sabem por onde começar ou até mesmo onde encontrar as redes que possibilitam este tipo de atuação. 
+
 Portanto, a plataforma busca conectar voluntariado a instituições que desenvolvem projetos sociais, oferecem serviços sem fins lucrativos voltados para o bem comum, reduzem opressões e vulnerabilidades sociais.
