@@ -14,9 +14,13 @@
 <tr>
 <td><b>Necessidades</b></td>
 <td>1.	Contato diretos com voluntários;
+
 2.	Disponibilidade de indivíduos interessados;
+
 3.	Divulgação da organização;
+
 4.	Busca de voluntários alinhados com as causas da organização com facilidade;
+
 5.	Voluntários engajados.
 </td>
 </tr>
