@@ -83,9 +83,9 @@
 
 |EU COMO...          | QUERO/PRECISO ...          |PARA ...                          |
 |--------------------|--------------------------- |----------------------------------|
-                       Buscar oportunidade de me                                    
+|                    |   Buscar oportunidade de me|                                  | 
   Voluntário           voluntariar por localização                                                                  
-                       e área de interesse.                                          
+|                    |  e área de interesse.      |                                  |  
 |                    | ...                        |                                  |
 | ...                | ...                        | ...                              |
 
