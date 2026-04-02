@@ -83,12 +83,7 @@
 
 |EU COMO...          | QUERO/PRECISO ...          |PARA ...                          |
 |--------------------|--------------------------- |----------------------------------|
-|                    |   Buscar oportunidade de me|                                  | 
-  Voluntário           voluntariar por localização                                                                  
-|                    |  e área de interesse.      |                                  |  
-|                    | ...                        |                                  |
-| ...                | ...                        | ...                              |
-
+|Voluntário|Buscar oportunidade de me voluntariar por localização e área de interesse|Que eu encontre causas que combinem com minhas habilidades e disponibilidade.|
 ## Requisitos do Projeto
 
 ### Requisitos Funcionais
