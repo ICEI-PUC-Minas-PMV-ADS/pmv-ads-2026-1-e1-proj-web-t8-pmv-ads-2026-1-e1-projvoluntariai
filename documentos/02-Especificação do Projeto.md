@@ -119,6 +119,7 @@
 |RF- 18|O sistema deve permitir recuperação de senha.|Baixa|
 |RF- 19|O sistema deve permitir exclusão de conta.|Baixo|
 |RF- 20|O sistema deve permitir classificação de horas por serviço prestado entre voluntários regionais e gerais apresentando ranking.|Baixo|
+
 **Prioridade: Alta / Média / Baixa.
 
 ### Requisitos não Funcionais
