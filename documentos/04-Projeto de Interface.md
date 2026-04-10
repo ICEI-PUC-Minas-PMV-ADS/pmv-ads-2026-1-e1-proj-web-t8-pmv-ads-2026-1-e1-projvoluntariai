@@ -23,9 +23,7 @@ Conteúdo - apresenta o conteúdo da tela em questão;
 <img width="726" height="515" alt="Captura de tela 2026-04-10 080755" src="https://github.com/user-attachments/assets/56295155-45a7-4322-bbb0-dd1073c70225" />
 
 Figura 2 - Estrutura padrão do sistema
-[Elabore as principais interfaces gráficas da aplicação de modo que os requisitos funcionais sejam contemplados nas telas propostas.]
 
-[Adicione aqui as telas da sua aplicação com seus devidos títulos.] 
  
 > **Links Úteis**:
 > - [Protótipos vs Wireframes](https://www.nngroup.com/videos/prototypes-vs-wireframes-ux-projects/)
