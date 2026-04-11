@@ -90,5 +90,4 @@ As telas do sistema apresentam uma estrutura comum que é apresentada na figura 
 >> - [MarvelApp](https://marvelapp.com/)
 >> - [Figma](https://www.figma.com/)
 
-<h3><b>Tela - Tela - Home</b></h3>
-![tela home](https://github.com/user-attachments/assets/6aca1d67-2334-4f72-ae01-cbb638f64bb5)
+
