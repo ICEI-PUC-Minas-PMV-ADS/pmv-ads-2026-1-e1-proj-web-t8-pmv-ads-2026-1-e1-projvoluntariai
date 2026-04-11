@@ -111,5 +111,5 @@ Figura 6 - Pagina Saiba mais ONG
 
 ![quem somos](https://github.com/user-attachments/assets/7b4127c8-9704-4fdb-9f94-af03cf0baa77)
 
-Figura 4 - Pagina Quem Somos Nós
+Figura 4 - Pagina Quem Somos
 
