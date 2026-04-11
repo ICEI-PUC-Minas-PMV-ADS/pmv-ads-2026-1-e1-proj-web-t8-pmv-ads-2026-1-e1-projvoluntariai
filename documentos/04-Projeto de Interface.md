@@ -2,15 +2,12 @@
 # Projeto de Interface
 ## User Flow
 
-Fluxo de usuário (User Flow) é uma técnica que permite ao desenvolvedor mapear todo fluxo de navegação do usuário na aplicação. Essa técnica funciona para alinhar os caminhos e as possíveis ações que o usuário pode fazer junto com os membros de sua equipe.
+O fluxograma apresentado na figura 1 mostra o fluxo de interação do usuário pelas telas do sistema. Cada uma das telas deste fluxo é detalhada na seção de Protótipo de baixa fidelidade que se segue. 
+</ul>
+<img width="732" height="411" alt="Captura de tela 2026-04-10 223546" src="https://github.com/user-attachments/assets/9c8b1f52-a6ff-401e-845b-0a32f0b094d7" />
+       <fifcaption>Figura 1 -  Fluxo de telas do usuário
+</figure>
 
-[Adicione aqui o diagrama de fluxo de usuário da sua aplicação.] 
-
-
-> **Links Úteis**:
-> - [User Flow: O Quê É e Como Fazer?](https://medium.com/7bits/fluxo-de-usu%C3%A1rio-user-flow-o-que-%C3%A9-como-fazer-79d965872534)
-> - [User Flow vs Site Maps](http://designr.com.br/sitemap-e-user-flow-quais-as-diferencas-e-quando-usar-cada-um/)
-> - [Top 25 User Flow Tools & Templates for Smooth](https://www.mockplus.com/blog/post/user-flow-tools)
 
 ### Protótipo de baixa fidelidade
 
