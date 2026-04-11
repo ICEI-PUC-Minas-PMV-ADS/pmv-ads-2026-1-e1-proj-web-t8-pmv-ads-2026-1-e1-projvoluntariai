@@ -96,11 +96,18 @@ As telas do sistema apresentam uma estrutura comum que é apresentada na figura 
 
 
 ![tela home](https://github.com/user-attachments/assets/1e25dd48-01e1-44a9-9a09-2ba8b50df8a7)
+Figura - 3
 <hr>
 <h3><b>Tela - Saiba Mais ONG</b></h3>
 <p></p>A tela “Saiba mais ONG” do nosso site foi criada para apresentar mais detalhes sobre cada organização, mostrando suas atividades, missão e formas de ajudar, facilitando para que as pessoas conheçam melhor e se envolvam com a causa.</p>
 
 ![tela sobre nos](https://github.com/user-attachments/assets/6d5e422a-5c91-4184-9380-8fc482ec99d8)
+Figura - 6
 <hr>
+<h3>Tela - Quem Somos</h3>
+<p></p>A tela “Quem somos” é a seção onde a equipe apresenta a identidade do projeto, explicando quem está por trás, o que fazemos e qual é o objetivo. Ela serve para transmitir confiança, mostrar transparência e ajudar o usuário a entender melhor a proposta da plataforma.</p>
 
+![quem somos](https://github.com/user-attachments/assets/7b4127c8-9704-4fdb-9f94-af03cf0baa77)
+<hr>
+Figura - 4
 
