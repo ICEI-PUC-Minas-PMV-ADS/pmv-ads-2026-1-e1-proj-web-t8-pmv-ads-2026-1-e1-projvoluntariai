@@ -110,7 +110,7 @@ Figura 6 - Pagina Saiba mais ONG
 
 Figura 4 - Pagina Quem Somos
 
-<h3>Tela de Cadastro de vagas - Etapa 1</h3>
+<h3>Tela - Cadastro de vagas - Etapa 1</h3>
 <p></p>A tela de cadastro de vagas são para as ONGs cadastrarem as informações essenciais com o objetivo de divulgar as vagas disponíveis em nossa plataforma. Para que o cadastro de vaga seja fácil e intuitivo foi separado em etapas. Após o preenchimento dos campos, a ONG tem a possibilidade de ter uma pré-visualização do cadastro realizado. 
 A tela da  etapa 1 é para realizar o Cadastro com as Informações Básicas/Gerais sobre a vaga. 
 </p>
@@ -120,7 +120,7 @@ A tela da  etapa 1 é para realizar o Cadastro com as Informações Básicas/Ger
 Figura 19 - Cadastro de vagas - Etapa 1
 <hr>
 
-<h3> Telas  de Cadastros de Vagas - Etapa 2 </h3>
+<h3> Telas - Cadastros de Vagas - Etapa 2 </h3>
 <p></p>Após preencher os campos obrigatórios da etapa 1 de cadastro, a ONG preenche a etapa 2 de cadastro com informações relevantes sobre os Detalhes da vaga. Nesta tela, possui o scroll infinito onde inicialmente o usuário preenche sobre a vaga, atividades e requisitos. Após isso, basta continuar o preenchimento informando a data de início e fim do prazo da divulgação da oportunidade, bem como qual a carga horária desejada. 
 </p>
 <img width="801" height="552" alt="image" src="https://github.com/user-attachments/assets/e4243ffc-60c3-49d5-838e-619dc93f0e1f" />
@@ -131,7 +131,7 @@ Figura 20 - Cadastro de Vagas - Etapa 2
 Figura 21 - Cadastro de Vagas - Etapa 2 (Continuação)
 <hr>
 
-<h3> Tela de Pre-visualização Cadastro de Vagas </h3>
+<h3> Tela - Pre-visualização Cadastro de Vagas </h3>
 <p></p>Após a ONG preencher corretamente todos os campos obrigatórios e suas respectivas etapas de cadastro da vaga, a tela de Preview é apresentada como uma oportunidade de checar as informações cadastradas. 
 
 Caso encontre inconsistência nos dados cadastrados, é possível "voltar" nas etapas anteriores. Já no cenário correto dos dados cadastrados, a vaga está pronta para ser publicada tendo a opção de "Publicar vaga". 
