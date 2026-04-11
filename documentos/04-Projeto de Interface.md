@@ -110,5 +110,6 @@ Figura 6 - Pagina Saiba mais ONG
 <p></p>A tela “Quem somos” é a seção onde a equipe apresenta a identidade do projeto, explicando quem está por trás, o que fazemos e qual é o objetivo. Ela serve para transmitir confiança, mostrar transparência e ajudar o usuário a entender melhor a proposta da plataforma.</p>
 
 ![quem somos](https://github.com/user-attachments/assets/7b4127c8-9704-4fdb-9f94-af03cf0baa77)
+
 Figura 4 - Pagina Quem Somos Nós
 
