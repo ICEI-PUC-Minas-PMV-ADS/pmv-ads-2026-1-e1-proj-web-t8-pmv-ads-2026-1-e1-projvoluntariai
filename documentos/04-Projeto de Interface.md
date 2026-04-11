@@ -5,9 +5,13 @@
 O fluxograma apresentado na figura 1 mostra o fluxo de interação do usuário pelas telas do sistema. Cada uma das telas deste fluxo é detalhada na seção de Protótipo de baixa fidelidade que se segue. 
 </ul>
 <img width="732" height="411" alt="Captura de tela 2026-04-10 223546" src="https://github.com/user-attachments/assets/9c8b1f52-a6ff-401e-845b-0a32f0b094d7" />
+<img width="726" height="515" alt="cadastro - 8" src="https://github.com/user-attachments/assets/afe334c9-2e82-40cc-9b4a-68401ed16313" />
+<img width="726" height="515" alt="cadastro de usuario - 9" src="https://github.com/user-attachments/assets/09ac1c82-f79e-4b9d-bfb0-f909eedda6f1" />
      
 Figura 1 -  Fluxo de telas do usuário
 </figure>
+<img width="726" height="515" alt="editar dados - 13" src="https://github.com/user-attachments/assets/1c43a237-f6e1-4a5e-a110-9b96ea87297c" />
+<img width="726" height="515" alt="cadastro de ongs - 14" src="https://github.com/user-attachments/assets/367506cc-320d-4abb-bcde-5ff4aa7509dd" />
 
 
 ### Protótipo de baixa fidelidade
