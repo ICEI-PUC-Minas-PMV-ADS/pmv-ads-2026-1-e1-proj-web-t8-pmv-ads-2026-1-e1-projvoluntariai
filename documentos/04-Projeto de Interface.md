@@ -98,5 +98,9 @@ As telas do sistema apresentam uma estrutura comum que é apresentada na figura 
 ![tela home](https://github.com/user-attachments/assets/1e25dd48-01e1-44a9-9a09-2ba8b50df8a7)
 <hr>
 <h3><b>Tela - Sobre nós</b></h3>
+<p></p>A tela “Sobre nós” é a parte do site onde explica quem somos, o que fazemos e qual é o nosso propósito, ajudando o usuário a entender e confiar no projeto.</p>
 
 ![tela sobre nos](https://github.com/user-attachments/assets/6d5e422a-5c91-4184-9380-8fc482ec99d8)
+<hr>
+
+
