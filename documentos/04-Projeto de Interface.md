@@ -92,7 +92,11 @@ As telas do sistema apresentam uma estrutura comum que é apresentada na figura 
 <hr>
 
 <h3><b>Tela - Home</b></h3>
-<p>A Uma tela home (ou home screen) é a tela principal de um aplicativo, site ou sistema — ou seja, é a primeira coisa que o usuário vê ao entrar.</p>
+<p>A A tela inicial do nosso site é o primeiro contato que as pessoas têm com a plataforma, então eu pensamos nela como um espaço simples, direto e inspirador. A ideia é que, logo ao entrar, o usuário já entenda que ali ele pode encontrar oportunidades para ajudar e se conectar com ONGs.</p>
 
 
 ![tela home](https://github.com/user-attachments/assets/1e25dd48-01e1-44a9-9a09-2ba8b50df8a7)
+<hr>
+<h3><b>Tela - Sobre nós</b></h3>
+![tela sobre nos](https://github.com/user-attachments/assets/e0083a0e-40e0-4a13-982b-1f1c1ccc0771)
+
