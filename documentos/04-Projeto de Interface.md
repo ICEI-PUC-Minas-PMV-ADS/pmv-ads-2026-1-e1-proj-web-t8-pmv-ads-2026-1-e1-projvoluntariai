@@ -1,4 +1,3 @@
-
 # Projeto de Interface
 ## User Flow
 
@@ -6,6 +5,8 @@ O fluxograma apresentado na figura 1 mostra o fluxo de interação do usuário p
 </ul>
 <img width="732" height="411" alt="Captura de tela 2026-04-10 223546" src="https://github.com/user-attachments/assets/9c8b1f52-a6ff-401e-845b-0a32f0b094d7" />
 
+Figura 1 - Fluxograma
+<ur>f
 
 
 <h3><b>Tela - Login</b></h3>
@@ -14,7 +15,7 @@ O fluxograma apresentado na figura 1 mostra o fluxo de interação do usuário p
 ![WhatsApp Image 2026-04-10 at 16 22 16](https://github.com/user-attachments/assets/feefd88b-a0f9-4ced-a556-92e5a52ce834)
 
 <figura>
-   <figcapiton>Figura 9 - Página de Login da Tela
+   <figcapiton>Figura 2 - Tela de Login
 </figure>
 <hr>
 
@@ -25,7 +26,7 @@ Após a seleção, a plataforma direciona para o cadastro de acordo com o perfil
 <img width="767" height="519" alt="image" src="https://github.com/user-attachments/assets/6ae8d666-5891-4614-855a-e4fe828fcdff" />
 
 
-Figura - Inicial de Cadastro de Usuários
+Figura 3 - Inicial de Cadastro de Usuários
 <hr>
 
 <h3>Tela - Cadastrar Voluntário <b></b></h3>
@@ -34,7 +35,7 @@ Figura - Inicial de Cadastro de Usuários
 <img width="787" height="559" alt="image" src="https://github.com/user-attachments/assets/bdc2a18b-5ebb-4394-9368-bad2cbb84dd5" />
 
 
-Figura - Cadastrar Voluntário
+Figura 4 - Cadastrar Voluntário
 <hr>
 
 <h3>Tela - Cadastrar ONG <b></b></h3>
@@ -43,7 +44,7 @@ Figura - Cadastrar Voluntário
 <img width="802" height="550" alt="image" src="https://github.com/user-attachments/assets/c501ff57-c872-4a57-ae59-6c83101bb3e5" />
 
 
-Figura - Cadastrar ONG
+Figura 5 - Cadastrar ONG
 <hr>
 
 <h3>Tela - Edição de Dados do Usuário <b></b></h3>
@@ -51,7 +52,7 @@ Figura - Cadastrar ONG
 
 <img width="775" height="558" alt="image" src="https://github.com/user-attachments/assets/460cd623-0a5f-4c31-ac69-e9a3e38700a2" />
 
-Figura - Edição de Dados do Usuário
+Figura 6 - Edição de Dados do Usuário
 <hr>
   
 <h3><b>Tela - Perfil de Usuário</b></h3>
@@ -60,7 +61,7 @@ Figura - Edição de Dados do Usuário
 <img width="726" height="515" alt="imagem_redimensionada" src="https://github.com/user-attachments/assets/fd8d9d15-c13e-4b9c-a621-f9dded4d7919" />
 
 <figura> 
-  <figcaption>Figura 12 - Página de Perfil do Usuário</figcaption>
+  <figcaption>Figura 7 - Página de Perfil do Usuário</figcaption>
 </figure>
 <hr>
 
