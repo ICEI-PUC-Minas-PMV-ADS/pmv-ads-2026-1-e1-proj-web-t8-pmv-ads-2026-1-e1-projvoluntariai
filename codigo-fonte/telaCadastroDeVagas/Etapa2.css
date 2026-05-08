@@ -149,8 +149,8 @@ textarea:focus {
     box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.15);
 }
 
-/* BOTÃO */
-button {
+button,
+#btnConcluído {
     width: 50%;
     margin-top: 20px;
     padding: 12px 20px;
@@ -162,7 +162,16 @@ button {
     font-weight: 500;
     cursor: pointer;
     transition: 0.3s;
+    text-align: center;
+    text-decoration: none;
 }
+
+#btnConcluído {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .botoes{
     display: flex;
     justify-content: flex-end; 

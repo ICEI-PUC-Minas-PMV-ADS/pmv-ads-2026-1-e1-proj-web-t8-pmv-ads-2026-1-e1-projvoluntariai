@@ -1,6 +1,8 @@
 const botao = document.getElementById("btnConcluído");
 
-botao.addEventListener("click", function() {
+botao.addEventListener("click", function(event) {
+
+    event.preventDefault();
 
     const vaga = document.getElementById("vaga");
     const atividades = document.getElementById("atividades");
@@ -39,10 +41,9 @@ botao.addEventListener("click", function() {
         valido = false;
     }
 
-   // if (valido) {
-    //    alert("Etapa Concluída!");
-    //    window.location.href = "pmv-ads-2026-1-e1-proj-web-t8-pmv-ads-2026-1-e1-projvoluntariai/codigo-fonte/telaCadastroDeVagas/etapa2C.html";
+    if (valido) {
+        alert("Etapa Concluída!");
+        window.location.href = "etapa2C.html";
+    }
 
-    //}
-
-}); 
+});
