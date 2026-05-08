@@ -1,0 +1,187 @@
+/* RESET */
+* {
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #f6f7fb, #eef1f7);
+}
+
+/* ── TOPO / HEADER ── */
+.topo {
+    display: flex;
+    justify-content:  space-between;
+    align-items: center;
+    padding: 12px 40px;
+    background-color: white;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+/* LOGO */
+.topo .logo {
+    font-weight: 600;
+    color: white;
+    background-color: rgb(162, 76, 196);
+    border-radius: 12px;
+    padding: 6px 12px;
+    font-size: 14px;
+}
+
+/* LINKS */
+.topo nav a {
+    margin-left: 30px;
+    text-decoration: none;
+    color: #6b7280;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+.topo nav a:hover {
+    color: rgb(162, 76, 196);
+    background-color: #f3f4f6;
+    border-radius: 6px;  
+    padding: 7px;
+}
+
+.topo nav a.ativo {
+    background-color: #f3f4f6;
+    padding: 6px 12px;
+    border-radius: 6px;
+    color: rgb(162, 76, 196);
+    font-weight: 500;
+}
+
+/* MENU */
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    font-size: 14px;
+    color: #555;
+    cursor: pointer;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.menu li:hover {
+    background: #ecebff;
+    color: rgb(162, 76, 196);
+}
+
+.menu .active {
+    background: #ecebff;
+    color: rgb(162, 76, 196);
+    font-weight: 500;
+}
+
+/* TEXTO TOPO */
+.top-text {
+    max-width: 1100px;
+    margin: 30px auto 10px auto;
+    padding: 0 20px;
+}
+
+.top-text h1 {
+    margin-bottom: 5px;
+}
+
+.top-text p {
+    color: #777;
+}
+
+/* CONTAINER CARD */
+.container {
+    max-width: 450px;
+    margin: 20px auto;
+
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+/* TITULO */
+.container h2 {
+    margin-bottom: 20px;
+}
+
+/* LABEL */
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+/* ASTERISCO */
+span {
+    color: red;
+}
+
+/* TEXTAREA */
+textarea {
+    width: 100%;
+    height: 90px;
+    padding: 12px;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+
+    resize: none;
+    font-size: 13px;
+
+    transition: 0.3s;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #6c63ff;
+    box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.15);
+}
+
+/* BOTÃO */
+button {
+    width: 50%;
+    margin-top: 20px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(162, 76, 196);
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.botoes{
+    display: flex;
+    justify-content: flex-end; 
+    gap: 10px;
+}
+.cancelar{
+    background-color: #555;
+}
+button:hover {
+    opacity: 0.9;
+}
+
+.erro {
+    color: red;
+    font-size: 12px;
+    display: block;
+    margin-top: 5px;
+}
+
+.input-erro {
+    border: 1px solid red;
+}
