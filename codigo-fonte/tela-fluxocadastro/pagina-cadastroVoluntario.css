@@ -1,0 +1,269 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+  color: #969FAA;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 40px;
+  background-color: white;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.logo {
+  font-weight: 600;
+  color: white;
+  background-color: #8b5cf6;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+nav a {
+  margin-left: 30px;
+  text-decoration: none;
+  color: #6b7280;
+  font-size: 15px;
+  transition: 0.2s;
+}
+
+nav a:hover {
+  color: rgb(162, 76, 196);
+  background-color: #f3f4f6;
+  border-radius: 6px;
+  padding: 7px;
+}
+
+nav a.ativo {
+  background-color: #f3f4f6;
+  padding: 6px 12px;
+  border-radius: 6px;
+  color: #111827;
+  font-weight: 500;
+}
+
+main {
+  flex: 1;
+  position: relative;
+  padding: 32px 40px 110px;
+}
+
+.titulo h1 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.titulo p {
+  color: #6b7280;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.form-area {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#formCadastro {
+  width: 300px;
+}
+
+#formCadastro h3 {
+  font-size: 17px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  margin-top: 16px;
+  margin-bottom: 6px;
+}
+
+.req {
+  color: #ef4444;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input:focus {
+  border-color: #7c3aed;
+}
+
+input.campo-erro {
+  border-color: #ef4444;
+}
+
+.select-wrapper {
+  position: relative;
+}
+
+.select-trigger {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #fff;
+  user-select: none;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.select-trigger.aberto {
+  border-bottom-color: transparent;
+  border-radius: 6px 6px 0 0;
+}
+
+.select-trigger.campo-erro {
+  border-color: #ef4444;
+}
+
+#perfilTexto {
+  color: #9ca3af;
+}
+
+#perfilTexto.selecionado {
+  color: #111827;
+}
+
+.opcoes {
+  display: none;
+  position: absolute;
+  top: calc(100% - 1px);
+  left: 0;
+  right: 0;
+  border: 1px solid #d1d5db;
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+  background: #fff;
+  list-style: none;
+  z-index: 10;
+}
+
+.opcoes.aberto {
+  display: block;
+}
+
+.opcoes li {
+  padding: 10px 12px;
+  font-size: 14px;
+  color: #374151;
+  cursor: pointer;
+}
+
+.opcoes li:hover {
+  background: #f3f4f6;
+}
+
+.hint {
+  display: block;
+  font-size: 12px;
+  color: #6b7280;
+  font-style: italic;
+  margin-top: 5px;
+}
+
+.match-ok {
+  color: #059669;
+  font-style: normal;
+}
+
+.match-erro {
+  color: #ef4444;
+  font-style: normal;
+}
+
+.botoes {
+  position: absolute;
+  bottom: 30px;
+  left: 40px;
+  right: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  padding: 14px 50px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.cancelar {
+  background: #6b7280;
+}
+
+.cancelar:hover {
+  background: #4b5563;
+}
+
+.salvar {
+  background: #7c3aed;
+}
+
+.salvar:hover {
+  background: #6d28d9;
+}
+
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(12px);
+  background: #1f2937;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.2s, transform 0.2s;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 100;
+}
+
+.toast.visivel {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.toast.sucesso {
+  background: #059669;
+}
+
+.toast.erro {
+  background: #dc2626;
+}

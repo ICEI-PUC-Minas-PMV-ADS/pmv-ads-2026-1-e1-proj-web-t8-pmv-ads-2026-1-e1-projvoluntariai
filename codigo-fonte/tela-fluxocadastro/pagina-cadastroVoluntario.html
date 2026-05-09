@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>VoluntariAI - Cadastro</title>
+  <link rel="stylesheet" href="pagina-cadastroVoluntario.css">
+</head>
+<body>
+
+  <header class="topo">
+    <div class="logo">VoluntariAI</div>
+    <nav>
+      <a href="#">Sobre</a>
+      <a href="#">Quem Somos</a>
+      <a href="#">Vagas</a>
+      <a href="#">Perfil</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <div class="titulo">
+      <h1>Cadastrar Voluntário</h1>
+      <p>Preencha seus dados e comece a fazer a diferença.</p>
+    </div>
+
+    <div class="form-area">
+      <form id="formCadastro">
+
+        <h3>Informações Gerais</h3>
+
+        <label>Nome Completo <span class="req">*</span></label>
+        <input type="text" id="nome" required>
+
+        <label>Perfil <span class="req">*</span></label>
+        <div id="perfilWrapper" class="select-wrapper">
+          <div id="perfilTrigger" class="select-trigger">
+            <span id="perfilTexto">Selecione</span>
+            <span>&#9662;</span>
+          </div>
+          <ul id="perfilOpcoes" class="opcoes">
+            <li data-value="voluntario">Sou Voluntário</li>
+            <li data-value="psc">Sou PSC</li>
+          </ul>
+          <input type="hidden" id="perfil">
+        </div>
+
+        <label>E-mail <span class="req">*</span></label>
+        <input type="email" id="email" required>
+
+        <label>Senha <span class="req">*</span></label>
+        <input type="password" id="senha" minlength="8" required>
+        <span class="hint">Mínimo de 8 caracteres</span>
+
+        <label>Confirmar senha <span class="req">*</span></label>
+        <input type="password" id="confirmarSenha" required>
+        <span class="hint" id="hintSenha"></span>
+
+      </form>
+    </div>
+
+    <div class="botoes">
+      <button type="button" class="cancelar" id="cancelar">Cancelar</button>
+      <button type="submit" form="formCadastro" class="salvar">Salvar dados</button>
+    </div>
+
+  </main>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="pagina-cadastroVoluntario.js"></script>
+</body>
+</html>
+
