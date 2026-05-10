@@ -2,7 +2,7 @@ const formLogin = document.querySelector('.form-login');
 const emailInput = document.getElementById('email');
 const senhaInput = document.getElementById('senha');
 const botaoVoltar = document.querySelector('.voltar');
-const botaoRegistrar = document.getElementById('registrar');
+// const botaoRegistrar = document.getElementById('registrar'); // Removido pois não existe botão de registro na tela de login
 const infoPerfil = document.getElementById('info-perfil');
 
 const params = new URLSearchParams(window.location.search);
@@ -48,50 +48,18 @@ formLogin.addEventListener('submit', function (event) {
     return;
   }
 
-  alert('Login realizado com sucesso!');
+  alert(`Login realizado com sucesso!\nPerfil: ${user.perfil}`);
   //armazenar usuário logado para uso posterior
   localStorage.setItem('loggedUser', JSON.stringify(user));
-  window.location.href = '../tela-fluxocadastro/pagina-cadastroinicial.html';
+  // Redireciona conforme o perfil
+  if (user.perfil === 'ONG') {
+    window.location.href = '../tela-fluxocadastro/pagina-cadastroinicial.html';
+  } else {
+    window.location.href = '../tela-fluxocadastro/pagina-cadastroinicial.html';
+  }
 });
 
-botaoRegistrar.addEventListener('click', function () {
-  const email = emailInput.value.trim();
-  const senha = senhaInput.value.trim();
-
-  if (!email || !senha) {
-    alert('Por favor, preencha email e senha para registrar.');
-    return;
-  }
-
-  if (!email.includes('@') || senha.length < 6) {
-    alert('Email ou senha inválidos. Use um email válido e senha com pelo menos 6 caracteres.');
-    return;
-  }
-
-  if (!perfil) {
-    alert('Selecione um perfil na tela inicial antes de registrar.');
-    return;
-  }
-
-  const users = JSON.parse(localStorage.getItem('users')) || [];
-  const existingUser = users.find(u => u.email === email);
-
-  if (existingUser) {
-    alert('Usuário já registrado. Faça login.');
-    return;
-  }
-
-  const newUser = {
-    email: email,
-    password: senha,
-    perfil: perfil
-  };
-
-  users.push(newUser);
-  localStorage.setItem('users', JSON.stringify(users));
-
-  alert('Registro realizado com sucesso! Agora faça login.');
-});
+// Bloco de registro removido pois não existe botão de registro na tela de login
 
 botaoVoltar.addEventListener('click', function () {
   window.location.href = '../tela-fluxocadastro/pagina-cadastroinicial.html';

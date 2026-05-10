@@ -50,7 +50,7 @@ botaoContinuar.addEventListener("click", function () {
   }
 
   // Se escolheu Voluntário
-  if (perfilSelecionado === "Voluntário") {
+  if (perfilSelecionado === "Voluntario") {
     window.location.href = "pagina-cadastroVoluntario.html";
   }
 
