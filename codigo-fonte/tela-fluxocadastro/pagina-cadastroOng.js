@@ -90,6 +90,22 @@ function validarFormulario() {
 document.getElementById('formCadastroOng').addEventListener('submit', function (e) {
     e.preventDefault();
     if (validarFormulario()) {
+        // Salvar usuário no localStorage
+        const nome = document.getElementById('nomeOrganizacao').value.trim();
+        const area = document.getElementById('areasAtuacao').value;
+        const email = document.getElementById('email').value.trim();
+        const senha = document.getElementById('senha').value;
+        const perfil = 'ONG';
+
+        const novoUsuario = { nome, area, email, password: senha, perfil };
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        // Verifica se já existe usuário com o mesmo email
+        if (users.some(u => u.email === email)) {
+            alert('Já existe um cadastro com este e-mail.');
+            return;
+        }
+        users.push(novoUsuario);
+        localStorage.setItem('users', JSON.stringify(users));
         alert('Cadastro realizado com sucesso!');
         this.reset();
     }

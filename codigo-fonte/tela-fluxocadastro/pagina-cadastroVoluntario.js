@@ -112,6 +112,18 @@ form.addEventListener('submit', e => {
     return;
   }
 
+  // Salvar usuário no localStorage
+  const novoUsuario = { nome, email, password: senha, perfil };
+  const users = JSON.parse(localStorage.getItem('users')) || [];
+  // Verifica se já existe usuário com o mesmo email
+  if (users.some(u => u.email === email)) {
+    mostrarToast('Já existe um cadastro com este e-mail.', 'erro');
+    marcarErro(emailEl);
+    emailEl.focus();
+    return;
+  }
+  users.push(novoUsuario);
+  localStorage.setItem('users', JSON.stringify(users));
   mostrarToast('Cadastro realizado com sucesso!', 'sucesso');
   form.reset();
   resetPerfil();
