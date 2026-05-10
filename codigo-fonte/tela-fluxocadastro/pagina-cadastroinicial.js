@@ -31,7 +31,7 @@ cardVoluntario.addEventListener("click", function (event) {
   limparSelecao();
 
   cardVoluntario.classList.add("selecionado");
-  perfilSelecionado = "Voluntário";
+  perfilSelecionado = "Voluntario";
 
   console.log("Perfil selecionado:", perfilSelecionado);
 });
