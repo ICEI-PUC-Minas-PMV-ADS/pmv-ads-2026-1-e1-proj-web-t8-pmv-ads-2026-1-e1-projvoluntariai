@@ -1,93 +1,59 @@
-document.addEventListener("DOMContentLoaded", () => {
+const botao = document.getElementById("btnConcluído");
 
-    const form = document.getElementById("formVaga");
-    const titulo = document.getElementById("tituloDaVaga");
-    const modalidade = document.getElementById("opcModalidades");
+botao.addEventListener("click", function(event) {
+
+    event.preventDefault();
+
+    const vaga = document.getElementById("vaga");
+    const modalidade = document.getElementById("modalidade");
     const localizacao = document.getElementById("localizacao");
-    const numeroVagas = document.getElementById("numeroVagas");
-    const btnCancelar = document.getElementById("btnCancelar");
+    const ndevagas = document.getElementById("ndevagas")
 
-    const mensagem = document.createElement("p");
-    mensagem.style.marginTop = "10px";
-    form.appendChild(mensagem);
+    const erroVaga = document.getElementById("erroVaga");
+    const erroModalidade = document.getElementById("erroModalidade");
+    const errolocalizacao = document.getElementById("errolocalizacao");
+    const errondevagas = document.getElementById("errondevagas")
 
-    // Função para mostrar mensagens
-    function mostrarMensagem(texto, cor) {
-        mensagem.textContent = texto;
-        mensagem.style.color = cor;
+    let valido = true;
+
+    // limpa erros antes
+    erroVaga.textContent = "";
+    erroModalidade.textContent = "";
+    errolocalizacao.textContent = "";
+     errondevagas.textContent = "";
+
+    vaga.classList.remove("input-erro");
+    modalidade.classList.remove("input-erro");
+    localizacao.classList.remove("input-erro");
+    ndevagas.classList.remove("input-erro");
+
+    if (vaga.value === "") {
+        erroVaga.textContent = "Preencha este campo";
+        vaga.classList.add("input-erro");
+        valido = false;
     }
 
-    function validarLocalizacao(localizacao) {
-        const valor = localizacao.value.trim();
-
-        if (valor === "") {
-            return "Preencha a localização";
-        }
-
-        if (valor.length < 3) {
-            return "Digite uma localização válida";
-        }
-
-        return null;
+    if (modalidade.value === "") {
+        erroModalidade.textContent = "Preencha este campo";
+        modalidade.classList.add("input-erro");
+        valido = false;
     }
 
-
-    function validarFormulario() {
-
-        if (!titulo.value.trim()) {
-            mostrarMensagem("Preencha o título da vaga", "red");
-            return false;
-        }
-
-        if (!modalidade.value) {
-            mostrarMensagem("Selecione uma modalidade", "red");
-            return false;
-        }
-
-        
-        const erroLocalizacao = validarLocalizacao(localizacao);
-        if (erroLocalizacao) {
-            mostrarMensagem(erroLocalizacao, "red");
-            return false;
-        }
-
-        if (!numeroVagas.value || numeroVagas.value <= 0) {
-            mostrarMensagem("Número de vagas inválido", "red");
-            return false;
-        }
-
-        return true;
+    if (localizacao.value === "") {
+        errolocalizacao.textContent = "Preencha este campo";
+        localizacao.classList.add("input-erro");
+        valido = false;
     }
 
-    form.addEventListener("submit", (e) => {
-        e.preventDefault();
+ if (ndevagas.value === "") {
+        errondevagas.textContent = "Preencha este campo";
+        ndevagas.classList.add("input-erro");
+        valido = false;
+    }
 
-        if (validarFormulario()) {
-
-            const vaga = {
-                titulo: titulo.value.trim(),
-                modalidade: modalidade.value,
-                localizacao: localizacao.value.trim(),
-                numeroVagas: numeroVagas.value
-            };
-
-          
-            let vagas = JSON.parse(localStorage.getItem("vagas")) || [];
-
-        
-            vagas.push(vaga);
-
-            localStorage.setItem("vagas", JSON.stringify(vagas));
-
-            mostrarMensagem("Informações gerais salvas!", "green");
-
-            form.reset();
-        }
-    });
-
-    btnCancelar.addEventListener("click", () => {
-        form.reset();
-        mostrarMensagem("Cadastro cancelado", "gray");
-    });
+    if (valido) {
+        alert("Etapa Concluída!");
+        window.location.href = "Etapa2.html";
+    }
 
 });

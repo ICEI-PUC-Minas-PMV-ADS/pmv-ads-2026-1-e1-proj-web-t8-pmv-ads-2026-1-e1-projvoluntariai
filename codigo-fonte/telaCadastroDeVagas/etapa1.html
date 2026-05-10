@@ -4,7 +4,8 @@
    <title>VoluntariAI Cadastro de vagas</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="etapa1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="etapa1.css">
 </head>
 <body>
 <header class = "topo">
@@ -17,38 +18,45 @@
     </nav>
   </header>
 
-    <h1 id="tit_1" class="titulo1"> 
-        Cadastrar vagas 
-</h1>
-<p id="p_1">
-    Cadastre oportunidades de voluntariado
-</p>
-<div class="formulario1">
-<h2 id="tit_2" class="titulos">
-    Etapa 1-Informações Gerais
-</h2>
-<div class="formulario">
-<form method="post" id="formVaga">
-<label>Título da vaga<span>*</span></label>
-<textarea id="tituloDaVaga" rows="1" cols="70"></textarea>
- <label>Modalidades<span id="asterisco">*</span></label>
-<select id="opcModalidades" aria-colspan="70">
-<option value=""></option>
-    <option value="remoto">Remoto</option>              
-<option value="presencial">Presencial</option>
-<option value="hibrido">Híbrido</option>
-</select>
-<label>Localização<span>*</span></label>
-<textarea id="localizacao" rows="1" cols="70"></textarea>
-<label>Número de Vagas<span>*</span></label>
-<input type="number" id="numeroVagas"> 
-</div>
-</div>
-<div class="botoes">
-<br><button class="cancelar" type="reset" id="btnCancelar">Cancelar</button></br>
-<button class="salvar" type="submit" id="btnSalvar">Salvar Dados</button>
-</div>
-</form>
+   <main>
+
+    <section class="top-text">
+        <h1>Cadastrar Vagas</h1>
+        <p>Cadastre oportunidades de voluntariado.</p>
+    </section>
+
+    <div class="container">
+
+        <h2>Etapa 1 - Informações Gerais</h2>
+
+        <label>Título da vaga <span>*</span></label>
+        <textarea id="vaga" placeholder="Escolha um nome para sua vaga" required></textarea>
+        <small class="erro" id="erroVaga"></small>
+       
+        <label>Modalidade <span>*</span></label>
+     <select required id="modalidade">
+    <option value="" disabled selected>Selecione uma modalidade</option>
+        <option value="remoto">Remoto</option>
+        <option value="presencial">Presencial</option>
+        <option value="hibrido">Híbrido</option>
+        </select>
+        <small class="erro" id="erroModalidade"></small>
+        
+        <label>Localização <span>*</span></label>
+        <textarea id="localizacao" placeholder="Escreva a localização da sua vaga" required></textarea>
+        <small class="erro" id="errolocalizacao"></small>
+         <label>Número de vagas <span>*</span></label>
+        <input type="number" id="ndevagas" placeholder="Informe a quantidade de Vagas" required></input>
+        <small class="erro" id="errondevagas"></small>
+       <div class="botoes">
+        <button class="cancelar" onclick="history.back()">Cancelar</button>
+     <a href="Etapa2.html" id="btnConcluído">
+        Concluído
+     </a>    
+       </div> 
+    </div>
+
+</main>
 <script src="etapa1.js"></script>
 </body>
 </html>
