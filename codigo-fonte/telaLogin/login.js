@@ -62,5 +62,5 @@ formLogin.addEventListener('submit', function (event) {
 // Bloco de registro removido pois não existe botão de registro na tela de login
 
 botaoVoltar.addEventListener('click', function () {
-  window.location.href = '../tela-fluxocadastro/pagina-cadastroinicial.html';
+  window.location.href = '#';
 });
