@@ -46,12 +46,12 @@ botaoContinuar.addEventListener("click", function () {
 
   // Se escolheu ONG
   if (perfilSelecionado === "ONG") {
-    window.location.href = "pagina-cadastroOng.html";
+    window.location.href = "pagina-CadastroOng.html";
   }
 
   // Se escolheu Voluntário
   if (perfilSelecionado === "Voluntario") {
-    window.location.href = "pagina-cadastroVoluntario.html";
+    window.location.href = "pagina-CadastroVoluntario.html";
   }
 
 });
