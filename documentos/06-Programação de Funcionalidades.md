@@ -1,44 +1,82 @@
 # Programação de Funcionalidades
 
-Implementação da aplicação descritas por meio dos requisitos codificados. 
+### Tela de cadastro de vagas - Etapa 1
 
-[Utilize a estrutura abaixo para cada funcionalidade entregue na etapa]
+Responsável: Amanda Caroline
 
-### Título da funcionalidade
+O acesso da Tela de cadastro de vagas - Etapa 1 poderá ser feito através da opção "Gerenciar Vagas" disponível no perfil da ONG.
 
-[Adicione imagem da funcionalidade/tela]
+Exemplo da Tela de cadastro de vagas - Etapa 1:
 
+<img width="1352" height="625" alt="Captura de tela 2026-05-20 190512" src="https://github.com/user-attachments/assets/9cc38bdd-929e-4bee-b12d-cef3f91bb9f3" />
 
 #### Requisito atendido
 
-[RF-X: adicione a descrição do requisito atendido]
+Rf-05: O sistema deve permitir que ONGs publiquem oportunidades de voluntariado.
 
+#### Artefatos da Funcionalidade
 
-#### Artefatos da funcionalidade
+●  etapa1.html
 
-[Adicione os nomes dos arquivos relacionados ao desenvolvimento da funcionalidade]
+●  etapa1.css
 
-
-#### Estrutura de Dados
-
-[Caso exista estrutura de dados, adicione aqui]
+●  etapa1.js
 
 
 #### Instruções de acesso
 
-[Adicione as orientações de acesso à funcionalidade]
+<hr>
+
+### Tela de cadastro de vagas - Etapa 2
+
+Responsável: Bruno Pereira Gomes
+
+O acesso da Tela de cadastro de vagas - Etapa 2 poderá ser feito através da opção "Gerenciar Vagas" disponível no perfil da ONG e depois de concluir a primeira etapa de cadastro de vagas.
+
+Exemplo da Tela de cadastro de vagas - Etapa 2:
+
+<img width="1333" height="632" alt="image" src="https://github.com/user-attachments/assets/830a7813-53df-497e-9ec1-e101533f67f5" />
+
+#### Requisito atendido
+
+Rf-05: O sistema deve permitir que ONGs publiquem oportunidades de voluntariado.
+
+#### Artefatos da Funcionalidade
+
+●  Etapa2.html
+
+●  Etapa2.css
+
+●  Etapa2.js
 
 
-#### Responsável
+#### Instruções de acesso
 
-[Adicione nome do responsável pelo desenvolvimento da funcionalidade]
+<hr>
+
+### Tela de cadastro de vagas - Etapa 2 (Continuação)
+
+Responsável: Amanda Caroline
+
+O acesso da Tela de cadastro de vagas - Etapa 2 poderá ser feito através da opção "Gerenciar Vagas" disponível no perfil da ONG e depois de concluir a primeira e segunda etapa de cadastro de vagas.
+
+Exemplo da Tela de cadastro de vagas - Etapa 2:
+
+<img width="1351" height="630" alt="image" src="https://github.com/user-attachments/assets/b8f3c03e-0c33-4389-97a8-c579a93a9856" />
+
+#### Requisito atendido
+
+Rf-05: O sistema deve permitir que ONGs publiquem oportunidades de voluntariado.
+
+#### Artefatos da Funcionalidade
+
+●  etapa2C.html
+
+●  etapa2C.css
+
+●  etapa2C.js
 
 
+#### Instruções de acesso
 
-
-> **Links Úteis**:
-> - [Trabalhando com HTML5 Local Storage e JSON](https://www.devmedia.com.br/trabalhando-com-html5-local-storage-e-json/29045)
-> - [JSON Tutorial](https://www.w3resource.com/JSON)
-> - [JSON - Introduction (W3Schools)](https://www.w3schools.com/js/js_json_intro.asp)
-> - [JSON Tutorial (TutorialsPoint)](https://www.tutorialspoint.com/json/index.htm)
-
+<hr>
