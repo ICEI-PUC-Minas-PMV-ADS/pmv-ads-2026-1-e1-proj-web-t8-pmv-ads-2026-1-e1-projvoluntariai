@@ -80,3 +80,30 @@ Rf-05: O sistema deve permitir que ONGs publiquem oportunidades de voluntariado.
 #### Instruções de acesso
 
 <hr>
+
+### Tela de Vagas
+
+Responsável: Bruno Pereira Gomes
+
+O acesso da Tela Vagas, poderá ser feito através da opção "Vagas" disponível no Cabeçalho.
+
+Exemplo da Tela Vagas
+
+<img width="1366" height="625" alt="chrome_CGU3TF1WU5" src="https://github.com/user-attachments/assets/6dd48167-cf9b-4b03-bf78-d1b922f09d5a" />
+
+#### Requisito atendido
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+#### Artefatos da Funcionalidade
+
+●  Vagas.html
+
+●  Vagas.css
+
+●  Vagas.js
+
+
+#### Instruções de acesso
+
+<hr>
