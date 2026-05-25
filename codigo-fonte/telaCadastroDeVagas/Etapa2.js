@@ -42,8 +42,22 @@ botao.addEventListener("click", function(event) {
     }
 
     if (valido) {
-        alert("Etapa Concluída!");
-        window.location.href = "etapa2C.html";
-    }
 
+    let novaVaga = JSON.parse(
+        localStorage.getItem("novaVaga")
+    );
+
+    novaVaga.descricao = vaga.value;
+    novaVaga.atividades = atividades.value;
+    novaVaga.requisitos = requisitos.value;
+
+    localStorage.setItem(
+        "novaVaga",
+        JSON.stringify(novaVaga)
+    );
+
+    alert("Etapa Concluída!");
+
+    window.location.href = "etapa2C.html";
+}
 });

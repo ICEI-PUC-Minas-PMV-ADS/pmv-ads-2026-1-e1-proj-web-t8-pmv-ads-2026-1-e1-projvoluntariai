@@ -52,8 +52,23 @@ botao.addEventListener("click", function(event) {
     }
 
     if (valido) {
-        alert("Etapa Concluída!");
-        window.location.href = "Etapa2.html";
-    }
+        const novaVaga = {
+
+        titulo: vaga.value,
+        modalidade: modalidade.value,
+        localizacao: localizacao.value,
+        numeroVagas: ndevagas.value
+
+    };
+
+    localStorage.setItem(
+        "novaVaga",
+        JSON.stringify(novaVaga)
+    );
+
+    alert("Etapa Concluída!");
+
+    window.location.href = "Etapa2.html";
+}
 
 });

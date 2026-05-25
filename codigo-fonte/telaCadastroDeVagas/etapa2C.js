@@ -43,8 +43,30 @@ botao.addEventListener("click", function(event) {
 
 
     if (valido) {
-        alert("Etapa Concluída!");
-        window.location.href = "";
-    }
+
+    let novaVaga = JSON.parse(
+        localStorage.getItem("novaVaga")
+    );
+
+    novaVaga.dataInicio = data1.value;
+    novaVaga.dataFim = data2.value;
+    novaVaga.cargaHoraria = hora.value;
+
+    let vagas = JSON.parse(
+        localStorage.getItem("vagas")
+    ) || [];
+
+    vagas.push(novaVaga);
+
+    localStorage.setItem(
+        "vagas",
+        JSON.stringify(vagas)
+    );
+
+    // REMOVE RASCUNHO
+    localStorage.removeItem("novaVaga");
+
+    alert("Vaga publicada com sucesso!");
+}
 
 });
