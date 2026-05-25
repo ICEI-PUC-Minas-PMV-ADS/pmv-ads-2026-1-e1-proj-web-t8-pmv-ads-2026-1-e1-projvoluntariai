@@ -71,26 +71,21 @@ function mostrarVagas() {
 
                 <div class="info-vaga">
 
-                    <h2>${vaga.nome}</h2>
+                    <h2>${vaga.título}</h2>
 
                     <p>
                         <strong>Horário:</strong>
-                        ${vaga.horario}
+                        ${vaga.cargaHoraria}
                     </p>
 
                     <p>
                         <strong>Local:</strong>
-                        ${vaga.local}
+                        ${vaga.localizacao}
                     </p>
 
                     <p>
                         <strong>Modalidade:</strong>
                         ${vaga.modalidade}
-                    </p>
-
-                    <p>
-                        <strong>Estado:</strong>
-                        ${vaga.estado}
                     </p>
 
                     <p>
