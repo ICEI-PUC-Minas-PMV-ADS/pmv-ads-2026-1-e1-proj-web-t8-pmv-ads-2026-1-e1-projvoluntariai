@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VoluntariAI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/perfil.css" />
+  <link rel="stylesheet" href="css/cadastro.css" />
+  <link rel="stylesheet" href="css/extras.css" />
+</head>
+<body>
+
+<nav>
+  <a class="nav-marca" href="#">VoluntariAI</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#" onclick="mostrarPagina('sobre')">Sobre</a></li>
+    <li><a href="#" onclick="mostrarPagina('quem-somos')">Quem Somos</a></li>
+    <li><a href="#" class="ativo" onclick="mostrarPagina('perfil')">Perfil</a></li>
+  </ul>
+  <div class="menu-hamburger" id="menuHamburger" onclick="alternarMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- SOBRE -->
+<div class="pagina pagina-simples" id="pagina-sobre">
+  <h1>Sobre o VoluntariAI</h1>
+  <p>O VoluntariAI é uma plataforma que conecta voluntários a organizações sem fins lucrativos (ONGs), facilitando o encontro entre quem quer ajudar e quem precisa de ajuda. Nossa missão é transformar a solidariedade em ação através da tecnologia.</p>
+</div>
+
+<!-- QUEM SOMOS -->
+<div class="pagina pagina-simples" id="pagina-quem-somos">
+  <h1>Quem Somos</h1>
+  <p>Somos uma equipe apaixonada por impacto social. Acreditamos que a tecnologia pode aproximar pessoas e organizações para construir um mundo melhor. O VoluntariAI nasceu do desejo de simplificar o voluntariado e ampliar o alcance das ONGs.</p>
+</div>
+
+<!-- PERFIL -->
+<div class="pagina" id="pagina-perfil">
+  <aside class="sidebar">
+    <div class="sidebar-avatar">
+      <div class="circulo-avatar">
+        <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+      </div>
+      <span class="sidebar-nome" id="sidebarNome">Nome ONG</span>
+    </div>
+    <div class="sidebar-menu">
+      <p>Perfil <span class="seta">▲</span></p>
+      <a href="#" onclick="mostrarPagina('perfil'); return false;">Ver perfil</a>
+      <a href="#" onclick="mostrarPagina('historico'); return false;">Histórico</a>
+      <a href="#" onclick="mostrarPagina('cadastro'); return false;">Editar dados</a>
+    </div>
+    <div class="sidebar-sair" onclick="sair()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="#e04040"><path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5-5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/></svg>
+      Sair
+    </div>
+  </aside>
+
+  <main class="perfil-principal">
+    <div class="perfil-banner">
+      <div class="perfil-banner-avatar">
+        <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+      </div>
+    </div>
+    <div class="perfil-conteudo">
+      <div class="perfil-titulo" id="perfilNome">—</div>
+      <div class="perfil-meta">
+        <span id="perfilArea">—</span>
+        <span id="perfilCidade">—</span>
+      </div>
+
+      <div class="perfil-secao-titulo">Sobre a ONG</div>
+      <div class="perfil-sobre-texto" id="perfilSobre">Nenhuma descrição cadastrada.</div>
+
+      <div class="perfil-secao-titulo">Nossos Trabalhos</div>
+      <div class="perfil-caixa alta"></div>
+
+      <div class="perfil-rodape">
+        <div class="area-atuacao">
+          <label>Área de Atuação</label>
+          <div class="select-customizado">
+            <select id="perfilSelectArea" onchange="atualizarAreaPerfil()">
+              <option>Atuação</option>
+              <option>Educação</option>
+              <option>Meio Ambiente</option>
+              <option>Saúde</option>
+              <option>Assistência Social</option>
+            </select>
+          </div>
+        </div>
+        <div class="secao-fotos">
+          <p>Fotos Postadas No Perfil:</p>
+          <div class="grade-fotos">
+            <div class="item-foto">Foto 1</div>
+            <div class="item-foto">Foto 2</div>
+            <div class="item-foto">Foto 3</div>
+            <div class="item-foto">+6</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- HISTÓRICO DE TRABALHO -->
+<div class="pagina" id="pagina-historico">
+  <aside class="historico-sidebar">
+    <div class="historico-sidebar-avatar">
+      <div class="circulo-avatar">
+        <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+      </div>
+      <span class="historico-sidebar-usuario" id="historicoSidebarNome">Usuário</span>
+    </div>
+    <div class="historico-sidebar-secao">
+      <div class="historico-sidebar-secao-titulo">Perfil <span class="seta">▲</span></div>
+      <a href="#" class="historico-sidebar-link" onclick="mostrarPagina('perfil'); return false;">Editar perfil</a>
+      <a href="#" class="historico-sidebar-link ativo" onclick="mostrarPagina('historico'); return false;">Histórico de trabalho</a>
+      <a href="#" class="historico-sidebar-link" onclick="mostrarPagina('cadastro'); return false;">Editar dados</a>
+    </div>
+    <div class="historico-sidebar-sair" onclick="sair()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="#e04040"><path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5-5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/></svg>
+      Sair
+    </div>
+  </aside>
+
+  <main class="historico-principal">
+    <div class="historico-topo">
+      <h1>Histórico de trabalho</h1>
+    </div>
+    <div class="historico-corpo">
+      <div class="historico-busca">
+        <input type="text" id="buscaHistorico" placeholder="Pesquisar" onkeyup="buscarHistorico()" />
+        <button onclick="buscarHistorico()">&#128269;</button>
+      </div>
+      <div class="historico-lista" id="historicoLista">
+        <div class="historico-carregando">
+          <div class="spinner"></div>
+          Carregando histórico...
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- CADASTRO ONG -->
+<div class="pagina" id="pagina-cadastro">
+  <div class="cadastro-wrapper">
+    <svg class="decoracao-formulario" viewBox="0 0 120 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M60 95 C20 70 5 50 5 30 C5 15 17 5 30 5 C42 5 52 14 60 25 C68 14 78 5 90 5 C103 5 115 15 115 30 C115 50 100 70 60 95Z" fill="#c4a0e8" opacity="0.5"/>
+      <path d="M60 80 C30 60 18 44 18 30 C18 20 25 12 35 12 C45 12 53 20 60 32 C67 20 75 12 85 12 C95 12 102 20 102 30 C102 44 90 60 60 80Z" fill="none" stroke="#9b6fd4" stroke-width="2" opacity="0.6"/>
+      <line x1="40" y1="48" x2="80" y2="48" stroke="#9b6fd4" stroke-width="1.5" opacity="0.5"/>
+      <line x1="35" y1="56" x2="85" y2="56" stroke="#9b6fd4" stroke-width="1.5" opacity="0.5"/>
+      <line x1="42" y1="64" x2="78" y2="64" stroke="#9b6fd4" stroke-width="1.5" opacity="0.5"/>
+    </svg>
+
+    <h2>Cadastrar ONG</h2>
+    <p class="subtitulo">Preencha o cadastro da ONG.</p>
+
+    <p class="formulario-secao-titulo">Informações Gerais</p>
+
+    <div class="grupo-campo">
+      <label>Nome da Organização<span class="obrigatorio">*</span></label>
+      <input type="text" id="nomeOrg" placeholder="Nome completo da ONG" oninput="validarCampo(this, 3)" />
+      <span class="erro-campo" id="erroNomeOrg">Mínimo de 3 caracteres.</span>
+    </div>
+
+    <div class="grupo-select">
+      <label>Área de Atuação<span class="obrigatorio">*</span></label>
+      <div class="container-dropdown">
+        <button type="button" class="botao-dropdown" id="botaoDropdown" onclick="alternarDropdown()">Atuação</button>
+        <span class="seta-dropdown">▼</span>
+        <div class="menu-dropdown" id="menuDropdown">
+          <div onclick="selecionarArea('Educação')">Educação</div>
+          <div onclick="selecionarArea('Meio Ambiente')">Meio Ambiente</div>
+          <div onclick="selecionarArea('Saúde')">Saúde</div>
+          <div onclick="selecionarArea('Assistência Social')">Assistência Social</div>
+          <div onclick="selecionarArea('Cultura')">Cultura</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grupo-campo">
+      <label>Descrição / Sobre a ONG</label>
+      <textarea id="descricaoOrg" placeholder="Conte um pouco sobre a missão e trabalho da ONG..."></textarea>
+    </div>
+
+    <p class="formulario-secao-titulo" style="margin-top:20px;">Localização</p>
+
+    <div class="grupo-campo">
+      <label>CEP<span class="obrigatorio">*</span></label>
+      <div class="cep-linha">
+        <input type="text" id="cep" placeholder="00000-000" maxlength="9" oninput="mascaraCep(this)" />
+        <button class="btn-buscar-cep" onclick="buscarCep()">Buscar CEP</button>
+      </div>
+      <span class="dica">Digite o CEP para preencher endereço automaticamente.</span>
+      <span class="erro-campo" id="erroCep">CEP inválido ou não encontrado.</span>
+    </div>
+
+    <div class="grupo-campo">
+      <label>Cidade</label>
+      <input type="text" id="cidade" placeholder="Preenchido automaticamente" readonly />
+    </div>
+
+    <div class="grupo-campo">
+      <label>Estado</label>
+      <input type="text" id="estado" placeholder="Preenchido automaticamente" readonly maxlength="2" />
+    </div>
+
+    <div class="grupo-campo">
+      <label>Bairro</label>
+      <input type="text" id="bairro" placeholder="Preenchido automaticamente" />
+    </div>
+
+    <p class="formulario-secao-titulo" style="margin-top:20px;">Acesso</p>
+
+    <div class="grupo-campo">
+      <label>E-mail<span class="obrigatorio">*</span></label>
+      <input type="email" id="email" placeholder="contato@ong.org.br" oninput="validarEmail(this)" />
+      <span class="erro-campo" id="erroEmail">E-mail inválido.</span>
+    </div>
+
+    <div class="grupo-campo">
+      <label>Senha<span class="obrigatorio">*</span></label>
+      <input type="password" id="senha" placeholder="" oninput="validarSenha(this)" />
+      <span class="dica">Mínimo de 8 caracteres.</span>
+      <span class="erro-campo" id="erroSenha">A senha deve ter no mínimo 8 caracteres.</span>
+    </div>
+
+    <div class="grupo-campo">
+      <label>Confirmar senha<span class="obrigatorio">*</span></label>
+      <input type="password" id="confirmarSenha" placeholder="" oninput="validarConfirmacao(this)" />
+      <span class="erro-campo" id="erroConfirmacao">As senhas não coincidem.</span>
+    </div>
+
+    <div class="acoes-formulario">
+      <button class="btn-cancelar" onclick="mostrarPagina('perfil')">Cancelar</button>
+      <button class="btn-salvar" onclick="salvarDados()">Salvar dados</button>
+    </div>
+
+    <div class="aviso-salvo" id="avisoSalvo">✔ Dados salvos com sucesso! Você pode visualizá-los na página de Perfil.</div>
+  </div>
+</div>
+
+<script src="js/perfil.js"></script>
+<script src="js/cadastro.js"></script>
+<script src="js/historico.js"></script>
+<script src="js/navegacao.js"></script>
+
+</body>
+</html>

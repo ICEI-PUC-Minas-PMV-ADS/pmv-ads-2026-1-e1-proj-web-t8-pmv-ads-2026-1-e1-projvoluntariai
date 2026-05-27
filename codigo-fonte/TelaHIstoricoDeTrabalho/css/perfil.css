@@ -1,0 +1,194 @@
+/* ── LAYOUT PERFIL ── */
+#pagina-perfil { display: none; flex-direction: row; min-height: calc(100vh - 43px); }
+#pagina-perfil.ativa { display: flex; }
+
+/* ── SIDEBAR ── */
+.sidebar {
+  width: var(--largura-sidebar);
+  min-width: var(--largura-sidebar);
+  background: var(--branco);
+  border-right: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0 0;
+}
+
+.sidebar-avatar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.circulo-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--cinza-claro);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circulo-avatar svg { width: 38px; height: 38px; fill: #888; }
+
+.sidebar-nome { font-size: 0.8rem; margin-top: 6px; color: #333; }
+
+.sidebar-menu { padding: 12px 0; flex: 1; }
+
+.sidebar-menu p {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #333;
+  padding: 4px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.sidebar-menu p span.seta { font-size: 0.7rem; color: var(--cinza-medio); }
+
+.sidebar-menu a {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--roxo);
+  text-decoration: none;
+  padding: 5px 24px;
+  transition: background 0.15s;
+}
+
+.sidebar-menu a:hover { background: var(--roxo-palido); }
+
+.sidebar-sair {
+  border-top: 1px solid #eee;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--vermelho);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.sidebar-sair:hover { background: #fff0f0; }
+
+/* ── PERFIL PRINCIPAL ── */
+.perfil-principal { flex: 1; overflow-y: auto; }
+
+.perfil-banner { background: var(--roxo-fundo); height: 100px; position: relative; }
+
+.perfil-banner-avatar {
+  position: absolute;
+  bottom: -30px;
+  right: 20px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #7a7a9a;
+  border: 3px solid var(--branco);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.perfil-banner-avatar svg { width: 44px; height: 44px; fill: #bbb; }
+
+.perfil-conteudo { padding: 14px 20px 30px; }
+
+.perfil-titulo { font-size: 1.2rem; font-weight: 800; color: #222; margin-top: 10px; }
+
+.perfil-meta { font-size: 0.72rem; color: var(--cinza-medio); margin-top: 2px; }
+.perfil-meta span { margin-right: 16px; }
+
+.perfil-secao-titulo { font-size: 0.88rem; font-weight: 700; color: #333; margin: 18px 0 6px; }
+
+.perfil-caixa { background: var(--cinza-claro); border-radius: 6px; height: 70px; width: 100%; }
+.perfil-caixa.alta { height: 90px; }
+
+.perfil-sobre-texto {
+  background: var(--roxo-palido);
+  border-radius: 6px;
+  padding: 12px 14px;
+  font-size: 0.85rem;
+  color: #444;
+  line-height: 1.6;
+  min-height: 70px;
+}
+
+.perfil-rodape {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+
+.area-atuacao { flex: 1; min-width: 160px; }
+
+.area-atuacao label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #333;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.select-customizado { position: relative; display: inline-block; width: 160px; }
+
+.select-customizado select {
+  appearance: none;
+  width: 100%;
+  padding: 6px 30px 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-family: 'Nunito', sans-serif;
+  background: var(--branco);
+  color: #333;
+  cursor: pointer;
+}
+
+.select-customizado::after {
+  content: '▼';
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.6rem;
+  color: var(--cinza-medio);
+  pointer-events: none;
+}
+
+.secao-fotos p { font-size: 0.82rem; font-weight: 700; color: #333; margin-bottom: 6px; }
+
+.grade-fotos {
+  display: grid;
+  grid-template-columns: repeat(2, 70px);
+  grid-template-rows: repeat(2, 55px);
+  gap: 4px;
+}
+
+.item-foto {
+  background: var(--roxo-fundo);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  color: var(--branco);
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.item-foto:hover { opacity: 0.85; }
+
+/* ── RESPONSIVO ── */
+@media (max-width: 600px) {
+  .sidebar { width: 120px; min-width: 120px; }
+  .perfil-banner { height: 70px; }
+  .perfil-banner-avatar { width: 54px; height: 54px; }
+}
