@@ -87,7 +87,7 @@ body {
 .sidebar{
     display: flex;
     flex-direction: column;
-height: 90vh;
+height: 110vh;
 width: 180px;
     background-color: #ffffff;
 border-right: 1px solid #dcdcdc;
@@ -190,15 +190,15 @@ p{
 .fotoperfil{
 align-items: center;   
 justify-content: center; 
-    width: 150px;
-    height: 150px;
+    width: 130px;
+    height: 130px;
     display: flex;
-    background-color: #555;
+    background-color:  #5d6788;
     border-radius: 50%;
     margin-left: auto;
     margin-right: 40px;
     margin-top: -150px;
-       font-size: 80px;
+       font-size: 70px;
     color: white;
 }
 .bloco{
@@ -226,67 +226,7 @@ justify-content: center;
     background-color:#b0aeae;
     border-radius: 10px;
 }
-
-.filtros {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 20px;
-}
-
-
-.filtros select {
-    padding: 8px 12px;
-
-    border-radius: 6px;
-
-    border: 1px solid #ccc;
-
-    background-color: white;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-}
-
-.filtros select:hover {
-    border: 1px solid rgb(162, 76, 196);
-
-    box-shadow: 0 0 5px rgba(142, 91, 217, 0.5);
-}
-
-.filtros select:focus {
-    outline: none;
-
-    border: 1px solid rgb(162, 76, 196);
-
-    box-shadow: 0 0 5px rgba(142, 91, 217, 0.5);
-}
-
-.galeria {
-    margin-top: 30px;
-}
-
-.galeria h3 {
-    margin-bottom: 15px;
-}
-
-.fotos {
-    display: flex;
-    gap: 15px;
-    justify-content: flex-end;
-    flex-wrap: wrap;
-}
-
-.foto-item {
-    width: 180px;
-    height: 180px;
-    border-radius: 12px;
-    overflow: hidden;
-    background-color: #e5e7eb;
-}
-
-.foto-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.menu-titulo a{
+    font-size: 18px;
+    color: #474747;
 }
