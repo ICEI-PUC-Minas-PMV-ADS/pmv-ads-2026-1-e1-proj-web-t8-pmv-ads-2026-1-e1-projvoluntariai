@@ -1,0 +1,322 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #f6f7fb, #eef1f7);
+    color: #333;
+}
+
+/* TOPO */
+.topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 40px;
+    background-color: white;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.topo .logo {
+    font-weight: 600;
+    color: white;
+    background-color: rgb(162, 76, 196);
+    border-radius: 12px;
+    padding: 6px 12px;
+    font-size: 14px;
+}
+
+.topo nav a {
+    margin-left: 30px;
+    text-decoration: none;
+    color: #6b7280;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+.topo nav a:hover {
+    color: rgb(162, 76, 196);
+    background-color: #f3f4f6;
+    border-radius: 6px;
+    padding: 7px;
+}
+
+.topo nav a.ativo {
+    background-color: #f3f4f6;
+    padding: 6px 12px;
+    border-radius: 6px;
+    color: rgb(162, 76, 196);
+    font-weight: 500;
+}
+
+
+/* CONTAINER */
+.container-detalhes {
+    width: 80%;
+    max-width: 1000px;
+    margin: 30px auto 60px;
+}
+
+.voltar {
+    display: inline-block;
+    margin-bottom: 15px;
+    text-decoration: none;
+    color: rgb(162, 76, 196);
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.voltar:hover {
+    text-decoration: underline;
+}
+
+
+/* CARD */
+.card-vaga {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.08);
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+.imagem-ong img {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 10px;
+    background-color: #ecebff;
+}
+
+.info-principal {
+    flex: 1;
+}
+
+.info-principal h1 {
+    font-size: 22px;
+    color: #3e3e3e;
+    margin-bottom: 8px;
+}
+
+.nome-ong {
+    color: #555;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.nome-ong strong {
+    color: #3e3e3e;
+}
+
+
+/* TAGS */
+.tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    background-color: #f3f4f6;
+    color: #6b7280;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.tag.aceita-psc {
+    background-color: #ecebff;
+    color: rgb(162, 76, 196);
+}
+
+
+/* BLOCOS */
+.bloco {
+    background-color: white;
+    padding: 20px 25px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.08);
+    margin-bottom: 18px;
+}
+
+.bloco h2 {
+    color: #3e3e3e;
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.bloco p {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.bloco ul {
+    padding-left: 20px;
+}
+
+.bloco li {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* GRADE INFO */
+.grade-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.rotulo {
+    font-size: 12px;
+    color: #9b9b9b;
+    text-transform: uppercase;
+}
+
+.valor {
+    font-size: 14px;
+    color: #3e3e3e;
+    font-weight: 500;
+}
+
+
+/* SOBRE ONG */
+.sobre-ong {
+    border-left: 4px solid rgb(162, 76, 196);
+}
+
+
+/* RODAPE / BOTAO INSCREVER */
+.rodape-acao {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.btn-inscrever {
+    background-color: rgb(162, 76, 196);
+    color: white;
+    border: none;
+    padding: 14px 40px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn-inscrever:hover {
+    background-color: #8e5bd9;
+    transform: translateY(-2px);
+    box-shadow: 0px 4px 12px rgba(162, 76, 196, 0.4);
+}
+
+.btn-inscrever:disabled {
+    background-color: #b0aeae;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal.aberto {
+    display: flex;
+}
+
+.modal-conteudo {
+    background-color: white;
+    padding: 30px 35px;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.modal-conteudo h3 {
+    color: rgb(162, 76, 196);
+    margin-bottom: 10px;
+}
+
+.modal-conteudo p {
+    color: #555;
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.modal-conteudo button {
+    background-color: rgb(162, 76, 196);
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+}
+
+.modal-conteudo button:hover {
+    background-color: #8e5bd9;
+}
+
+
+/* RESPONSIVO */
+@media (max-width: 700px) {
+    .container-detalhes {
+        width: 92%;
+    }
+
+    .card-vaga {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .imagem-ong img {
+        width: 130px;
+        height: 130px;
+    }
+
+    .grade-info {
+        grid-template-columns: 1fr;
+    }
+
+    .topo {
+        padding: 12px 20px;
+    }
+
+    .topo nav a {
+        margin-left: 12px;
+        font-size: 13px;
+    }
+}

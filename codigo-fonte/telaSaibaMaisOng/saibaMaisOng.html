@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoluntariAI - Saiba mais ONG</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="saibaMaisOng.css">
+</head>
+<body>
+
+<header class="topo">
+    <div class="logo">VoluntariAI</div>
+    <nav>
+        <a href="#">Sobre</a>
+        <a href="#">Quem somos</a>
+        <a href="../TelaVagasVoluntario/Vagas.html" class="ativo">Vagas</a>
+        <a href="#">Perfil</a>
+    </nav>
+</header>
+
+<main class="container-detalhes">
+
+    <a href="../TelaVagasVoluntario/Vagas.html" class="voltar">&laquo; Voltar para vagas</a>
+
+    <section class="card-vaga">
+
+        <div class="imagem-ong">
+            <img id="imgOng" src="" alt="Imagem da ONG">
+        </div>
+
+        <div class="info-principal">
+            <h1 id="tituloVaga">Título da vaga</h1>
+
+            <p class="nome-ong">
+                <strong>ONG:</strong>
+                <span id="nomeOng">Nome da ONG</span>
+            </p>
+
+            <div class="tags">
+                <span class="tag" id="tagModalidade">Presencial</span>
+                <span class="tag" id="tagArea">Educação</span>
+                <span class="tag aceita-psc" id="tagPsc">Aceita PSC</span>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section class="bloco">
+        <h2>Sobre a vaga</h2>
+        <p id="descricaoVaga">Descrição da vaga.</p>
+    </section>
+
+
+    <section class="bloco grade-info">
+
+        <div class="info-item">
+            <span class="rotulo">Local</span>
+            <span class="valor" id="localizacao">--</span>
+        </div>
+
+        <div class="info-item">
+            <span class="rotulo">Carga horária</span>
+            <span class="valor" id="cargaHoraria">--</span>
+        </div>
+
+        <div class="info-item">
+            <span class="rotulo">Período</span>
+            <span class="valor" id="periodo">--</span>
+        </div>
+
+        <div class="info-item">
+            <span class="rotulo">Modalidade</span>
+            <span class="valor" id="modalidade">--</span>
+        </div>
+
+    </section>
+
+
+    <section class="bloco">
+        <h2>Atividades</h2>
+        <ul id="atividades"></ul>
+    </section>
+
+
+    <section class="bloco">
+        <h2>Requisitos</h2>
+        <ul id="requisitos"></ul>
+    </section>
+
+
+    <section class="bloco sobre-ong">
+        <h2>Sobre a ONG</h2>
+        <p id="sobreOng">Texto sobre a ONG.</p>
+    </section>
+
+
+    <div class="rodape-acao">
+        <button id="btnInscrever" class="btn-inscrever">Quero me inscrever</button>
+    </div>
+
+</main>
+
+
+<div id="modalConfirma" class="modal">
+    <div class="modal-conteudo">
+        <h3>Inscrição enviada!</h3>
+        <p>Sua candidatura foi registrada. A ONG entrará em contato em breve.</p>
+        <button onclick="fecharModal()">Fechar</button>
+    </div>
+</div>
+
+<script src="saibaMaisOng.js"></script>
+</body>
+</html>
