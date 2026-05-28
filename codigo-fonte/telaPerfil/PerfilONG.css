@@ -230,3 +230,17 @@ justify-content: center;
     font-size: 18px;
     color: #474747;
 }
+
+.galeria {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.fotoGaleria {
+    width: 180px;
+    height: 180px;
+    border-radius: 12px;
+    object-fit: cover;
+}
