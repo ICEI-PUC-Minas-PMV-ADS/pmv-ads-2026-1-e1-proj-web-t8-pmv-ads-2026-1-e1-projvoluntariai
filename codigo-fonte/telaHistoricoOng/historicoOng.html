@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoluntariAI - Histórico de Trabalho</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="historicoOng.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    >
+</head>
+<body>
+
+<header class="topo">
+    <div class="logo">VoluntariAI</div>
+    <nav>
+        <a href="#">Sobre</a>
+        <a href="#">Quem somos</a>
+        <a href="#">Vagas</a>
+        <a href="#" class="ativo">Perfil</a>
+    </nav>
+</header>
+
+
+<div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="perfil">
+            <div class="foto">
+                <i class="fa-solid fa-user"></i>
+            </div>
+            <p id="nomeOngTopo">ONG-Teste</p>
+        </div>
+
+        <nav class="menu">
+
+            <div class="menu-titulo">
+                <a href="#">Perfil</a>
+                <i class="fa-solid fa-chevron-up"></i>
+            </div>
+
+            <ul>
+                <li><a href="../telaPerfil/PerfilONG.html">Editar Perfil</a></li>
+                <li><a href="#">Editar Dados</a></li>
+                <li><a href="#">Gerenciar Vagas</a></li>
+                <li><a href="#" class="ativo">Histórico de Trabalho</a></li>
+            </ul>
+        </nav>
+
+        <div class="sair">
+            <a href="#">
+                Sair
+                <i class="fa-solid fa-right-from-bracket"></i>
+            </a>
+        </div>
+
+    </aside>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="principal">
+
+        <div class="cabecalho">
+            <h1>Histórico de Trabalho</h1>
+            <p>Visualize e valide as horas trabalhadas pelos voluntários nas suas vagas.</p>
+        </div>
+
+
+        <!-- RESUMO -->
+        <div class="resumo">
+
+            <div class="card-resumo">
+                <span class="resumo-rotulo">Total de participações</span>
+                <span class="resumo-valor" id="totalParticipacoes">0</span>
+            </div>
+
+            <div class="card-resumo">
+                <span class="resumo-rotulo">Horas validadas</span>
+                <span class="resumo-valor" id="totalHoras">0h</span>
+            </div>
+
+            <div class="card-resumo">
+                <span class="resumo-rotulo">Aguardando validação</span>
+                <span class="resumo-valor pendente" id="totalPendentes">0</span>
+            </div>
+
+        </div>
+
+
+        <!-- FILTROS -->
+        <div class="filtros">
+
+            <input
+                type="text"
+                id="buscaParticipante"
+                placeholder="Buscar voluntário ou vaga..."
+            >
+
+            <select id="filtroStatus">
+                <option value="">Todos os status</option>
+                <option value="pendente">Pendente</option>
+                <option value="validado">Validado</option>
+            </select>
+
+        </div>
+
+
+        <!-- LISTA -->
+        <div id="listaParticipantes" class="lista-participantes"></div>
+
+    </main>
+
+</div>
+
+
+<!-- MODAL DE VALIDAÇÃO -->
+<div id="modalValidar" class="modal">
+    <div class="modal-conteudo">
+
+        <h3>Validar horas</h3>
+
+        <p>
+            Voluntário:
+            <strong id="modalNomeVoluntario">--</strong>
+        </p>
+
+        <p>
+            Vaga:
+            <strong id="modalNomeVaga">--</strong>
+        </p>
+
+
+        <label for="inputHoras">Horas trabalhadas</label>
+        <input
+            type="number"
+            id="inputHoras"
+            min="0"
+            step="0.5"
+            placeholder="Ex: 8"
+        >
+
+        <label for="inputObs">Observação (opcional)</label>
+        <textarea
+            id="inputObs"
+            rows="3"
+            placeholder="Ex: participou de todas as oficinas"
+        ></textarea>
+
+        <div class="modal-botoes">
+            <button class="btn-secundario" onclick="fecharModal()">Cancelar</button>
+            <button class="btn-primario" onclick="confirmarValidacao()">Validar</button>
+        </div>
+
+    </div>
+</div>
+
+
+<script src="historicoOng.js"></script>
+</body>
+</html>
