@@ -338,3 +338,18 @@ input[type="file"]{
 #btnSalvar:hover{
     background-color: #7c3aed;
 }
+
+.banner{
+    cursor: pointer;
+}
+
+.fotoperfil{
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.fotoperfil img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
