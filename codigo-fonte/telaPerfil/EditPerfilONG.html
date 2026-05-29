@@ -16,6 +16,7 @@
 
 <body>
 
+    <!-- TOPO -->
     <header class="topo">
 
         <div class="logo">
@@ -31,6 +32,8 @@
 
     </header>
 
+
+    <!-- LAYOUT -->
     <div class="layout">
 
         <!-- SIDEBAR -->
@@ -39,18 +42,27 @@
             <div class="perfil">
 
                 <div class="foto">
+
                     <i class="fa-solid fa-user"></i>
+
                 </div>
 
-                <p>ONG-Teste</p>
+                <p id="nomeSidebar">
+                    ONG-Teste
+                </p>
 
             </div>
 
+
+            <!-- MENU -->
             <nav class="menu">
 
                 <div class="menu-titulo">
+
                     <span>Perfil</span>
+
                     <i class="fa-solid fa-chevron-up"></i>
+
                 </div>
 
                 <ul>
@@ -79,16 +91,37 @@
 
         </aside>
 
+
         <!-- CONTEÚDO -->
         <main>
 
-            <div class="banner"></div>
+            <!-- BANNER -->
+            <div class="banner" id="bannerONG">
 
+                <!-- FOTO PERFIL -->
+                <div
+                    class="fotoperfil"
+                    id="fotoPerfilPrincipal">
+
+                    <i class="fa-solid fa-user"></i>
+
+                </div>
+
+            </div>
+
+
+            <!-- INFORMAÇÕES -->
             <section class="perfilinfo">
 
                 <div class="textousu">
 
-                    <h2>Editar Perfil</h2>
+                    <!-- NOME ONG -->
+                    <input
+                        type="text"
+                        id="inputNomeONG"
+                        class="inputNome"
+                        placeholder="Nome da ONG">
+
 
                     <p>
                         Atualize as informações da ONG
@@ -98,61 +131,95 @@
 
             </section>
 
+
+            <!-- ALTERAR BANNER -->
+            <section class="blocoUpload">
+
+                <label>
+                    Alterar Banner
+                </label>
+
+                <input
+                    type="file"
+                    id="inputBanner"
+                    accept="image/*">
+
+            </section>
+
+
+            <!-- ALTERAR FOTO PERFIL -->
+            <section class="blocoUpload">
+
+                <label>
+                    Alterar Foto de Perfil
+                </label>
+
+                <input
+                    type="file"
+                    id="inputFotoPerfil"
+                    accept="image/*">
+
+            </section>
+
+
             <!-- APRESENTAÇÃO -->
-<section class="bloco">
+            <section class="bloco">
 
-    <h3>Apresentação</h3>
+                <h3>Apresentação</h3>
 
-    <textarea
-        id="inputApresentacao"
-        placeholder="Escreva uma apresentação da ONG">
-    </textarea>
+                <textarea
+                    id="inputApresentacao"
+                    placeholder="Escreva uma apresentação da ONG">
+                </textarea>
 
-</section>
-
-
-<!-- NOSSOS TRABALHOS -->
-<section class="bloco">
-
-    <h3>Nossos Trabalhos</h3>
-
-    <textarea
-        id="inputTrabalhos"
-        placeholder="Descreva os trabalhos realizados pela ONG">
-    </textarea>
-
-</section>
+            </section>
 
 
-<!-- FOTOS -->
-<section class="bloco">
+            <!-- NOSSOS TRABALHOS -->
+            <section class="bloco">
 
-    <h3>Fotos da ONG</h3>
+                <h3>Nossos Trabalhos</h3>
 
-    <input
-        type="file"
-        id="inputFotos"
-        multiple
-        accept="image/*">
+                <textarea
+                    id="inputTrabalhos"
+                    placeholder="Descreva os trabalhos realizados pela ONG">
+                </textarea>
 
-</section>
+            </section>
 
 
-<!-- ÁREA DE ATUAÇÃO -->
-<section class="bloco">
+            <!-- FOTOS -->
+            <section class="bloco">
 
-    <h3>Área de atuação</h3>
+                <h3>Fotos da ONG</h3>
 
-    <input
-        type="text"
-        id="inputAtuacao"
-        placeholder="Ex: Educação, Saúde, Animais">
+                <input
+                    type="file"
+                    id="inputFotos"
+                    multiple
+                    accept="image/*">
 
-</section>
+            </section>
+
+
+            <!-- ÁREA DE ATUAÇÃO -->
+            <section class="bloco">
+
+                <h3>Área de atuação</h3>
+
+                <input
+                    type="text"
+                    id="inputAtuacao"
+                    placeholder="Ex: Educação, Saúde, Animais">
+
+            </section>
+
 
             <!-- BOTÃO -->
             <button id="btnSalvar">
+
                 Salvar Alterações
+
             </button>
 
         </main>
