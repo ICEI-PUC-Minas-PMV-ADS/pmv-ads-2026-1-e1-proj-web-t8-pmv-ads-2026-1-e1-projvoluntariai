@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,14 +11,16 @@
 
     <link 
         rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    >
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
 
     <header class="topo">
-        <div class="logo">VoluntariAI</div>
+
+        <div class="logo">
+            VoluntariAI
+        </div>
 
         <nav>
             <a href="#">Sobre</a>
@@ -25,100 +28,185 @@
             <a href="#">Vagas</a>
             <a href="#" class="ativo">Perfil</a>
         </nav>
+
     </header>
+
 
     <div class="layout">
 
+        <!-- SIDEBAR -->
         <aside class="sidebar">
 
             <div class="perfil">
-                <div class="foto">
+
+                <!-- FOTO SIDEBAR -->
+                <div
+                    class="foto"
+                    id="fotoPerfilSidebar">
+
                     <i class="fa-solid fa-user"></i>
+
                 </div>
 
-                <p>ONG-Teste</p>
+                <!-- NOME SIDEBAR -->
+                <p id="nomeONGSidebar">
+                    ONG-Teste
+                </p>
+
             </div>
 
+
+            <!-- MENU -->
             <nav class="menu">
 
-      <div class="menu-titulo">
-  <a href="#">Perfil</a>
-  <i class="fa-solid fa-chevron-up"></i>
-</div>
+                <div class="menu-titulo">
+
+                    <a href="#">
+                        Perfil
+                    </a>
+
+                    <i class="fa-solid fa-chevron-up"></i>
+
+                </div>
 
                 <ul>
+
                     <li>
-                        <a href="EditPerfilONG.html">Editar Perfil</a>
+                        <a href="EditPerfilONG.html">
+                            Editar Perfil
+                        </a>
                     </li>
 
                     <li>
-                        <a href="#">Editar Dados</a>
+                        <a href="#">
+                            Editar Dados
+                        </a>
                     </li>
 
                     <li>
-                        <a href="#">Gerenciar Vagas</a>
+                        <a href="#">
+                            Gerenciar Vagas
+                        </a>
                     </li>
+
                 </ul>
 
             </nav>
 
+
+            <!-- SAIR -->
             <div class="sair">
+
                 <a href="#">
+
                     Sair
+
                     <i class="fa-solid fa-right-from-bracket"></i>
+
                 </a>
+
             </div>
 
         </aside>
 
+
+        <!-- CONTEÚDO -->
         <main>
 
-            <div class="banner"></div>
+            <!-- BANNER -->
+            <div
+                class="banner"
+                id="bannerONG">
+            </div>
 
+
+            <!-- PERFIL -->
             <section class="perfilinfo">
 
                 <div class="textousu">
 
-                    <h2>ONG-Teste</h2>
+                    <!-- NOME PRINCIPAL -->
+                    <h2 id="nomeONGPrincipal">
+                        ONG-Teste
+                    </h2>
 
                     <p>
                         (Instituição/Localização - Dia e Horário de Funcionamento)
                     </p>
-                </div>
-                    <div class="fotoperfil">
-                        <i class="fa-solid fa-user"></i>
-                    </div>
 
-               
+                </div>
+
+
+                <!-- FOTO PERFIL -->
+                <div
+                    class="fotoperfil"
+                    id="fotoPerfilPrincipal">
+
+                    <i class="fa-solid fa-user"></i>
+
+                </div>
 
             </section>
 
+
+            <!-- APRESENTAÇÃO -->
             <section class="bloco">
+
                 <h3>Apresentação</h3>
-                <div class="caixa" id="apresentacaoTexto">
+
+                <div
+                    class="caixa"
+                    id="apresentacaoTexto">
+
                     Nenhuma apresentação cadastrada.
+
                 </div>
+
             </section>
 
+
+            <!-- NOSSOS TRABALHOS -->
             <section class="bloco">
+
                 <h3>Nossos Trabalhos</h3>
-                <div class="caixa2" id="trabalhosTexto">
+
+                <div
+                    class="caixa2"
+                    id="trabalhosTexto">
+
                     Nenhum trabalho cadastrado.
+
                 </div>
 
-                <div class="galeria" id="galeriaFotos">
-                  <img src="img/foto1.jpg" class="fotoGaleria">
-                  <img src="img/foto2.jpg" class="fotoGaleria">
+
+                <!-- GALERIA -->
+                <div
+                    class="galeria"
+                    id="galeriaFotos">
+
                 </div>
+
             </section>
-  <section class="bloco">
+
+
+            <!-- ÁREA DE ATUAÇÃO -->
+            <section class="bloco">
+
                 <h3>Área de atuação</h3>
-                <div class="tags" id="atuacaoTexto"></div>
+
+                <div
+                    class="tags"
+                    id="atuacaoTexto">
+                </div>
+
             </section>
-        </div> 
+
         </main>
 
-<script src="perfilONG.js"></script>
+    </div>
+
+    <script src="perfilONG.js"></script>
 
 </body>
+
 </html>

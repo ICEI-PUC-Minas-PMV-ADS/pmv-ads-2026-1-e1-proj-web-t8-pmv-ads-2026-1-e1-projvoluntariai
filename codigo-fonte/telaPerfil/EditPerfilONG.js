@@ -1,7 +1,9 @@
 const botaoSalvar =
     document.getElementById("btnSalvar");
 
-
+const inputFotos =
+    document.getElementById("inputFotos");
+    
 // INPUTS
 const inputNome =
     document.getElementById("inputNomeONG");
@@ -126,12 +128,9 @@ inputFotoPerfil.addEventListener("change", function () {
 
 });
 
-
-
-
-// SALVAR PERFIL
 botaoSalvar.addEventListener("click", function () {
 
+    // SALVAR TEXTO
     localStorage.setItem(
         "nomeONG",
         inputNome.value
@@ -152,9 +151,75 @@ botaoSalvar.addEventListener("click", function () {
         inputAtuacao.value
     );
 
-    alert("Perfil atualizado com sucesso!");
+
+
+    // SALVAR FOTOS GALERIA
+    const arquivos =
+        inputFotos.files;
+
+    const fotosBase64 = [];
+
+    let contador = 0;
+
+
+
+    // SE TIVER FOTOS
+    if (arquivos.length > 0) {
+
+        for (let i = 0; i < arquivos.length; i++) {
+
+            const leitor =
+                new FileReader();
+
+            leitor.onload = function(e) {
+
+                fotosBase64.push(
+                    e.target.result
+                );
+
+                contador++;
+
+                // TERMINOU TODAS
+                if (contador === arquivos.length) {
+
+                    localStorage.setItem(
+                        "fotosONG",
+                        JSON.stringify(fotosBase64)
+                    );
+
+                    finalizarSalvamento();
+
+                }
+
+            };
+
+            leitor.readAsDataURL(
+                arquivos[i]
+            );
+
+        }
+
+    }
+
+    else {
+
+        finalizarSalvamento();
+
+    }
+
+});
+
+
+
+
+// FINALIZAR
+function finalizarSalvamento() {
+
+    alert(
+        "Perfil atualizado com sucesso!"
+    );
 
     window.location.href =
         "PerfilONG.html";
 
-});
+}
