@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Editar Perfil ONG</title>
+
+    <link rel="stylesheet" href="EditPerfilONG.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <header class="topo">
+
+        <div class="logo">
+            VoluntariAI
+        </div>
+
+        <nav>
+            <a href="#">Sobre</a>
+            <a href="#">Quem Somos</a>
+            <a href="#">Vagas</a>
+            <a href="#" class="ativo">Perfil</a>
+        </nav>
+
+    </header>
+
+    <div class="layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="perfil">
+
+                <div class="foto">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <p>ONG-Teste</p>
+
+            </div>
+
+            <nav class="menu">
+
+                <div class="menu-titulo">
+                    <span>Perfil</span>
+                    <i class="fa-solid fa-chevron-up"></i>
+                </div>
+
+                <ul>
+
+                    <li>
+                        <a href="#" class="ativoMenu">
+                            Editar Perfil
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Editar Dados
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Gerenciar Vagas
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </aside>
+
+        <!-- CONTEÚDO -->
+        <main>
+
+            <div class="banner"></div>
+
+            <section class="perfilinfo">
+
+                <div class="textousu">
+
+                    <h2>Editar Perfil</h2>
+
+                    <p>
+                        Atualize as informações da ONG
+                    </p>
+
+                </div>
+
+            </section>
+
+            <!-- APRESENTAÇÃO -->
+<section class="bloco">
+
+    <h3>Apresentação</h3>
+
+    <textarea
+        id="inputApresentacao"
+        placeholder="Escreva uma apresentação da ONG">
+    </textarea>
+
+</section>
+
+
+<!-- NOSSOS TRABALHOS -->
+<section class="bloco">
+
+    <h3>Nossos Trabalhos</h3>
+
+    <textarea
+        id="inputTrabalhos"
+        placeholder="Descreva os trabalhos realizados pela ONG">
+    </textarea>
+
+</section>
+
+
+<!-- FOTOS -->
+<section class="bloco">
+
+    <h3>Fotos da ONG</h3>
+
+    <input
+        type="file"
+        id="inputFotos"
+        multiple
+        accept="image/*">
+
+</section>
+
+
+<!-- ÁREA DE ATUAÇÃO -->
+<section class="bloco">
+
+    <h3>Área de atuação</h3>
+
+    <input
+        type="text"
+        id="inputAtuacao"
+        placeholder="Ex: Educação, Saúde, Animais">
+
+</section>
+
+            <!-- BOTÃO -->
+            <button id="btnSalvar">
+                Salvar Alterações
+            </button>
+
+        </main>
+
+    </div>
+
+    <script src="EditPerfilONG.js"></script>
+
+</body>
+
+</html>

@@ -87,7 +87,7 @@ body {
 .sidebar{
     display: flex;
     flex-direction: column;
-height: 110vh;
+height: 115vh;
 width: 180px;
     background-color: #ffffff;
 border-right: 1px solid #dcdcdc;
@@ -177,16 +177,15 @@ main{
     margin-left: 30px;
     margin-top: 5px;
     margin-bottom: 10px;
-    font-size: 20px;
-    border-bottom: 1px solid #dcdcdc;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 250px;
+padding-bottom:15px;
+width: 100%;
+    border-bottom:1px solid #dcdcdc;
 }
-h2{
-    color: #3e3e3e;
-}
-p{
-    color: #9b9b9b;
-    font-size: 15px;
-}
+
 .fotoperfil{
 align-items: center;   
 justify-content: center; 
@@ -201,33 +200,82 @@ justify-content: center;
        font-size: 70px;
     color: white;
 }
-.bloco{
-    padding: 15px;
-    margin-left: 25px;
-    margin-right: 40px;
-    color:#383737;
+.menu-titulo a{
     font-size: 18px;
+    color: #474747;
+}
+.textousu input{
+    padding: 18px;
+    width: 350px;
+    border: none;
+    border-radius: 10px; 
+    background-color: #b0aeae;
+    font-size: 20px;
+}
 
+.textousu select{
+    padding:9px;
+    width: 250px;
+    border: none;
+font-size: 11px;
+border-radius: 10px;
+color: #383737;
+background-color: #b0aeae;
 }
-.caixa{
-    width: auto;
-    height: 100px;
-    background-color: #b0aeae;
-    border-radius: 10px;
+#ativo{
+    background-color: #ecebff;
+    color: rgb(162, 76, 196);
 }
-.caixa2{
-    width: auto;
-    height: 150px;
-    background-color: #b0aeae;
-    border-radius: 10px;
+.moreInfo{
+    display: flex;
+    flex-direction: column;
+    margin-right: 25px;
+    margin-left: 25px;
+    width:90%;
+    padding:15px;
+    align-items: flex-start;
+    color: #383737;
+    font-size: 18px;
+    gap: 25px;
 }
-.lilcaixa{
+.pt1{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.pt1 textarea{
+width: 100%;
+height: 110px;
+padding: 15px;
+border: none;
+background-color: #b0aeae;
+border-radius: 10px;
+font-size: 15px;
+}
+.pt2{
+    display: flex;
+    flex-direction: column;
+}
+.pt2 select{
     width: 270px;
     height: 50px;
     background-color:#b0aeae;
     border-radius: 10px;
+    border: none;
+    color: #383737;
+    font-size: 15px;
 }
-.menu-titulo a{
-    font-size: 18px;
-    color: #474747;
+.pt3{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.pt3 textarea{
+width: 100%;
+height: 160px;
+padding: 15px;
+border: none;
+background-color: #b0aeae;
+border-radius: 10px;
+font-size: 15px;
 }
