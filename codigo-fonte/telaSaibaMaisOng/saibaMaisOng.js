@@ -1,15 +1,15 @@
-// PEGA O ID DA VAGA NA URL
-function pegarIdVaga() {
+// PEGA O ÍNDICE DA VAGA NA URL (?idx=)
+function pegarIndiceVaga() {
     const url = new URLSearchParams(window.location.search);
-    return url.get("id");
+    const idx = url.get("idx");
+    return idx !== null ? parseInt(idx, 10) : null;
 }
 
 
 // VAGA DE EXEMPLO (USADA QUANDO NÃO HÁ DADOS SALVOS)
 const vagaExemplo = {
-    título: "Educador Ambiental",
+    titulo: "Educador Ambiental",
     nomeOng: "ONG Verde Vivo",
-    imagem: "",
     modalidade: "Presencial",
     area: "Meio Ambiente",
     aceitaPsc: true,
@@ -18,36 +18,24 @@ const vagaExemplo = {
     cargaHoraria: "8h semanais",
     dataInicio: "01/06/2026",
     dataFim: "30/08/2026",
-    atividades: [
-        "Conduzir oficinas sobre reciclagem",
-        "Apoiar plantio de mudas em escolas parceiras",
-        "Auxiliar na organização de eventos comunitários"
-    ],
-    requisitos: [
-        "Maior de 16 anos",
-        "Disponibilidade aos sábados",
-        "Interesse por meio ambiente"
-    ],
+    atividades: "Conduzir oficinas sobre reciclagem\nApoiar plantio de mudas em escolas parceiras\nAuxiliar na organização de eventos comunitários",
+    requisitos: "Maior de 16 anos\nDisponibilidade aos sábados\nInteresse por meio ambiente",
     sobreOng: "A ONG Verde Vivo atua há 10 anos em projetos de educação ambiental e preservação da biodiversidade urbana."
 };
 
 
 // PEGA A VAGA QUE VEIO DA TELA DE VAGAS OU USA A DE EXEMPLO
 function carregarVaga() {
-    const id = pegarIdVaga();
+    const idx = pegarIndiceVaga();
     const vagas = JSON.parse(localStorage.getItem("vagas")) || [];
 
     let vaga;
 
-    if (id) {
-        vaga = vagas.find(v => String(v.id) === id);
-    }
-
-    if (!vaga && vagas.length > 0) {
+    if (idx !== null && vagas[idx]) {
+        vaga = vagas[idx];
+    } else if (vagas.length > 0) {
         vaga = vagas[0];
-    }
-
-    if (!vaga) {
+    } else {
         vaga = vagaExemplo;
     }
 
@@ -55,11 +43,29 @@ function carregarVaga() {
 }
 
 
+// Aceita string com quebras de linha OU array. Retorna array de itens.
+function normalizarLista(valor) {
+    if (!valor) return [];
+
+    if (Array.isArray(valor)) {
+        return valor.filter(v => v && v.toString().trim());
+    }
+
+    return valor
+        .toString()
+        .split(/\r?\n/)
+        .map(s => s.trim())
+        .filter(s => s);
+}
+
+
 // COLOCA OS DADOS NA TELA
 function preencherTela(vaga) {
 
-    document.getElementById("tituloVaga").textContent =
-        vaga.título || vaga.titulo || "Vaga sem título";
+    // Cadastro salva "titulo" (sem acento). Fallback p/ "título" só por segurança.
+    const titulo = vaga.titulo || vaga.título || "Vaga sem título";
+
+    document.getElementById("tituloVaga").textContent = titulo;
 
     document.getElementById("nomeOng").textContent =
         vaga.nomeOng || "ONG não informada";
@@ -87,45 +93,41 @@ function preencherTela(vaga) {
     document.getElementById("periodo").textContent = periodo;
 
 
-    // TAGS
-    document.getElementById("tagModalidade").textContent =
-        vaga.modalidade || "Modalidade";
+    // TAGS - esconde as que não têm dado
+    const tagModalidade = document.getElementById("tagModalidade");
+    if (vaga.modalidade) {
+        tagModalidade.textContent = vaga.modalidade;
+        tagModalidade.style.display = "inline-block";
+    } else {
+        tagModalidade.style.display = "none";
+    }
 
-    document.getElementById("tagArea").textContent =
-        vaga.area || "Área";
+    const tagArea = document.getElementById("tagArea");
+    if (vaga.area) {
+        tagArea.textContent = vaga.area;
+        tagArea.style.display = "inline-block";
+    } else {
+        tagArea.style.display = "none";
+    }
 
     const tagPsc = document.getElementById("tagPsc");
-    if (vaga.aceitaPsc) {
-        tagPsc.style.display = "inline-block";
-    } else {
-        tagPsc.style.display = "none";
-    }
+    tagPsc.style.display = vaga.aceitaPsc ? "inline-block" : "none";
 
 
     // ATIVIDADES
     const ulAtividades = document.getElementById("atividades");
-    ulAtividades.innerHTML = "";
-    const atividades = vaga.atividades || [];
-    if (atividades.length === 0) {
-        ulAtividades.innerHTML = "<li>Nenhuma atividade descrita.</li>";
-    } else {
-        atividades.forEach(a => {
-            ulAtividades.innerHTML += "<li>" + a + "</li>";
-        });
-    }
+    const atividades = normalizarLista(vaga.atividades);
+    ulAtividades.innerHTML = atividades.length === 0
+        ? "<li>Nenhuma atividade descrita.</li>"
+        : atividades.map(a => "<li>" + a + "</li>").join("");
 
 
     // REQUISITOS
     const ulRequisitos = document.getElementById("requisitos");
-    ulRequisitos.innerHTML = "";
-    const requisitos = vaga.requisitos || [];
-    if (requisitos.length === 0) {
-        ulRequisitos.innerHTML = "<li>Sem requisitos específicos.</li>";
-    } else {
-        requisitos.forEach(r => {
-            ulRequisitos.innerHTML += "<li>" + r + "</li>";
-        });
-    }
+    const requisitos = normalizarLista(vaga.requisitos);
+    ulRequisitos.innerHTML = requisitos.length === 0
+        ? "<li>Sem requisitos específicos.</li>"
+        : requisitos.map(r => "<li>" + r + "</li>").join("");
 
 
     // SOBRE A ONG
@@ -133,7 +135,8 @@ function preencherTela(vaga) {
         vaga.sobreOng || "A ONG ainda não cadastrou descrição.";
 
 
-    // IMAGEM
+    // IMAGEM - cadastro de vagas ainda não salva imagem,
+    // então usa placeholder se não tiver
     const img = document.getElementById("imgOng");
     if (vaga.imagem) {
         img.src = vaga.imagem;
@@ -141,14 +144,16 @@ function preencherTela(vaga) {
         img.src = "https://placehold.co/160x160/ecebff/a24cc4?text=ONG";
     }
 
-    guardarVagaAtual(vaga);
+    guardarVagaAtual(vaga, titulo);
 }
 
 
 // SALVA A VAGA QUE ESTÁ SENDO VISTA PARA USAR NA INSCRIÇÃO
 let vagaAtual = null;
-function guardarVagaAtual(vaga) {
+let tituloAtual = "";
+function guardarVagaAtual(vaga, titulo) {
     vagaAtual = vaga;
+    tituloAtual = titulo;
 }
 
 
@@ -161,10 +166,7 @@ function inscrever() {
 
 
     // EVITA INSCRIÇÃO DUPLICADA
-    const jaInscrito = inscricoes.some(i =>
-        i.idVaga === vagaAtual.id &&
-        i.nomeVaga === (vagaAtual.título || vagaAtual.titulo)
-    );
+    const jaInscrito = inscricoes.some(i => i.nomeVaga === tituloAtual);
 
     if (jaInscrito) {
         alert("Você já está inscrito nesta vaga.");
@@ -173,11 +175,10 @@ function inscrever() {
 
 
     inscricoes.push({
-        idVaga: vagaAtual.id || null,
-        nomeVaga: vagaAtual.título || vagaAtual.titulo,
-        nomeOng: vagaAtual.nomeOng,
-        localizacao: vagaAtual.localizacao,
-        cargaHoraria: vagaAtual.cargaHoraria,
+        nomeVaga: tituloAtual,
+        nomeOng: vagaAtual.nomeOng || "",
+        localizacao: vagaAtual.localizacao || "",
+        cargaHoraria: vagaAtual.cargaHoraria || "",
         dataInscricao: new Date().toLocaleDateString("pt-BR"),
         status: "Aguardando confirmação"
     });
