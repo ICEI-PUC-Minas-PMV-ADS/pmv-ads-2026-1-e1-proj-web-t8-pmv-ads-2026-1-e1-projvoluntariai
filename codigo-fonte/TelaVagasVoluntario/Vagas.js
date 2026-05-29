@@ -56,6 +56,9 @@ function mostrarVagas() {
     // CRIA OS CARDS
     vagasFiltradas.forEach(vaga => {
 
+        // pega o índice do vaga no array original p/ passar pro Saiba mais
+        const indiceOriginal = vagas.indexOf(vaga);
+
         lista.innerHTML += `
 
             <div class="vaga-card">
@@ -71,7 +74,7 @@ function mostrarVagas() {
 
                 <div class="info-vaga">
 
-                    <h2>${vaga.título}</h2>
+                    <h2>${vaga.titulo || vaga.título || 'Vaga sem título'}</h2>
 
                     <p>
                         <strong>Horário:</strong>
@@ -97,7 +100,7 @@ function mostrarVagas() {
 
                 <div class="botao-vaga">
 
-                    <a href="detalhes.html">
+                    <a href="../telaSaibaMaisOng/saibaMaisOng.html?idx=${indiceOriginal}">
                         Saiba mais >>
                     </a>
 
