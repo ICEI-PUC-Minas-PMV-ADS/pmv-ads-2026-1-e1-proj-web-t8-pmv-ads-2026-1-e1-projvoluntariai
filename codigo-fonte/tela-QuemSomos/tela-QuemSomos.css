@@ -1,0 +1,160 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Lato', sans-serif;
+}
+
+body{
+    background:#f8f8f8;
+    color:#4b5563;
+}
+
+/* HEADER */
+
+.topo{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 40px;
+    background:white;
+    border-bottom:1px solid #e5e7eb;
+}
+
+.logo{
+    background:#8b5cf6;
+    color:white;
+    padding:6px 12px;
+    border-radius:8px;
+    font-weight:600;
+}
+
+nav a{
+    text-decoration:none;
+    color:#6b7280;
+    margin-left:25px;
+}
+
+nav a.ativo{
+    background:#f3f4f6;
+    padding:6px 12px;
+    border-radius:6px;
+}
+
+/* CONTAINER */
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:50px 20px;
+    text-align:center;
+}
+
+.container h1{
+    font-size:36px;
+    color:#374151;
+    margin-bottom:50px;
+}
+
+/* CARDS */
+
+.cards{
+    display:flex;
+    justify-content:center;
+    gap:35px;
+    flex-wrap:wrap;
+}
+
+.card{
+
+    background:white;
+
+    width:300px;
+    min-height:430px;
+
+    padding:30px;
+
+    border-radius:30px;
+
+    box-shadow:
+    0 8px 20px rgba(0,0,0,0.10);
+
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.icone{
+    font-size:55px;
+    margin-bottom:20px;
+}
+
+.card h2{
+    color:#4b5563;
+    font-size:22px;
+    margin-bottom:20px;
+}
+
+.card p{
+    line-height:1.8;
+    color:#6b7280;
+}
+
+/* BOTÃO */
+
+.btn-voluntario{
+
+    margin-top:50px;
+
+    padding:15px 35px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:linear-gradient(
+    90deg,
+    #c4f1f9,
+    #c084fc);
+
+    color:#6b21a8;
+
+    font-size:18px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.btn-voluntario:hover{
+    transform:scale(1.05);
+}
+
+/* RESPONSIVO */
+
+@media(max-width:768px){
+
+    .topo{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .container h1{
+        font-size:28px;
+    }
+
+    .card{
+        width:100%;
+        max-width:350px;
+    }
+
+}
