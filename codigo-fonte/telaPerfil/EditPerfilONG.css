@@ -163,7 +163,7 @@ main{
 .banner{
     height: 220px;
 
-    background-color: #8b5cf6;
+    background-color: rgb(162, 76, 196);
 
     border-radius: 0 0 20px 20px;
 
@@ -263,7 +263,7 @@ textarea{
 }
 
 textarea:focus{
-    border-color: #8b5cf6;
+    border-color: rgb(162, 76, 196);
 }
 
 
