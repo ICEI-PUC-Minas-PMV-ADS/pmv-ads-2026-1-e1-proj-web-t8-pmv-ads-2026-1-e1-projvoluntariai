@@ -96,17 +96,26 @@
         <main>
 
             <!-- BANNER -->
-            <div class="banner" id="bannerONG">
+            <div 
+                 class="banner" 
+                 id="bannerONG">
+
+                <button id="btnRemoverBanner">
+                    Remover Banner
+                </button>
 
                 <input
                     type="file"
                     id="inputBanner"
-                    accept="image/*">
+                    accept="image/*"
+                    hidden>
+
 
                 <!-- FOTO PERFIL -->
                 <div
                     class="fotoperfil"
                     id="fotoPerfilPrincipal">
+                    
                     <input
                         type="file"
                         id="inputFotoPerfil"
@@ -114,9 +123,11 @@
                         hidden>
 
                     <i class="fa-solid fa-user"></i>
-
+                
                 </div>
-
+                <button id="btnRemoverFotoPerfil">
+                        Remover Foto
+                    </button>
             </div>
 
 
@@ -156,8 +167,7 @@
 
                 <textarea
                     id="inputApresentacao"
-                    placeholder="Escreva uma apresentação da ONG">
-                </textarea>
+                    placeholder="Escreva uma apresentação da ONG"></textarea>
 
             </section>
 
@@ -169,8 +179,7 @@
 
                 <textarea
                     id="inputTrabalhos"
-                    placeholder="Descreva os trabalhos realizados pela ONG">
-                </textarea>
+                    placeholder="Descreva os trabalhos realizados pela ONG"></textarea>
 
             </section>
 

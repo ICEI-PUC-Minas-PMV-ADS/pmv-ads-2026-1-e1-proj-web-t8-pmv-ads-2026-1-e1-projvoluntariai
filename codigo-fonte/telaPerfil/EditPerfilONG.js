@@ -3,7 +3,7 @@ const botaoSalvar =
 
 const inputFotos =
     document.getElementById("inputFotos");
-    
+
 // INPUTS
 const inputNome =
     document.getElementById("inputNomeONG");
@@ -32,6 +32,44 @@ const fotoPerfil =
 
 const inputFotoPerfil =
     document.getElementById("inputFotoPerfil");
+
+
+// BOTÕES REMOVER
+const btnRemoverBanner =
+    document.getElementById("btnRemoverBanner");
+
+const btnRemoverFotoPerfil =
+    document.getElementById("btnRemoverFotoPerfil");
+
+
+// CARREGAR BANNER SALVO
+const bannerSalvo =
+    localStorage.getItem("bannerONG");
+
+if (bannerSalvo) {
+
+    bannerONG.style.backgroundImage =
+        `url(${bannerSalvo})`;
+
+    bannerONG.style.backgroundSize =
+        "cover";
+
+    bannerONG.style.backgroundPosition =
+        "center";
+
+}
+
+
+// CARREGAR FOTO SALVA
+const fotoSalva =
+    localStorage.getItem("fotoPerfilONG");
+
+if (fotoSalva) {
+
+    fotoPerfil.innerHTML =
+        `<img src="${fotoSalva}" alt="Foto de Perfil">`;
+
+}
 
 
 
@@ -94,6 +132,21 @@ inputBanner.addEventListener("change", function () {
 });
 
 
+// REMOVER BANNER
+btnRemoverBanner.addEventListener("click", function (event) {
+
+    event.stopPropagation();
+
+    localStorage.removeItem(
+        "bannerONG"
+    );
+
+    bannerONG.style.backgroundImage =
+        "";
+
+});
+
+
 
 
 // ALTERAR FOTO PERFIL
@@ -127,6 +180,37 @@ inputFotoPerfil.addEventListener("change", function () {
     }
 
 });
+
+
+// REMOVER FOTO PERFIL
+btnRemoverFotoPerfil.addEventListener("click", function (event) {
+
+    event.stopPropagation();
+
+    localStorage.removeItem(
+        "fotoPerfilONG"
+    );
+
+    fotoPerfil.innerHTML =
+        `
+        <button id="btnRemoverFotoPerfil">
+            Remover Foto
+        </button>
+
+        <input
+            type="file"
+            id="inputFotoPerfil"
+            accept="image/*"
+            hidden>
+
+        <i class="fa-solid fa-user"></i>
+        `;
+
+    location.reload();
+
+});
+
+
 
 botaoSalvar.addEventListener("click", function () {
 
