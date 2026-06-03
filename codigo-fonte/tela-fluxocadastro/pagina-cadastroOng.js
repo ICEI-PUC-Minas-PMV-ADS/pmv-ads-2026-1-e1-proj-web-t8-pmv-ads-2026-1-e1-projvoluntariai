@@ -49,11 +49,13 @@ function validarFormulario() {
         valido = false;
     }
 
-    const area = document.getElementById('areasAtuacao').value;
-    if (!area) {
-        definirErro('areasAtuacao', 'Selecione uma área de atuação.');
-        valido = false;
-    }
+   const selectArea =
+    document.getElementById('areasAtuacao');
+
+const area =
+    selectArea.options[
+        selectArea.selectedIndex
+    ].text;
 
     const email = document.getElementById('email').value.trim();
     const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -88,31 +90,94 @@ function validarFormulario() {
 
 // Submissão do formulário
 document.getElementById('formCadastroOng').addEventListener('submit', function (e) {
+
     e.preventDefault();
+
     if (validarFormulario()) {
-        // Salvar usuário no localStorage
+
         const nome = document.getElementById('nomeOrganizacao').value.trim();
         const area = document.getElementById('areasAtuacao').value;
         const email = document.getElementById('email').value.trim();
         const senha = document.getElementById('senha').value;
         const perfil = 'ONG';
 
-        const novoUsuario = { nome, area, email, password: senha, perfil };
+        const novoUsuario = {
+    nome,
+    area,
+    email,
+    password: senha,
+    perfil: "ONG",
+    foto: "",
+    banner: "",
+    apresentacao: "",
+    nossostrabalhos: ""
+};
+
         const users = JSON.parse(localStorage.getItem('users')) || [];
-        // Verifica se já existe usuário com o mesmo email
+
         if (users.some(u => u.email === email)) {
             alert('Já existe um cadastro com este e-mail.');
             return;
         }
+
         users.push(novoUsuario);
-        localStorage.setItem('users', JSON.stringify(users));
+
+        localStorage.setItem(
+            'users',
+            JSON.stringify(users)
+        );
+
+        // LOGIN AUTOMÁTICO
+        localStorage.setItem(
+            'loggedUser',
+            JSON.stringify(novoUsuario)
+        );
+
         alert('Cadastro realizado com sucesso!');
-        this.reset();
+
+        window.location.href =
+            '../telaPerfil/PerfilONG.html';
     }
+
 });
+
 
 // Cancelar limpa o formulário e os erros
 document.getElementById('btnCancelar').addEventListener('click', function () {
     document.getElementById('formCadastroOng').reset();
     ['nomeOrganizacao', 'areasAtuacao', 'email', 'senha', 'confirmarSenha'].forEach(id => definirErro(id, ''));
+});
+const btnPerfil = document.getElementById("btnPerfil");
+
+btnPerfil.addEventListener("click", function(event){
+
+    event.preventDefault();
+
+    const usuarioLogado =
+    JSON.parse(localStorage.getItem("loggedUser"));
+
+    // Não está logado
+    if(!usuarioLogado){
+
+        window.location.href =
+        "../telaLogin/login.html";
+
+        return;
+    }
+
+    // ONG
+    if(usuarioLogado.perfil === "ONG"){
+
+        window.location.href =
+        "../telaPerfil/PerfilONG.html";
+
+    }
+
+    else {
+
+        window.location.href =
+        "../telaPerfil/perfilVolun.html";
+
+    }
+
 });

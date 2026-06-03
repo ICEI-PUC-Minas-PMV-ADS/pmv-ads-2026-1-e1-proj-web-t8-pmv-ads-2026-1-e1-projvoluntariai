@@ -113,7 +113,16 @@ form.addEventListener('submit', e => {
   }
 
   // Salvar usuário no localStorage
-  const novoUsuario = { nome, email, password: senha, perfil };
+  const novoUsuario = { nome,
+    email,
+    password: senha,
+    perfil,
+    foto: "",
+    banner: "",
+    apresentacao: "",
+    disponibilidade: "",
+    habilidades: ""
+};
   const users = JSON.parse(localStorage.getItem('users')) || [];
   // Verifica se já existe usuário com o mesmo email
   if (users.some(u => u.email === email)) {
@@ -122,18 +131,57 @@ form.addEventListener('submit', e => {
     emailEl.focus();
     return;
   }
-  users.push(novoUsuario);
-  localStorage.setItem('users', JSON.stringify(users));
-  mostrarToast('Cadastro realizado com sucesso!', 'sucesso');
-  form.reset();
-  resetPerfil();
-  hintSenha.textContent = '';
-  hintSenha.className = 'hint';
-});
+  users.push(novoUsuario);{
 
-cancelar.addEventListener('click', () => {
-  form.reset();
-  resetPerfil();
-  hintSenha.textContent = '';
-  hintSenha.className = 'hint';
+        localStorage.setItem(
+            'users',
+            JSON.stringify(users)
+        );
+
+        // LOGIN AUTOMÁTICO
+        localStorage.setItem(
+            'loggedUser',
+            JSON.stringify(novoUsuario)
+        );
+
+        alert('Cadastro realizado com sucesso!');
+
+        window.location.href =
+            '../telaPerfil/perfilVolun.html';
+    }
+
+});
+const btnPerfil = document.getElementById("btnPerfil");
+
+btnPerfil.addEventListener("click", function(event){
+
+    event.preventDefault();
+
+    const usuarioLogado =
+    JSON.parse(localStorage.getItem("loggedUser"));
+
+    // Não está logado
+    if(!usuarioLogado){
+
+        window.location.href =
+        "../telaLogin/login.html";
+
+        return;
+    }
+
+    // ONG
+    if(usuarioLogado.perfil === "ONG"){
+
+        window.location.href =
+        "../telaPerfil/PerfilONG.html";
+
+    }
+
+    else {
+
+        window.location.href =
+        "../telaPerfil/perfilVolun.html";
+
+    }
+
 });

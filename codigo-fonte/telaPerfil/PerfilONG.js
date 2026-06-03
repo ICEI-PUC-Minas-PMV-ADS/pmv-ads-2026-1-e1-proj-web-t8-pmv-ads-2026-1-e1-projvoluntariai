@@ -1,89 +1,77 @@
-// NOME ONG
-const nomeSalvo =
-    localStorage.getItem("nomeONG");
+// Verifica se existe usuário logado
+const usuarioLogado =
+    JSON.parse(localStorage.getItem("loggedUser"));
 
-if (nomeSalvo) {
+if (!usuarioLogado) {
 
-    document.getElementById(
-        "nomeONGPrincipal"
-    ).innerText = nomeSalvo;
-
-    document.getElementById(
-        "nomeONGSidebar"
-    ).innerText = nomeSalvo;
+    window.location.href =
+        "../telaLogin/login.html";
 
 }
 
+// Nome
+document.getElementById(
+    "nomeONGPrincipal"
+).innerText = usuarioLogado.nome;
+
+document.getElementById(
+    "nomeONGSidebar"
+).innerText = usuarioLogado.nome;
 
 
-// APRESENTAÇÃO
-const apresentacaoSalva =
-    localStorage.getItem("apresentacaoONG");
-
-if (apresentacaoSalva) {
+// Apresentação
+if (usuarioLogado.apresentacao) {
 
     document.getElementById(
         "apresentacaoTexto"
-    ).innerText = apresentacaoSalva;
+    ).innerText =
+        usuarioLogado.apresentacao;
 
 }
 
 
-
-// TRABALHOS
-const trabalhosSalvos =
-    localStorage.getItem("trabalhosONG");
-
-if (trabalhosSalvos) {
+// Trabalhos
+if (usuarioLogado.nossostrabalhos) {
 
     document.getElementById(
         "trabalhosTexto"
-    ).innerText = trabalhosSalvos;
+    ).innerText =
+        usuarioLogado.nossostrabalhos;
 
 }
 
 
-
-// TAGS
-const atuacaoSalva =
-    localStorage.getItem("atuacaoONG");
-
+// Área de atuação
 const containerTags =
-    document.getElementById("atuacaoTexto");
+    document.getElementById(
+        "atuacaoTexto"
+    );
 
-if (atuacaoSalva) {
+if (usuarioLogado.area) {
 
-    const listaTags =
-        atuacaoSalva.split(",");
+    const tag =
+        document.createElement("div");
 
-    listaTags.forEach(function(tag) {
+    tag.classList.add("tag");
 
-        const novaTag =
-            document.createElement("div");
+    tag.innerText =
+        usuarioLogado.area;
 
-        novaTag.classList.add("tag");
-
-        novaTag.innerText = tag.trim();
-
-        containerTags.appendChild(novaTag);
-
-    });
+    containerTags.appendChild(tag);
 
 }
 
 
+// Banner
+if (usuarioLogado.banner) {
 
-// BANNER
-const bannerSalvo =
-    localStorage.getItem("bannerONG");
-
-const banner =
-    document.getElementById("bannerONG");
-
-if (bannerSalvo) {
+    const banner =
+        document.getElementById(
+            "bannerONG"
+        );
 
     banner.style.backgroundImage =
-        `url(${bannerSalvo})`;
+        `url(${usuarioLogado.banner})`;
 
     banner.style.backgroundSize =
         "cover";
@@ -94,52 +82,59 @@ if (bannerSalvo) {
 }
 
 
-
-// FOTO PERFIL
-const fotoSalva =
-    localStorage.getItem("fotoPerfilONG");
-
-if (fotoSalva) {
+// Foto de perfil
+if (usuarioLogado.foto) {
 
     document.getElementById(
         "fotoPerfilPrincipal"
     ).innerHTML =
-        `<img src="${fotoSalva}">`;
-
+        `<img src="${usuarioLogado.foto}">`;
 
     document.getElementById(
         "fotoPerfilSidebar"
     ).innerHTML =
-        `<img src="${fotoSalva}">`;
+        `<img src="${usuarioLogado.foto}">`;
 
 }
 
-// FOTOS GALERIA
-const fotosSalvas =
-    JSON.parse(
-        localStorage.getItem("fotosONG")
+
+// Botão Perfil
+const btnPerfil =
+    document.getElementById(
+        "btnPerfil"
     );
 
-const galeria =
-    document.getElementById("galeriaFotos");
+btnPerfil.addEventListener(
+    "click",
+    function(event){
 
-if (fotosSalvas) {
+        event.preventDefault();
 
-    fotosSalvas.forEach(function(foto) {
+        window.location.href =
+            "PerfilONG.html";
 
-        const novaImagem =
-            document.createElement("img");
+    }
+);
 
-        novaImagem.src = foto;
 
-        novaImagem.classList.add(
-            "fotoGaleria"
+// Sair
+const btnSair =
+    document.querySelector(
+        ".sair a"
+    );
+
+btnSair.addEventListener(
+    "click",
+    function(event){
+
+        event.preventDefault();
+
+        localStorage.removeItem(
+            "loggedUser"
         );
 
-        galeria.appendChild(
-            novaImagem
-        );
+        window.location.href =
+            "../telaLogin/login.html";
 
-    });
-
-}
+    }
+);
