@@ -304,5 +304,11 @@ RNF-04	O sistema deve ser responsivo (funcionar em dispositivos móveis e deskto
 
 <img width="1338" height="559" alt="Exemplo de responsividade" src="https://github.com/user-attachments/assets/432d7ebd-7088-4eae-802f-18cf8e7bc79d" />
 
+#### Exemplo 2 - Tela de Login
+
+<img width="1311" height="557" alt="Exemplo de responsividade 2 " src="https://github.com/user-attachments/assets/368276c6-7b50-4d3d-bdbe-b0b8df552543" />
+
+Portanto, observa-se com os exemplos acima que existem oportunidades de melhoria relacionadas à responsividade da aplicação. Contudo, os conteúdos e funcionalidades principais permanecem acessíveis aos usuários, garantindo a utilização adequada da plataforma.
+
 <hr>
 
