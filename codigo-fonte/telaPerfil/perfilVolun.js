@@ -28,6 +28,7 @@ document.querySelector(
 document.querySelector(
     ".textousu p"
 ).innerText =
+    usuarioLogado.categoria ||
     usuarioLogado.perfil;
 
 
@@ -80,28 +81,40 @@ if (
 
 
 // Banner
-if (usuarioLogado.banner) {
 
+   const banner =
     document.querySelector(
         ".banner"
-    ).style.backgroundImage =
+    );
+
+if (usuarioLogado.banner) {
+
+    banner.style.backgroundImage =
         `url(${usuarioLogado.banner})`;
 
+    banner.style.backgroundSize =
+        "cover";
+
+    banner.style.backgroundPosition =
+        "center";
+
 }
+
+
 
 
 // Foto
 if (usuarioLogado.foto) {
 
-    document.querySelector(
-        ".fotoperfil"
-    ).innerHTML =
-        `<img src="${usuarioLogado.foto}">`;
+   document.querySelector(
+    ".fotoperfil"
+).innerHTML =
+    `<img src="${usuarioLogado.foto}" alt="Foto de Perfil">`;
 
-    document.querySelector(
-        ".foto"
-    ).innerHTML =
-        `<img src="${usuarioLogado.foto}">`;
+document.querySelector(
+    ".foto"
+).innerHTML =
+    `<img src="${usuarioLogado.foto}" alt="Foto de Perfil">`;
 
 }
 

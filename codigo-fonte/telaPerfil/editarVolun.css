@@ -1,17 +1,18 @@
-* {
-    box-sizing: border-box;
+*{
     margin: 0;
     padding: 0;
-     font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
 }
 
 /* BODY */
-body {
-    margin: 0;
-    background-color: #f5f5f5;
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f3f4f6;
+    color: #1f2937;
 }
 
 
+/* TOPO */
 .topo {
     display: flex;
     justify-content:  space-between;
@@ -55,227 +56,358 @@ body {
     font-weight: 500;
 }
 
-/* MENU */
-.menu {
-    list-style: none;
-    display: block;
-    gap: 30px;
-    margin: 0;
-    padding: 0;
+/* LAYOUT */
+.layout{
+    display: flex;
 }
 
-.menu li {
-    font-size: 14px;
-    color: #555;
-    cursor: pointer;
-    padding: 6px 10px;
-    border-radius: 6px;
-    transition: 0.3s;
-}
 
-.menu li:hover {
-    background: #ecebff;
-    color: rgb(162, 76, 196);
-}
-
-.menu .active {
-    background: #ecebff;
-    color: rgb(162, 76, 196);
-    font-weight: 500;
-}
-
+/* SIDEBAR */
 .sidebar{
+    width: 250px;
+    min-height: 100vh;
+
+    background-color: white;
+
+    border-right: 1px solid #d1d5db;
+}
+
+
+/* PERFIL */
+.perfil{
     display: flex;
     flex-direction: column;
-height: 115vh;
-width: 180px;
-    background-color: #ffffff;
-border-right: 1px solid #dcdcdc;
+    align-items: center;
+
+    padding: 30px 20px;
+
+    border-bottom: 1px solid #d1d5db;
+}
+
+.foto {
+    width: 90px;
+    height: 90px;
+
+    border-radius: 50%;
+    margin-top: auto 15px;
+    background-color: #e5e7eb;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 40px;
+
+    color: #111827;
+
+    margin-bottom: 15px;
+        overflow: hidden;
 
 }
-.perfil{
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-bottom: 1px solid #dcdcdc;
-}
-.foto{
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    background-color: #5d6788;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
-}
-.foto i{
-    color: white;
-    font-size: 35px;
-}
-.perfil p{
-font-size: 14px;
-color: #777;
-}
+
+
+/* MENU */
 .menu{
-    width: 100%;
+    padding: 25px 20px;
 }
+
 .menu-titulo{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
-    color: #555;
-    cursor: pointer;
+
+    margin-bottom: 20px;
+
+    font-size: 18px;
 }
+
 .menu ul{
     list-style: none;
-    margin: 8px 10px;
-    background-color: #f7f7ff;
 }
-.menu li{
-width: 100%;
-}
-.menu a{
-    text-decoration: none;
-    color: #8a8a8a;
-    font-size: 14px;
-    transition: 0.3s;
-    display: block;
-    padding: 10px 12px;
-}
-.menu a:hover{
-    color:#5d6788;
 
+.menu ul li{
+    margin-bottom: 20px;
 }
-.sair{
-    padding: 15px;
-    background-color: #f1f3f8;
-    margin-top: auto;
-}
-.sair a{
+
+.menu ul li a{
     text-decoration: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: red;
-    font-size: 14px;
+    color: #374151;
+
+    font-size: 17px;
 }
-.layout{
-    display: flex;
+
+.ativoMenu{
+    color: rgb(162, 76, 196) !important;
+    background: #ecebff;
+    font-weight: 500;
+    border-radius: 6px;
+    padding: 6px 10px;
 }
-.banner{
-    background-color:rgb(162, 76, 196);
-    height:150px;
-    width: 100%;
+
+.menu ul li a:hover{
+    color: rgb(162, 76, 196);
+    background: #ecebff;
+    border-radius: 6px;
+    padding: 6px 10px;
+    cursor: pointer;
+    transition: 0.3s;
 }
+
+/* MAIN */
 main{
     flex: 1;
+
+    padding: 0 40px 40px 40px;
 }
-.textousu{
-    margin-left: 30px;
-    margin-top: 5px;
-    margin-bottom: 10px;
+
+
+/* BANNER */
+.banner{
+    height: 220px;
+
+    background-color: rgb(162, 76, 196);
+
+    border-radius: 0 0 20px 20px;
+
+    position: relative;
+
+    margin-bottom: 80px;
+}
+
+
+/* FOTO PERFIL */
+.fotoperfil{
+    width: 140px;
+    height: 140px;
+
+    border-radius: 50%;
+
+    background-color: #5b648c;
+
+    position: absolute;
+
+    right: 40px;
+    bottom: -60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 60px;
+
+    color: white;
+
+    border: 5px solid white;
+        overflow: hidden;
+
+}
+
+
+/* PERFIL INFO */
+.perfilinfo{
+    margin-bottom: 35px;
+}
+
+.textousu p{
+    color: #6b7280;
+    margin-top: 10px;
+}
+
+
+/* INPUT NOME */
+.inputNome{
+    width: 400px;
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 42px;
+    font-weight: bold;
+
+    color: #1f2937;
+
+    outline: none;
+}
+
+
+/* BLOCOS */
+.bloco{
+    margin-bottom: 30px;
+}
+
+.bloco h3{
+    margin-bottom: 12px;
+
+    font-size: 24px;
+
+    color: #1f2937;
+}
+
+
+/* TEXTAREA */
+textarea{
+    width: 100%;
+
+    min-height: 170px;
+
+    padding: 18px;
+
+    border-radius: 16px;
+
+    border: 1px solid #d1d5db;
+
+    background-color: white;
+
+    resize: vertical;
+
+    font-size: 16px;
+
+    outline: none;
+}
+
+textarea:focus{
+    border-color: rgb(162, 76, 196);
+}
+
+
+/* INPUT TEXT */
+input[type="text"]{
+    width: 100%;
+
+    padding: 15px;
+
+    border-radius: 14px;
+
+    border: 1px solid #d1d5db;
+
+    font-size: 16px;
+
+    outline: none;
+}
+
+input[type="text"]:focus{
+    border-color: #8b5cf6;
+}
+
+
+/* INPUT FILE */
+input[type="file"]{
+    background-color: white;
+
+    padding: 12px;
+
+    border-radius: 12px;
+
+    border: 1px solid #d1d5db;
+}
+
+
+/* BLOCO UPLOAD */
+.blocoUpload{
+    margin-bottom: 25px;
+
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    width: 250px;
-padding-bottom:15px;
-width: 100%;
-    border-bottom:1px solid #dcdcdc;
+
+    gap: 10px;
+}
+
+.blocoUpload label{
+    font-weight: bold;
+
+    color: #374151;
+}
+
+
+/* BOTÃO */
+#btnSalvar{
+    background-color: rgb(162, 76, 196);
+    color: white;
+
+    border: none;
+
+    padding: 16px 30px;
+
+    border-radius: 14px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+#btnSalvar:hover{
+    background-color: #7c3aed;
+}
+
+.banner{
+    cursor: pointer;
 }
 
 .fotoperfil{
-align-items: center;   
-justify-content: center; 
-    width: 130px;
-    height: 130px;
-    display: flex;
-    background-color:  #5d6788;
-    border-radius: 50%;
-    margin-left: auto;
-    margin-right: 40px;
-    margin-top: -150px;
-       font-size: 70px;
-    color: white;
-}
-.menu-titulo a{
-    font-size: 18px;
-    color: #474747;
-}
-.textousu input{
-    padding: 18px;
-    width: 350px;
-    border: none;
-    border-radius: 10px; 
-    background-color: #b0aeae;
-    font-size: 20px;
+    cursor: pointer;
+    overflow: hidden;
 }
 
-.textousu select{
-    padding:9px;
-    width: 250px;
-    border: none;
-font-size: 11px;
-border-radius: 10px;
-color: #383737;
-background-color: #b0aeae;
-}
-#ativo{
-    background-color: #ecebff;
-    color: rgb(162, 76, 196);
-}
-.moreInfo{
-    display: flex;
-    flex-direction: column;
-    margin-right: 25px;
-    margin-left: 25px;
-    width:90%;
-    padding:15px;
-    align-items: flex-start;
-    color: #383737;
-    font-size: 18px;
-    gap: 25px;
-}
-.pt1{
-    display: flex;
-    flex-direction: column;
+.fotoperfil img{
     width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
 }
-.pt1 textarea{
-width: 100%;
-height: 110px;
-padding: 15px;
-border: none;
-background-color: #b0aeae;
-border-radius: 10px;
-font-size: 15px;
-}
-.pt2{
-    display: flex;
-    flex-direction: column;
-}
-.pt2 select{
-    width: 270px;
-    height: 50px;
-    background-color:#b0aeae;
-    border-radius: 10px;
+
+#btnRemoverBanner{
+    padding: 8px 12px;
     border: none;
-    color: #383737;
-    font-size: 15px;
+    border-radius: 8px;
+    cursor: pointer;
 }
-.pt3{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+
+#btnRemoverFotoPerfil{
+    position: absolute;
+
+    right: 55px;
+
+    bottom: -70px;
+
+    padding: 8px 12px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    background-color: white;
+
+    border: 1px solid #d1d5db;
+
+    z-index: 10;
 }
-.pt3 textarea{
-width: 100%;
-height: 160px;
-padding: 15px;
-border: none;
-background-color: #b0aeae;
+
+.textousu{
+display: flex;
+flex-direction: column;
+gap: 15px;
+}
+.selecione{
+    width: 200px;
+        color:#4f535d;
+border-color: #d1d5db;
+background-color: transparent;
 border-radius: 10px;
+padding: 5px;
+font-size: 13px;
+}
+.selecione1{
+    width: 400px;
+        color: #1f2937;
+border-color: #d1d5db;
+background-color: transparent;
+border-radius: 10px;
+padding: 15px;
 font-size: 15px;
 }
