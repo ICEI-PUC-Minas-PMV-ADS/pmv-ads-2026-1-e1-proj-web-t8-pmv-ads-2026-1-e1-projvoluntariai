@@ -202,3 +202,29 @@ RF-18: O sistema deve permitir recuperação de senha.
 A partir da página inicial, o usuário clica em "Login" no cabeçalho. As credenciais são verificadas contra os usuários salvos no localStorage (chave `users`). Quando "Lembrar-me" está marcado, o email é salvo na chave `emailLembrado` para preenchimento automático no próximo acesso. A recuperação de senha é acionada pelo link "Esqueci minha senha".
 
 <hr>
+
+### Tela - Inicial de Cadastro de Usuários
+
+Responsável: Amanda Soares
+
+#### Instruções de acesso
+
+Nesta etapa, o usuário escolha entre ONG ou Pessoa Voluntária para iniciar seu cadastro. Após a seleção, e "Continuar" será direcionado para a tela de cadastro adequada ao perfil escolhido.
+
+Tela - Inicial de Cadastro de Usuários:
+
+ <img width="1340" height="551" alt="Tela Cadastro Inicial" src="https://github.com/user-attachments/assets/dd2e8764-5122-4788-bc7f-f76f80c286ef" />
+
+#### Requisito atendido
+
+RF-01	O sistema deve permitir cadastro de usuários voluntário, ONG e PSC na plataforma.
+
+#### Artefatos da Funcionalidade
+
+●  pagina-cadastroinicial.css
+
+●  pagina-cadastroinicial.html
+
+●  pagina-cadastroinicial.js
+
+<hr>
