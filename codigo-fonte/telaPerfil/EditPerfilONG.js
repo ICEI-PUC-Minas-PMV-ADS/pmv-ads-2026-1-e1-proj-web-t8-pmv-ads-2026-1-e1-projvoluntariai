@@ -1,12 +1,12 @@
-const botaoSalvar =
-    document.getElementById("btnSalvar");
+// =====================================
+// ELEMENTOS DA PÁGINA
+// =====================================
 
-const inputFotos =
-    document.getElementById("inputFotos");
-
-// INPUTS
-const inputNome =
+const inputNomeONG =
     document.getElementById("inputNomeONG");
+
+    const inputinfo =
+    document.getElementById("inputinfo")
 
 const inputApresentacao =
     document.getElementById("inputApresentacao");
@@ -17,293 +17,410 @@ const inputTrabalhos =
 const inputAtuacao =
     document.getElementById("inputAtuacao");
 
+const inputFotos =
+    document.getElementById("inputFotos");
 
-// BANNER
+const btnSalvar =
+    document.getElementById("btnSalvar");
+
 const bannerONG =
     document.getElementById("bannerONG");
 
 const inputBanner =
     document.getElementById("inputBanner");
 
-
-// FOTO PERFIL
 const fotoPerfil =
     document.getElementById("fotoPerfilPrincipal");
 
 const inputFotoPerfil =
     document.getElementById("inputFotoPerfil");
 
-
-// BOTÕES REMOVER
 const btnRemoverBanner =
     document.getElementById("btnRemoverBanner");
 
 const btnRemoverFotoPerfil =
     document.getElementById("btnRemoverFotoPerfil");
 
+const nomeSidebar =
+    document.getElementById("nomeSidebar");
 
-// CARREGAR BANNER SALVO
-const bannerSalvo =
-    localStorage.getItem("bannerONG");
+const fotoSidebar =
+    document.querySelector(".perfil .foto");
 
-if (bannerSalvo) {
+
+// =====================================
+// USUÁRIO LOGADO
+// =====================================
+
+let usuarioLogado =
+    JSON.parse(
+        localStorage.getItem("loggedUser")
+    );
+
+if (!usuarioLogado) {
+
+    alert("Nenhum usuário logado.");
+
+    window.location.href =
+        "../telaLogin/login.html";
+}
+
+
+// =====================================
+// CARREGAR DADOS
+// =====================================
+
+inputNomeONG.value =
+    usuarioLogado.nome || "";
+
+    inputinfo.value =
+    usuarioLogado.info || "";
+
+inputApresentacao.value =
+    usuarioLogado.apresentacao || "";
+
+inputTrabalhos.value =
+    usuarioLogado.nossostrabalhos || "";
+
+inputAtuacao.value =
+    usuarioLogado.area || "";
+
+nomeSidebar.innerText =
+    usuarioLogado.nome || "ONG";
+
+
+// =====================================
+// CARREGAR BANNER
+// =====================================
+
+if (usuarioLogado.banner) {
 
     bannerONG.style.backgroundImage =
-        `url(${bannerSalvo})`;
+        `url(${usuarioLogado.banner})`;
 
     bannerONG.style.backgroundSize =
         "cover";
 
     bannerONG.style.backgroundPosition =
         "center";
-
 }
 
 
-// CARREGAR FOTO SALVA
-const fotoSalva =
-    localStorage.getItem("fotoPerfilONG");
+// =====================================
+// CARREGAR FOTO
+// =====================================
 
-if (fotoSalva) {
+if (usuarioLogado.foto) {
 
     fotoPerfil.innerHTML =
-        `<img src="${fotoSalva}" alt="Foto de Perfil">`;
+        `<img src="${usuarioLogado.foto}" alt="Foto da ONG">`;
+
+    fotoSidebar.innerHTML =
+        `<img src="${usuarioLogado.foto}" alt="Foto da ONG">`;
 
 }
 
 
-
+// =====================================
 // CLICAR NO BANNER
-bannerONG.addEventListener("click", function () {
+// =====================================
 
-    inputBanner.click();
+bannerONG.addEventListener(
+    "click",
+    function(event){
 
-});
+        if (
+            event.target === btnRemoverBanner ||
+            event.target === btnRemoverFotoPerfil
+        ) {
+            return;
+        }
+
+        inputBanner.click();
+
+    }
+);
 
 
+// =====================================
 // CLICAR NA FOTO
-fotoPerfil.addEventListener("click", function (event) {
+// =====================================
 
-    event.stopPropagation();
+fotoPerfil.addEventListener(
+    "click",
+    function(event){
 
-    inputFotoPerfil.click();
+        event.stopPropagation();
 
-});
+        inputFotoPerfil.click();
+
+    }
+);
 
 
-
-
+// =====================================
 // ALTERAR BANNER
-inputBanner.addEventListener("change", function () {
+// =====================================
 
-    const arquivo =
-        inputBanner.files[0];
+inputBanner.addEventListener(
+    "change",
+    function(){
 
-    if (arquivo) {
+        const arquivo =
+            inputBanner.files[0];
+
+        if (!arquivo) return;
 
         const leitor =
             new FileReader();
 
-        leitor.onload = function (e) {
+        leitor.onload =
+            function(e){
 
-            const imagem =
-                e.target.result;
+                const imagem =
+                    e.target.result;
 
-            bannerONG.style.backgroundImage =
-                `url(${imagem})`;
+                bannerONG.style.backgroundImage =
+                    `url(${imagem})`;
 
-            bannerONG.style.backgroundSize =
-                "cover";
+                bannerONG.style.backgroundSize =
+                    "cover";
 
-            bannerONG.style.backgroundPosition =
-                "center";
+                bannerONG.style.backgroundPosition =
+                    "center";
 
-            localStorage.setItem(
-                "bannerONG",
-                imagem
-            );
+                usuarioLogado.banner =
+                    imagem;
 
-        };
+                salvarUsuario();
 
-        leitor.readAsDataURL(arquivo);
+            };
+
+        leitor.readAsDataURL(
+            arquivo
+        );
 
     }
+);
 
-});
 
-
+// =====================================
 // REMOVER BANNER
-btnRemoverBanner.addEventListener("click", function (event) {
+// =====================================
 
-    event.stopPropagation();
+btnRemoverBanner.addEventListener(
+    "click",
+    function(event){
 
-    localStorage.removeItem(
-        "bannerONG"
-    );
+        event.stopPropagation();
 
-    bannerONG.style.backgroundImage =
-        "";
+        usuarioLogado.banner = "";
 
-});
+        bannerONG.style.backgroundImage =
+            "";
+
+        salvarUsuario();
+
+    }
+);
 
 
+// =====================================
+// ALTERAR FOTO
+// =====================================
 
+inputFotoPerfil.addEventListener(
+    "change",
+    function(){
 
-// ALTERAR FOTO PERFIL
-inputFotoPerfil.addEventListener("change", function () {
+        const arquivo =
+            inputFotoPerfil.files[0];
 
-    const arquivo =
-        inputFotoPerfil.files[0];
-
-    if (arquivo) {
+        if (!arquivo) return;
 
         const leitor =
             new FileReader();
 
-        leitor.onload = function (e) {
+        leitor.onload =
+            function(e){
 
-            const imagem =
-                e.target.result;
+                const imagem =
+                    e.target.result;
 
-            fotoPerfil.innerHTML =
-                `<img src="${imagem}">`;
+                fotoPerfil.innerHTML =
+                    `<img src="${imagem}" alt="Foto da ONG">`;
 
-            localStorage.setItem(
-                "fotoPerfilONG",
-                imagem
-            );
+                fotoSidebar.innerHTML =
+                    `<img src="${imagem}" alt="Foto da ONG">`;
 
-        };
+                usuarioLogado.foto =
+                    imagem;
 
-        leitor.readAsDataURL(arquivo);
+                salvarUsuario();
+
+            };
+
+        leitor.readAsDataURL(
+            arquivo
+        );
 
     }
-
-});
-
-
-// REMOVER FOTO PERFIL
-btnRemoverFotoPerfil.addEventListener("click", function (event) {
-
-    event.stopPropagation();
-
-    localStorage.removeItem(
-        "fotoPerfilONG"
-    );
-
-    fotoPerfil.innerHTML =
-        `
-        <button id="btnRemoverFotoPerfil">
-            Remover Foto
-        </button>
-
-        <input
-            type="file"
-            id="inputFotoPerfil"
-            accept="image/*"
-            hidden>
-
-        <i class="fa-solid fa-user"></i>
-        `;
-
-    location.reload();
-
-});
+);
 
 
+// =====================================
+// REMOVER FOTO
+// =====================================
 
-botaoSalvar.addEventListener("click", function () {
+btnRemoverFotoPerfil.addEventListener(
+    "click",
+    function(event){
 
-    // SALVAR TEXTO
-    localStorage.setItem(
-        "nomeONG",
-        inputNome.value
-    );
+        event.stopPropagation();
 
-    localStorage.setItem(
-        "apresentacaoONG",
-        inputApresentacao.value
-    );
+        usuarioLogado.foto = "";
 
-    localStorage.setItem(
-        "trabalhosONG",
-        inputTrabalhos.value
-    );
+        inputFotoPerfil.value = "";
 
-    localStorage.setItem(
-        "atuacaoONG",
-        inputAtuacao.value
-    );
+        fotoPerfil.innerHTML =
+            `<i class="fa-solid fa-user"></i>`;
 
+        fotoSidebar.innerHTML =
+            `<i class="fa-solid fa-user"></i>`;
 
+        salvarUsuario();
 
-    // SALVAR FOTOS GALERIA
-    const arquivos =
-        inputFotos.files;
-
-    const fotosBase64 = [];
-
-    let contador = 0;
+    }
+);
 
 
+// =====================================
+// GALERIA DE FOTOS
+// =====================================
 
-    // SE TIVER FOTOS
-    if (arquivos.length > 0) {
+inputFotos.addEventListener(
+    "change",
+    function(){
 
-        for (let i = 0; i < arquivos.length; i++) {
+        const arquivos =
+            Array.from(inputFotos.files);
+
+        if (arquivos.length === 0)
+            return;
+
+        usuarioLogado.galeria = [];
+
+        let imagensCarregadas = 0;
+
+        arquivos.forEach(arquivo => {
 
             const leitor =
                 new FileReader();
 
-            leitor.onload = function(e) {
+            leitor.onload =
+                function(e){
 
-                fotosBase64.push(
-                    e.target.result
-                );
-
-                contador++;
-
-                // TERMINOU TODAS
-                if (contador === arquivos.length) {
-
-                    localStorage.setItem(
-                        "fotosONG",
-                        JSON.stringify(fotosBase64)
+                    usuarioLogado.galeria.push(
+                        e.target.result
                     );
 
-                    finalizarSalvamento();
+                    imagensCarregadas++;
 
-                }
+                    if (
+                        imagensCarregadas ===
+                        arquivos.length
+                    ) {
 
-            };
+                        salvarUsuario();
+
+                    }
+
+                };
 
             leitor.readAsDataURL(
-                arquivos[i]
+                arquivo
             );
 
-        }
+        });
 
     }
+);
 
-    else {
 
-        finalizarSalvamento();
+// =====================================
+// SALVAR ALTERAÇÕES
+// =====================================
+
+btnSalvar.addEventListener(
+    "click",
+    function(){
+
+        usuarioLogado.nome =
+            inputNomeONG.value.trim();
+
+            usuarioLogado.info =
+            inputinfo.value.trim()
+
+        nomeSidebar.innerText =
+            usuarioLogado.nome;
+
+        usuarioLogado.apresentacao =
+            inputApresentacao.value.trim();
+
+        usuarioLogado.nossostrabalhos =
+            inputTrabalhos.value.trim();
+
+        usuarioLogado.area =
+            inputAtuacao.value.trim();
+
+        salvarUsuario();
+
+        alert(
+            "Perfil atualizado com sucesso!"
+        );
+
+        window.location.href =
+            "PerfilONG.html";
 
     }
-
-});
-
+);
 
 
+// =====================================
+// SALVAR LOCAL STORAGE
+// =====================================
 
-// FINALIZAR
-function finalizarSalvamento() {
+function salvarUsuario() {
 
-    alert(
-        "Perfil atualizado com sucesso!"
+    localStorage.setItem(
+        "loggedUser",
+        JSON.stringify(
+            usuarioLogado
+        )
     );
 
-    window.location.href =
-        "PerfilONG.html";
+    const users =
+        JSON.parse(
+            localStorage.getItem("users")
+        ) || [];
+
+    const indice =
+        users.findIndex(
+            user =>
+                user.email ===
+                usuarioLogado.email
+        );
+
+    if (indice !== -1) {
+
+        users[indice] =
+            usuarioLogado;
+
+        localStorage.setItem(
+            "users",
+            JSON.stringify(users)
+        );
+
+    }
 
 }

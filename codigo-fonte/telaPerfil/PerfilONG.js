@@ -18,6 +18,10 @@ document.getElementById(
     "nomeONGSidebar"
 ).innerText = usuarioLogado.nome;
 
+//info
+document.getElementById(
+    "info"
+).innerText = usuarioLogado.info;
 
 // Apresentação
 if (usuarioLogado.apresentacao) {

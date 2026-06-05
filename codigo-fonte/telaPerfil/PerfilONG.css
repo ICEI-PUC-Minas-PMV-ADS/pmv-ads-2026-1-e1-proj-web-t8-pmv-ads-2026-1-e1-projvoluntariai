@@ -87,7 +87,7 @@ body {
 .sidebar{
     display: flex;
     flex-direction: column;
-height: 110vh;
+height: 115vh;
 width: 180px;
     background-color: #ffffff;
 border-right: 1px solid #dcdcdc;
@@ -109,6 +109,14 @@ border-right: 1px solid #dcdcdc;
     justify-content: center;
     align-items: center;
     margin-bottom: 10px;
+        overflow: hidden;
+
+}
+.foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 .foto i{
     color: white;
@@ -118,6 +126,7 @@ border-right: 1px solid #dcdcdc;
 font-size: 14px;
 color: #777;
 }
+
 .menu{
     width: 100%;
 }
@@ -200,6 +209,13 @@ justify-content: center;
     margin-top: -150px;
        font-size: 70px;
     color: white;
+        overflow: hidden;
+    }
+    .fotoperfil img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 .bloco{
     padding: 15px;
@@ -210,19 +226,37 @@ justify-content: center;
 }
 
 .caixa{
-    width: auto;
-    min-height: 100px;
+    width: 100%;
+    height: 150px;
+
     background-color: #b0aeae;
     border-radius: 10px;
+
     padding: 15px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    white-space: pre-wrap;
+
+    word-break: break-all;
 }
 
 .caixa2{
-    width: auto;
-    min-height: 150px;
+    width: 100%;
+    height: 150px;
+
     background-color: #b0aeae;
     border-radius: 10px;
+
     padding: 15px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    white-space: pre-wrap;
+
+    word-break: break-all;
 }
 
 .menu-titulo a{
