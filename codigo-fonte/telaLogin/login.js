@@ -64,7 +64,7 @@ formLogin.addEventListener('submit', function (event) {
     localStorage.removeItem('emailLembrado');
   }
 
-  alert(`Login realizado com sucesso!\nPerfil: ${user.perfil}`);
+  alert("Login realizado com sucesso!");
   //armazenar usuário logado para uso posterior
   localStorage.setItem('loggedUser', JSON.stringify(user));
   // Redireciona conforme o perfil
