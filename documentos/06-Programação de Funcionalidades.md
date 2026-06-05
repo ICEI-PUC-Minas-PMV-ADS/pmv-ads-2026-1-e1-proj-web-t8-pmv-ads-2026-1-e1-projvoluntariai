@@ -228,3 +228,29 @@ RF-01	O sistema deve permitir cadastro de usuários voluntário, ONG e PSC na pl
 ●  pagina-cadastroinicial.js
 
 <hr>
+
+### Tela - Home/Sobre
+
+Responsável: Amanda Soares
+
+A tela inicial do nosso site é o primeiro ponto de contato dos usuários com a plataforma. Por isso, ela foi projetada para ser um ambiente simples, intuitivo e inspirador.
+
+Nessa tela, o usuário encontra informações introdutórias sobre a plataforma e pode selecionar a opção "Consultar Vagas", sendo direcionado para o fluxo de visualização das vagas disponíveis.
+
+Exemplo da Tela de Sobre:
+
+<img width="1354" height="590" alt="Tela de Sobre" src="https://github.com/user-attachments/assets/83318cab-8735-48da-a913-b4dd37c5e87e" />
+
+#### Requisito atendido
+
+Contribui para o engajamento do usuário no requisito RF- 06	O sistema deve permitir busca de oportunidades por localização e área de interesse.
+
+#### Artefatos da Funcionalidade
+
+●  tela-Sobre.css
+
+●  tela-Sobre.html
+
+●  tela-Sobre.js
+
+
