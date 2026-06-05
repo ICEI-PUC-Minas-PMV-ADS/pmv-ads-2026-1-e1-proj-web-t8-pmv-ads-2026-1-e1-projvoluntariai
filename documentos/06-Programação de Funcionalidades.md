@@ -253,4 +253,32 @@ Contribui para o engajamento do usuário no requisito RF- 06	O sistema deve perm
 
 ●  tela-Sobre.js
 
+<hr>
 
+### Tela - Quem Somos 
+
+Responsável: Amanda Soares
+
+A tela “Quem somos” é a seção onde a equipe apresenta a identidade do projeto, explicando o que fazemos e qual é o objetivo. Ela serve para transmitir confiança, mostrar transparência e ajudar o usuário a entender melhor a proposta da plataforma.
+
+Nessa tela, o usuário pode selecionar a opção "Quero ser Voluntário". Caso ainda não possua cadastro, o sistema o direcionará para o fluxo de cadastro correspondente ao perfil. 
+
+
+Exemplo da Tela de Quem Somos:
+
+<img width="1341" height="548" alt="Tela de Quem Somos" src="https://github.com/user-attachments/assets/e2c531df-3906-431c-a552-f2cd8c738f50" />
+
+
+#### Requisito atendido
+
+Contribui para o engajamento do usuário no requisito RF- 07	O sistema deve permitir que voluntários se candidatem às vagas disponíveis.
+
+#### Artefatos da Funcionalidade
+
+●  tela-QuemSomos.css
+
+●  tela-QuemSomos.html
+
+●  tela-QuemSomos.js
+
+<hr>
