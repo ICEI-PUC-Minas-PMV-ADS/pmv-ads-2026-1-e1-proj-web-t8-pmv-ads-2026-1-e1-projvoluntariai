@@ -282,3 +282,27 @@ Contribui para o engajamento do usuário no requisito RF- 07	O sistema deve perm
 ●  tela-QuemSomos.js
 
 <hr>
+
+# Programação de Funcionalidades - Requisitos Não Funcionais 
+
+### Responsividade
+
+A aplicação atualmente atende aos requisitos de responsividade de **forma parcial**, uma vez que foram aplicadas boas práticas de desenvolvimento responsivo nas telas implementadas. Entre elas, destacam-se:
+
+● Utilização de Flexbox para organização e adaptação dos elementos da interface
+
+● Configuração da meta tag viewport, permitindo a correta adaptação da página a diferentes dispositivos
+
+● Uso de Media Queries para ajustar o layout conforme o tamanho da tela
+
+Esses recursos possibilitam que a aplicação seja utilizada em diferentes resoluções, especialmente em dispositivos móveis. Entretanto, ainda existem oportunidades de evolução, como a implementação de um menu hambúrguer e a adoção completa da abordagem Mobile First, para ampliar a experiência responsiva da plataforma.
+
+#### Requisito parcialmente atendido
+RNF-04	O sistema deve ser responsivo (funcionar em dispositivos móveis e desktops).
+
+#### Exemplo - Tela Historico de ONG
+
+<img width="1338" height="559" alt="Exemplo de responsividade" src="https://github.com/user-attachments/assets/432d7ebd-7088-4eae-802f-18cf8e7bc79d" />
+
+<hr>
+
