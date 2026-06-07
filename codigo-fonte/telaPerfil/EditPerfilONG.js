@@ -23,6 +23,9 @@ const inputFotos =
 const btnSalvar =
     document.getElementById("btnSalvar");
 
+    const btnvoltar =
+    document.getElementById("btnvoltar");
+
 const bannerONG =
     document.getElementById("bannerONG");
 
@@ -382,6 +385,15 @@ btnSalvar.addEventListener(
         window.location.href =
             "PerfilONG.html";
 
+    }
+);
+
+//voltar//
+
+btnvoltar.addEventListener(
+    "click", () => {
+    window.location.href =
+    "PerfilONG.html";
     }
 );
 

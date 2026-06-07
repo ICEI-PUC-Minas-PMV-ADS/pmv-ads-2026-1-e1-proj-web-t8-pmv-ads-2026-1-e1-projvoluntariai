@@ -87,8 +87,8 @@ body {
 .sidebar{
     display: flex;
     flex-direction: column;
-height: 115vh;
-width: 180px;
+width: 250px;
+    min-height: 100vh;
     background-color: #ffffff;
 border-right: 1px solid #dcdcdc;
 
@@ -149,7 +149,7 @@ width: 100%;
 .menu a{
     text-decoration: none;
     color: #8a8a8a;
-    font-size: 14px;
+    font-size: 15px;
     transition: 0.3s;
     display: block;
     padding: 10px 12px;
@@ -158,6 +158,15 @@ width: 100%;
     color:#5d6788;
 
 }
+.menu ul li a:hover{
+    color: rgb(162, 76, 196);
+    background: #ecebff;
+    border-radius: 6px;
+    padding: 6px 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
 .sair{
     padding: 15px;
     background-color: #f1f3f8;

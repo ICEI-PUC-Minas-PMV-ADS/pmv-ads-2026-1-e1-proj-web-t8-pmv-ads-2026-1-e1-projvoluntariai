@@ -107,50 +107,50 @@ body{
 
 /* MENU */
 .menu{
-    padding: 25px 20px;
+    width: 100%;
 }
 
 .menu-titulo{
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    margin-bottom: 20px;
-
-    font-size: 18px;
+    padding: 15px;
+    color: #555;
+    cursor: pointer;
+    margin-top: 3px;
+    font-size:18px ;
+    margin-left: 13px;
 }
 
 .menu ul{
     list-style: none;
+    margin: 8px 10px;
+    background-color: #f7f7ff;
 }
-
-.menu ul li{
-    margin-bottom: 20px;
+.menu li{
+width: 100%;
 }
-
-.menu ul li a{
+.menu a{
     text-decoration: none;
-    color: #374151;
-
-    font-size: 17px;
+    color: #8a8a8a;
+    font-size: 15px;
+    transition: 0.3s;
+    display: block;
+    padding: 18px;
 }
+.menu a:hover{
+    color:#5d6788;
 
-.ativoMenu{
-    color: rgb(162, 76, 196) !important;
-    background: #ecebff;
-    font-weight: 500;
-    border-radius: 6px;
-    padding: 6px 10px;
 }
-
 .menu ul li a:hover{
     color: rgb(162, 76, 196);
     background: #ecebff;
     border-radius: 6px;
-    padding: 6px 10px;
+    padding: 15px;
     cursor: pointer;
     transition: 0.3s;
 }
+
 
 /* MAIN */
 main{
@@ -344,6 +344,28 @@ input[type="file"]{
 }
 
 #btnSalvar:hover{
+    background-color: #7c3aed;
+}
+#btnvoltar{
+    background-color: rgb(162, 76, 196);
+    color: white;
+
+    border: none;
+
+    padding: 16px 30px;
+
+    border-radius: 14px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+    margin-left: 600px;
+}
+
+#btnvoltar:hover{
     background-color: #7c3aed;
 }
 
