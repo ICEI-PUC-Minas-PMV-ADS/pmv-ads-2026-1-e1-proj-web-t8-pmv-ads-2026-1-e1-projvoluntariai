@@ -1,0 +1,270 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+     font-family: 'Poppins', sans-serif;
+}
+
+/* BODY */
+body {
+    margin: 0;
+    background-color: #f5f5f5;
+}
+
+
+.topo {
+    display: flex;
+    justify-content:  space-between;
+    align-items: center;
+    padding: 12px 40px;
+    background-color: white;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+/* LOGO */
+.topo .logo {
+    font-weight: 600;
+    color: white;
+    background-color: rgb(162, 76, 196);
+    border-radius: 12px;
+    padding: 6px 12px;
+    font-size: 14px;
+}
+
+/* LINKS */
+.topo nav a {
+    margin-left: 30px;
+    text-decoration: none;
+    color: #6b7280;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+.topo nav a:hover {
+    color: rgb(162, 76, 196);
+    background-color: #f3f4f6;
+    border-radius: 6px;  
+    padding: 7px;
+}
+
+.topo nav a.ativo {
+    background-color: #f3f4f6;
+    padding: 6px 12px;
+    border-radius: 6px;
+    color: rgb(162, 76, 196);
+    font-weight: 500;
+}
+
+/* MENU */
+.menu {
+    list-style: none;
+    display: block;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    font-size: 14px;
+    color: #555;
+    cursor: pointer;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.menu li:hover {
+    background: #ecebff;
+    color: rgb(162, 76, 196);
+}
+
+.menu .active {
+    background: #ecebff;
+    color: rgb(162, 76, 196);
+    font-weight: 500;
+}
+
+.sidebar{
+    display: flex;
+    flex-direction: column;
+width: 250px;
+    min-height: 100vh;
+    background-color: #ffffff;
+border-right: 1px solid #dcdcdc;
+
+}
+.perfil{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid #dcdcdc;
+}
+.foto{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #5d6788;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+        overflow: hidden;
+
+}
+.foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.foto i{
+    color: white;
+    font-size: 35px;
+}
+.perfil p{
+font-size: 14px;
+color: #777;
+}
+
+.menu{
+    width: 100%;
+}
+.menu-titulo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    color: #555;
+    cursor: pointer;
+}
+.menu ul{
+    list-style: none;
+    margin: 8px 10px;
+    background-color: #f7f7ff;
+}
+.menu li{
+width: 100%;
+}
+.menu a{
+    text-decoration: none;
+    color: #8a8a8a;
+    font-size: 15px;
+    transition: 0.3s;
+    display: block;
+    padding: 10px 12px;
+}
+.menu a:hover{
+    color:#5d6788;
+
+}
+.menu ul li a:hover{
+    color: rgb(162, 76, 196);
+    background: #ecebff;
+    border-radius: 6px;
+    padding: 6px 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.layout{
+    display: flex;
+}
+.banner{
+     background-color:rgb(162, 76, 196);
+    height:150px;
+    width: 100%;
+}
+
+.titulo{
+    color: #414141;
+    margin: 15px;
+    margin-left: 20px;
+    font-size: 35px;
+}
+
+main{
+    flex: 1;
+}
+#pesquisa{
+     padding: 10px;
+    width: 320px;
+  
+    border-radius: 14px;
+border-color: #d1d5d1;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-left: 40px;
+}
+
+.card-vaga{
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    background-color: #ece5f6;
+
+    padding: 20px;
+
+    margin-bottom: 15px;
+
+    border-radius: 6px;
+
+}
+
+/* Imagem da ONG */
+
+.imagem-ong{
+
+    width: 150px;
+
+    height: 100px;
+
+    background-color: #9b59d0;
+
+    color: #6b4d87;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    font-size: 14px;
+
+    flex-shrink: 0;
+
+}
+
+/* Informações */
+
+.info-vaga{
+
+    flex: 1;
+
+}
+
+.info-vaga p{
+
+    margin: 4px 0;
+
+    color: #444;
+
+    font-size: 15px;
+
+}
+
+.imagem-ong img{
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+}

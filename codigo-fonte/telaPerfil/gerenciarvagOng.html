@@ -3,7 +3,7 @@
     <head>
         <title>Editar Dados</title>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="editarDadosOng.css">
+        <link rel="stylesheet" href="gerenciarvagOng.css">
         <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -58,7 +58,7 @@
                     </li>
 
                     <li>
-                        <a href="gerenciarvagOng.html">
+                        <a href="#">
                             Gerenciar Vagas
                         </a>
                     </li>
@@ -72,49 +72,69 @@
             </nav>
 
    </aside>
-   <main>
-    <div class="banner"></div>
+<main>
+   <div class="banner"></div>
 
-<h1 class="titulo">Editar Dados de Usuário</h1>
-
-<section class="bloco">
-
-    <h2>Email</h2>
-    <input type="email" id="email" required placeholder="Altere seu email">
-
-</section>
-
-<section class="bloco">
-
-      <h2> Alterar Senha</h2>
- <input type="password" id="senha" minlength="8" required>
-        <span class="hint">Mínimo de 8 caracteres</span>
-
-        <h2>Confirmar senha</h2>
-        <input type="password" id="confirmarSenha" required>
-        <span class="hint" id="hintSenha"></span>
+   <h1 class="titulo">Gerenciar Vagas</h1>
 
 
-</section>
+   <button id="btncriar" class="btncriar">
+    Criar Vaga
+</button>
 
-<!-- BOTÃO -->
-            <button id="btnSalvar">
+<input type="text" id="pesquisa" placeholder="pesquise o nome da vaga">
 
-                Salvar Alterações
+<div class="card-vaga">
 
-            </button>
-  <button id="btnvoltar">
+    <div class="imagem-ong">
 
-                Voltar para Perfil
+    <img src="imagem.jpg" alt="ONG">
 
-            </button>
+</div>
 
-        </main>
+    <div class="info-vaga">
+
+        <p><strong>Nome da vaga:</strong> </p>
+
+        <p><strong>Descrição:</strong> </p>
+
+        <p><strong>Data de publicação:</strong> </p>
+
+        <p><strong>Número de inscritos:</strong> </p>
 
     </div>
 
-    <script src="editarDadosOng.js"></script>
+  
 
+</div>
+
+<div class="card-vaga">
+
+    <div class="imagem-ong">
+
+    <img src="imagem.jpg" alt="ONG">
+
+</div>
+
+    <div class="info-vaga">
+
+        <p><strong>Nome da vaga:</strong> </p>
+
+        <p><strong>Descrição:</strong> </p>
+
+        <p><strong>Data de publicação:</strong> </p>
+
+        <p><strong>Número de inscritos:</strong> </p>
+
+    </div>
+
+  
+
+</div>
+
+
+</main>
+
+<script src="gerenciarvagOng.js"></script>
 </body>
-
 </html>

@@ -42,6 +42,15 @@ const btnSalvar =
 const btnVoltar =
     document.getElementById("btnvoltar");
 
+     const nomeSidebar =
+    document.getElementById("nomeSidebar");
+ 
+    const fotoSidebar =
+    document.getElementById(
+        "fotoSidebar"
+    );
+
+
 
 // =====================================
 // CARREGAR DADOS ATUAIS
@@ -56,6 +65,11 @@ inputEstado.value =
 inputIdade.value =
     usuarioLogado.idade || "";
 
+     nomeSidebar.innerText =
+    usuarioLogado.nome || "Voluntário";
+
+
+
 
 // =====================================
 // VALIDAR EMAIL
@@ -67,6 +81,16 @@ function emailValido(email) {
         /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     return regex.test(email);
+
+}
+// =====================================
+// FOTO SIDEBAR
+// =====================================
+
+if (usuarioLogado.foto) {
+
+    fotoSidebar.innerHTML =
+        `<img src="${usuarioLogado.foto}" alt="Foto de Perfil">`;
 
 }
 
@@ -113,6 +137,8 @@ btnSalvar.addEventListener(
             return;
 
         }
+
+        
 
 
         // =====================================
@@ -167,6 +193,8 @@ btnSalvar.addEventListener(
             }
 
         }
+
+
 
 
         // =====================================
