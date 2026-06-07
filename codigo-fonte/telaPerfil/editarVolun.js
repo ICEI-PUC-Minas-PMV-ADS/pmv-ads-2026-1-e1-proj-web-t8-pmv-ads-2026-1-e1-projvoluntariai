@@ -5,6 +5,9 @@
 const botaoSalvar =
     document.getElementById("btnSalvar");
 
+    const btnvoltar =
+    document.getElementById("btnvoltar")
+
 const inputNome =
     document.getElementById("inputNomeVolun");
 
@@ -318,6 +321,18 @@ nomeSidebar.innerText =
     }
 );
 
+
+// =====================================
+// BOTÃO SALVAR
+// =====================================
+
+btnvoltar.addEventListener(
+    "click", () => {
+    
+        window.location.href =
+    "perfilVolun.html";
+    }
+)
 
 // =====================================
 // ATUALIZA loggedUser E users

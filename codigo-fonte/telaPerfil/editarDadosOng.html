@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Editar Dados</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="editarDadosOng.css">
+        <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    </head>
+    <body>
+       <header class = "topo">
+    <div class = "logo">VoluntariAI</div>
+    <nav>
+      <a href="../tela-Sobre/tela-Sobre.html">Sobre</a>
+      <a href="../tela-QuemSomos/tela-QuemSomos.html">Quem Somos </a>
+      <a href="../TelaVagasVoluntario/Vagas.html">Vagas</a>
+      <a href="../telaPerfil/perfilVolun.html" class="ativo" id="btnPerfil">Perfil</a>
+    </nav>
+  </header>
+<div class="layout">
+   <aside class="sidebar">
+  <div class="perfil">
+     <div
+                    class="foto"
+                    id="fotoSidebar">
+      <i class="fa-solid fa-user"></i>
+    </div>
+  <p id="nomeSidebar">
+                    ONG-Teste
+                </p>
+
+  </div>
+  <nav class="menu">
+
+                <div class="menu-titulo">
+
+                    <a href="#">
+                        Perfil
+                    </a>
+
+                    <i class="fa-solid fa-chevron-up"></i>
+
+                </div>
+
+                <ul>
+
+                    <li>
+                        <a href="EditPerfilONG.html">
+                            Editar Perfil
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="editarDadosOng.html">
+                            Editar Dados
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Gerenciar Vagas
+                        </a>
+                    </li>
+<li>
+    <a href="../telaHistoricoOng/historicoOng.html">
+        Histórico de Trabalho
+    </a>
+</li>
+                </ul>
+
+            </nav>
+
+   </aside>
+   <main>
+    <div class="banner"></div>
+
+<h1 class="titulo">Editar Dados de Usuário</h1>
+
+<section class="bloco">
+
+    <h2>Email</h2>
+    <input type="email" id="email" required placeholder="Altere seu email">
+
+</section>
+
+<section class="bloco">
+
+      <h2> Alterar Senha</h2>
+ <input type="password" id="senha" minlength="8" required>
+        <span class="hint">Mínimo de 8 caracteres</span>
+
+        <h2>Confirmar senha</h2>
+        <input type="password" id="confirmarSenha" required>
+        <span class="hint" id="hintSenha"></span>
+
+
+</section>
+
+<!-- BOTÃO -->
+            <button id="btnSalvar">
+
+                Salvar Alterações
+
+            </button>
+  <button id="btnvoltar">
+
+                Voltar para Perfil
+
+            </button>
+
+        </main>
+
+    </div>
+
+    <script src="editarDadosOng.js"></script>
+
+</body>
+
+</html>
