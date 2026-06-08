@@ -24,6 +24,7 @@ RF-05: O sistema deve permitir que ONGs publiquem oportunidades de voluntariado.
 
 
 #### Instruções de acesso
+O usuário deve acessar o perfil, clicar na opção "Gerenciar Vagas" e clicar em "Criar Vaga".
 
 <hr>
 
@@ -51,6 +52,7 @@ RF-05: O sistema deve permitir que ONGs publiquem oportunidades de voluntariado.
 
 
 #### Instruções de acesso
+O usuário deve acessar o perfil, clicar na opção "Gerenciar Vagas", clicar em "Criar Vaga" e concluir a primeira etapa preenchendo o formulário com as informações solicitadas.
 
 <hr>
 
@@ -78,7 +80,7 @@ RF-05: O sistema deve permitir que ONGs publiquem oportunidades de voluntariado.
 
 
 #### Instruções de acesso
-
+O usuário deve acessar o perfil, clicar na opção "Gerenciar Vagas", clicar em "Criar Vaga" e concluir a primeira e segunda etapa preenchendo o formulário com as informações solicitadas.
 <hr>
 
 ### Tela de Vagas
@@ -104,6 +106,7 @@ RF-06: O sistema deve permitir busca de oportunidades por localização e área 
 
 
 #### Instruções de acesso
+O usuário deve clicar na opção "Vagas" na barra de navegação.
 
 <hr>
 
