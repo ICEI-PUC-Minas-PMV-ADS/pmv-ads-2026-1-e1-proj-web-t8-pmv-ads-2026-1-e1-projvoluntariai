@@ -25,17 +25,25 @@ function mostrarVagas() {
     const estadoSelecionado =
     filtroEstado.value;
 
+    // texto do estado selecionado (ex: "Minas Gerais")
+    const estadoTexto =
+    filtroEstado.options[filtroEstado.selectedIndex].text;
+
 
     // FILTRA VAGAS
     const vagasFiltradas = vagas.filter(vaga => {
 
+        // compara sem diferenciar maiúscula de minúscula
         const filtroModalidadeOk =
         modalidadeSelecionada === "" ||
-        vaga.modalidade === modalidadeSelecionada;
+        (vaga.modalidade || "").toLowerCase() === modalidadeSelecionada.toLowerCase();
 
+        // a localização é texto livre, então procura o código (MG) ou o nome do estado
+        const local = (vaga.localizacao || "").toLowerCase();
         const filtroEstadoOk =
         estadoSelecionado === "" ||
-        vaga.estado === estadoSelecionado;
+        local.includes(estadoSelecionado.toLowerCase()) ||
+        local.includes(estadoTexto.toLowerCase());
 
         return filtroModalidadeOk &&
                filtroEstadoOk;
