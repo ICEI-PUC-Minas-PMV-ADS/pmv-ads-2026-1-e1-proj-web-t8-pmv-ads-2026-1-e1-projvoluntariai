@@ -269,7 +269,7 @@ O usuário deve entrar na página de cadastro por meio do login e escolher a op�
 Responsável: Denilson Emanoel Emerichek de Souza
 
 
-Nesta etapa, o usuário que escolhe a opção "Sou uma ONG" é direcionado para a página de cadastro de Voluntário e deve preencher com informações conforme solicitado
+Nesta etapa, o usuário que escolhe a opção "Sou Voluntário" é direcionado para a página de cadastro de Voluntário e deve preencher com informações conforme solicitado
 
 Exemplo da tela de cadastro de Voluntário:
  <img width="1340" height="621" alt="image" src="https://github.com/user-attachments/assets/48e7f4f2-b084-44ec-92b9-b24edfb49bb1" />
