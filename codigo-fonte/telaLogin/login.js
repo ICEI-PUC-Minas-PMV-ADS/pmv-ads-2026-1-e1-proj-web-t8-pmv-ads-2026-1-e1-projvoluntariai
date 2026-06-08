@@ -69,9 +69,9 @@ formLogin.addEventListener('submit', function (event) {
   localStorage.setItem('loggedUser', JSON.stringify(user));
   // Redireciona conforme o perfil
   if (user.perfil === 'ONG') {
-    window.location.href = 'http://127.0.0.1:5500/pmv-ads-2026-1-e1-proj-web-t8-pmv-ads-2026-1-e1-projvoluntariai/codigo-fonte/telaPerfil/PerfilONG.html';
+    window.location.href = '../telaPerfil/PerfilONG.html';
   } else {
-    window.location.href = 'http://127.0.0.1:5500/pmv-ads-2026-1-e1-proj-web-t8-pmv-ads-2026-1-e1-projvoluntariai/codigo-fonte/telaPerfil/perfilVolun.html';
+    window.location.href = '../telaPerfil/perfilVolun.html';
   }
 });
 
