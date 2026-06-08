@@ -6,40 +6,36 @@ function pegarIndiceVaga() {
 }
 
 
-// VAGA DE EXEMPLO (USADA QUANDO NÃO HÁ DADOS SALVOS)
-const vagaExemplo = {
-    titulo: "Educador Ambiental",
-    nomeOng: "ONG Verde Vivo",
-    modalidade: "Presencial",
-    area: "Meio Ambiente",
-    aceitaPsc: true,
-    descricao: "Oportunidade para atuar em oficinas de conscientização ambiental com crianças e jovens da comunidade.",
-    localizacao: "Belo Horizonte - MG",
-    cargaHoraria: "8h semanais",
-    dataInicio: "01/06/2026",
-    dataFim: "30/08/2026",
-    atividades: "Conduzir oficinas sobre reciclagem\nApoiar plantio de mudas em escolas parceiras\nAuxiliar na organização de eventos comunitários",
-    requisitos: "Maior de 16 anos\nDisponibilidade aos sábados\nInteresse por meio ambiente",
-    sobreOng: "A ONG Verde Vivo atua há 10 anos em projetos de educação ambiental e preservação da biodiversidade urbana."
-};
-
-
-// PEGA A VAGA QUE VEIO DA TELA DE VAGAS OU USA A DE EXEMPLO
+// PEGA A VAGA QUE VEIO DA TELA DE VAGAS
 function carregarVaga() {
     const idx = pegarIndiceVaga();
     const vagas = JSON.parse(localStorage.getItem("vagas")) || [];
 
-    let vaga;
+    let vaga = null;
 
     if (idx !== null && vagas[idx]) {
         vaga = vagas[idx];
     } else if (vagas.length > 0) {
         vaga = vagas[0];
-    } else {
-        vaga = vagaExemplo;
+    }
+
+    if (!vaga) {
+        mostrarVazio();
+        return;
     }
 
     preencherTela(vaga);
+}
+
+
+// QUANDO NÃO TEM VAGA PRA MOSTRAR
+function mostrarVazio() {
+    document.getElementById("tituloVaga").textContent = "Vaga não encontrada";
+    document.getElementById("descricaoVaga").textContent =
+        "Esta vaga não está mais disponível ou nenhuma vaga foi publicada ainda.";
+
+    const botao = document.getElementById("btnInscrever");
+    botao.disabled = true;
 }
 
 
@@ -62,8 +58,7 @@ function normalizarLista(valor) {
 // COLOCA OS DADOS NA TELA
 function preencherTela(vaga) {
 
-    // Cadastro salva "titulo" (sem acento). Fallback p/ "título" só por segurança.
-    const titulo = vaga.titulo || vaga.título || "Vaga sem título";
+    const titulo = vaga.titulo || "Vaga sem título";
 
     document.getElementById("tituloVaga").textContent = titulo;
 
@@ -135,8 +130,7 @@ function preencherTela(vaga) {
         vaga.sobreOng || "A ONG ainda não cadastrou descrição.";
 
 
-    // IMAGEM - cadastro de vagas ainda não salva imagem,
-    // então usa placeholder se não tiver
+    // IMAGEM
     const img = document.getElementById("imgOng");
     if (vaga.imagem) {
         img.src = vaga.imagem;
@@ -161,12 +155,25 @@ function guardarVagaAtual(vaga, titulo) {
 function inscrever() {
     if (!vagaAtual) return;
 
+    const usuario =
+        JSON.parse(localStorage.getItem("loggedUser"));
+
+    // precisa estar logado para se inscrever
+    if (!usuario) {
+        alert("Você precisa entrar na sua conta para se inscrever.");
+        window.location.href = "../telaLogin/login.html";
+        return;
+    }
+
     const inscricoes =
         JSON.parse(localStorage.getItem("inscricoes")) || [];
 
 
-    // EVITA INSCRIÇÃO DUPLICADA
-    const jaInscrito = inscricoes.some(i => i.nomeVaga === tituloAtual);
+    // EVITA INSCRIÇÃO DUPLICADA DO MESMO VOLUNTÁRIO NA MESMA VAGA
+    const jaInscrito = inscricoes.some(i =>
+        i.nomeVaga === tituloAtual &&
+        i.nomeVoluntario === usuario.nome
+    );
 
     if (jaInscrito) {
         alert("Você já está inscrito nesta vaga.");
@@ -175,12 +182,15 @@ function inscrever() {
 
 
     inscricoes.push({
+        nomeVoluntario: usuario.nome || "Voluntário",
         nomeVaga: tituloAtual,
         nomeOng: vagaAtual.nomeOng || "",
         localizacao: vagaAtual.localizacao || "",
         cargaHoraria: vagaAtual.cargaHoraria || "",
         dataInscricao: new Date().toLocaleDateString("pt-BR"),
-        status: "Aguardando confirmação"
+        status: "pendente",
+        horas: 0,
+        observacao: ""
     });
 
     localStorage.setItem("inscricoes", JSON.stringify(inscricoes));
