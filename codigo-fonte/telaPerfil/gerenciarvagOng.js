@@ -25,6 +25,8 @@ if (!usuarioLogado) {
     document.getElementById(
         "fotoSidebar"
     );
+ const btncriar =
+    document.getElementById("btncriar");
 // =====================================
 // CARREGAR DADOS
 // =====================================
@@ -45,3 +47,12 @@ if (usuarioLogado.foto) {
         `<img src="${usuarioLogado.foto}" alt="Foto de Perfil">`;
 
 }
+
+//criar vagas//
+
+btncriar.addEventListener(
+    "click", () => {
+    window.location.href =
+    "../telaCadastroDeVagas/etapa1.html"
+    }
+);
