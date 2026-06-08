@@ -434,22 +434,6 @@ O usuário deve se cadastrar ou fazer login, entrar no perfil e clicar na opçã
 
 <hr>
 
-#### Requisito atendido
-
-RF-3:	O sistema deve permitir que voluntários criem e editem seus perfis com habilidades, interesses e disponibilidade.
-
-#### Artefatos da Funcionalidade
-
-●  editarDadosOng.css
-
-●  editarDadosOng.html
-
-●  editarDadosOng.js
-
-#### Instruções de acesso
-O usuário deve se cadastrar ou fazer login, entrar no perfil e clicar na opção "Editar dados" na sidebar.
-
-<hr>
 
 ### Tela - Perfil Voluntário
 
