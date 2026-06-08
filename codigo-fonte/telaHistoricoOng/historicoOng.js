@@ -8,6 +8,12 @@ if (nomeTopo && ongLogada.nome) {
     nomeTopo.textContent = ongLogada.nome;
 }
 
+// foto da ONG no topo da sidebar
+const fotoTopo = document.getElementById("fotoSidebar");
+if (fotoTopo && ongLogada.foto) {
+    fotoTopo.innerHTML = `<img src="${ongLogada.foto}" alt="Foto da ONG">`;
+}
+
 // lista completa de inscrições do site
 let inscricoes =
     JSON.parse(localStorage.getItem("inscricoes")) || [];
