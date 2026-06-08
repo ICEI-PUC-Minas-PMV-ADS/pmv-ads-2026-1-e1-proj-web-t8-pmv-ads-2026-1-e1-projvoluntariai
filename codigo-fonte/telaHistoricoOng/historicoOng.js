@@ -1,84 +1,46 @@
-// LISTA DE PARTICIPAÇÕES DE EXEMPLO
-const participacoesExemplo = [
-    {
-        id: 1,
-        nomeVoluntario: "Maria Souza",
-        nomeVaga: "Educador Ambiental",
-        dataInicio: "10/03/2026",
-        dataFim: "10/05/2026",
-        horas: 24,
-        status: "validado",
-        observacao: "Participou de todas as oficinas."
-    },
-    {
-        id: 2,
-        nomeVoluntario: "João Silva",
-        nomeVaga: "Professor de Reforço Escolar",
-        dataInicio: "02/04/2026",
-        dataFim: null,
-        horas: 0,
-        status: "pendente",
-        observacao: ""
-    },
-    {
-        id: 3,
-        nomeVoluntario: "Carla Mendes",
-        nomeVaga: "Assistente Social Voluntário",
-        dataInicio: "15/02/2026",
-        dataFim: "15/05/2026",
-        horas: 32,
-        status: "validado",
-        observacao: ""
-    },
-    {
-        id: 4,
-        nomeVoluntario: "Pedro Almeida",
-        nomeVaga: "Educador Ambiental",
-        dataInicio: "20/04/2026",
-        dataFim: null,
-        horas: 0,
-        status: "pendente",
-        observacao: ""
-    }
-];
+// ONG logada
+const ongLogada =
+    JSON.parse(localStorage.getItem("loggedUser")) || {};
+
+// nome da ONG no topo da sidebar
+const nomeTopo = document.getElementById("nomeOngTopo");
+if (nomeTopo && ongLogada.nome) {
+    nomeTopo.textContent = ongLogada.nome;
+}
+
+// lista completa de inscrições do site
+let inscricoes =
+    JSON.parse(localStorage.getItem("inscricoes")) || [];
+
+let idxEmEdicao = null;
 
 
-// PEGA PARTICIPAÇÕES DO LOCALSTORAGE OU USA AS DE EXEMPLO
-function carregarParticipacoes() {
-    const dados = localStorage.getItem("participacoes_ong");
-
-    if (!dados) {
-        localStorage.setItem(
-            "participacoes_ong",
-            JSON.stringify(participacoesExemplo)
-        );
-        return participacoesExemplo;
-    }
-
-    return JSON.parse(dados);
+// guarda a lista no localStorage
+function salvarInscricoes() {
+    localStorage.setItem("inscricoes", JSON.stringify(inscricoes));
 }
 
 
-// SALVA A LISTA NO LOCALSTORAGE
-function salvarParticipacoes(lista) {
-    localStorage.setItem("participacoes_ong", JSON.stringify(lista));
+// retorna as inscrições das vagas dessa ONG, junto com o índice na lista completa
+function inscricoesDaOng() {
+    return inscricoes
+        .map((item, idx) => ({ item, idx }))
+        .filter(p => p.item.nomeOng === ongLogada.nome);
 }
-
-
-let participacoes = carregarParticipacoes();
-let idEmEdicao = null;
 
 
 // ATUALIZA OS NÚMEROS DO TOPO
 function atualizarResumo() {
-    const total = participacoes.length;
+    const lista = inscricoesDaOng();
 
-    const totalHoras = participacoes
-        .filter(p => p.status === "validado")
-        .reduce((soma, p) => soma + (Number(p.horas) || 0), 0);
+    const total = lista.length;
 
-    const pendentes = participacoes
-        .filter(p => p.status === "pendente").length;
+    const totalHoras = lista
+        .filter(p => p.item.status === "validado")
+        .reduce((soma, p) => soma + (Number(p.item.horas) || 0), 0);
+
+    const pendentes = lista
+        .filter(p => p.item.status === "pendente").length;
 
     document.getElementById("totalParticipacoes").textContent = total;
     document.getElementById("totalHoras").textContent = totalHoras + "h";
@@ -93,12 +55,12 @@ function mostrarParticipantes() {
     const statusFiltro = document.getElementById("filtroStatus").value;
 
 
-    const filtradas = participacoes.filter(p => {
+    const filtradas = inscricoesDaOng().filter(p => {
         const ok1 =
-            p.nomeVoluntario.toLowerCase().includes(termo) ||
-            p.nomeVaga.toLowerCase().includes(termo);
+            (p.item.nomeVoluntario || "").toLowerCase().includes(termo) ||
+            (p.item.nomeVaga || "").toLowerCase().includes(termo);
 
-        const ok2 = statusFiltro === "" || p.status === statusFiltro;
+        const ok2 = statusFiltro === "" || p.item.status === statusFiltro;
 
         return ok1 && ok2;
     });
@@ -117,20 +79,17 @@ function mostrarParticipantes() {
 
 
     filtradas.forEach(p => {
+        const item = p.item;
 
-        const periodo = p.dataFim
-            ? p.dataInicio + " a " + p.dataFim
-            : "Desde " + p.dataInicio;
-
-        const labelStatus = p.status === "validado"
+        const labelStatus = item.status === "validado"
             ? "Validado"
             : "Pendente";
 
-        const textoBotao = p.status === "validado"
+        const textoBotao = item.status === "validado"
             ? "Editar horas"
             : "Validar horas";
 
-        const classeBotao = p.status === "validado"
+        const classeBotao = item.status === "validado"
             ? "btn-editar"
             : "btn-validar";
 
@@ -143,23 +102,23 @@ function mostrarParticipantes() {
                 </div>
 
                 <div class="info-voluntario">
-                    <h3>${p.nomeVoluntario}</h3>
-                    <p class="vaga">${p.nomeVaga}</p>
+                    <h3>${item.nomeVoluntario || "Voluntário"}</h3>
+                    <p class="vaga">${item.nomeVaga || ""}</p>
 
                     <div class="detalhes">
-                        <span><strong>Período:</strong> ${periodo}</span>
-                        <span><strong>Horas:</strong> ${p.horas}h</span>
+                        <span><strong>Inscrito em:</strong> ${item.dataInscricao || "—"}</span>
+                        <span><strong>Horas:</strong> ${item.horas || 0}h</span>
                     </div>
                 </div>
 
-                <div class="status-validacao ${p.status}">
+                <div class="status-validacao ${item.status}">
                     ${labelStatus}
                 </div>
 
                 <div class="acoes">
                     <button
                         class="${classeBotao}"
-                        onclick="abrirModal(${p.id})"
+                        onclick="abrirModal(${p.idx})"
                     >
                         ${textoBotao}
                     </button>
@@ -172,16 +131,16 @@ function mostrarParticipantes() {
 
 
 // ABRE O MODAL PARA VALIDAR / EDITAR HORAS
-function abrirModal(id) {
-    const p = participacoes.find(x => x.id === id);
-    if (!p) return;
+function abrirModal(idx) {
+    const item = inscricoes[idx];
+    if (!item) return;
 
-    idEmEdicao = id;
+    idxEmEdicao = idx;
 
-    document.getElementById("modalNomeVoluntario").textContent = p.nomeVoluntario;
-    document.getElementById("modalNomeVaga").textContent = p.nomeVaga;
-    document.getElementById("inputHoras").value = p.horas || "";
-    document.getElementById("inputObs").value = p.observacao || "";
+    document.getElementById("modalNomeVoluntario").textContent = item.nomeVoluntario || "Voluntário";
+    document.getElementById("modalNomeVaga").textContent = item.nomeVaga || "";
+    document.getElementById("inputHoras").value = item.horas || "";
+    document.getElementById("inputObs").value = item.observacao || "";
 
     document.getElementById("modalValidar").classList.add("aberto");
 }
@@ -189,13 +148,13 @@ function abrirModal(id) {
 
 function fecharModal() {
     document.getElementById("modalValidar").classList.remove("aberto");
-    idEmEdicao = null;
+    idxEmEdicao = null;
 }
 
 
 // SALVA AS HORAS VALIDADAS
 function confirmarValidacao() {
-    if (idEmEdicao === null) return;
+    if (idxEmEdicao === null) return;
 
     const horas = parseFloat(document.getElementById("inputHoras").value);
     const obs = document.getElementById("inputObs").value;
@@ -205,15 +164,11 @@ function confirmarValidacao() {
         return;
     }
 
+    inscricoes[idxEmEdicao].horas = horas;
+    inscricoes[idxEmEdicao].observacao = obs;
+    inscricoes[idxEmEdicao].status = "validado";
 
-    const indice = participacoes.findIndex(p => p.id === idEmEdicao);
-    if (indice === -1) return;
-
-    participacoes[indice].horas = horas;
-    participacoes[indice].observacao = obs;
-    participacoes[indice].status = "validado";
-
-    salvarParticipacoes(participacoes);
+    salvarInscricoes();
 
     fecharModal();
     atualizarResumo();
@@ -232,6 +187,8 @@ document.getElementById("filtroStatus")
 // CARREGA AO ABRIR
 atualizarResumo();
 mostrarParticipantes();
+
+
 const btnPerfil = document.getElementById("btnPerfil");
 
 btnPerfil.addEventListener("click", function(event){
