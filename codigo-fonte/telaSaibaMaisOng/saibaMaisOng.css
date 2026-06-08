@@ -156,6 +156,8 @@ body {
     color: #555;
     font-size: 14px;
     line-height: 1.6;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 .bloco ul {
@@ -166,6 +168,8 @@ body {
     color: #555;
     font-size: 14px;
     line-height: 1.7;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 
