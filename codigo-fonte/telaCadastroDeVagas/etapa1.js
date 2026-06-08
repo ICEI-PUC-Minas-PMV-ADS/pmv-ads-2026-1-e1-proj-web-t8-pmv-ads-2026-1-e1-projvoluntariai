@@ -52,12 +52,20 @@ botao.addEventListener("click", function(event) {
     }
 
     if (valido) {
+
+        // pega dados da ONG logada pra mostrar na vaga
+        const ong =
+            JSON.parse(localStorage.getItem("loggedUser")) || {};
+
         const novaVaga = {
 
         titulo: vaga.value,
         modalidade: modalidade.value,
         localizacao: localizacao.value,
-        numeroVagas: ndevagas.value
+        numeroVagas: ndevagas.value,
+        nomeOng: ong.nome || "",
+        area: ong.area || "",
+        sobreOng: ong.apresentacao || ""
 
     };
 
