@@ -67,6 +67,8 @@ botao.addEventListener("click", function(event) {
     localStorage.removeItem("novaVaga");
 
     alert("Vaga publicada com sucesso!");
+    window.location.href = "../telaPerfil/gerenciarvagOng.html";
+
 }
 
 });

@@ -58,7 +58,7 @@ botao.addEventListener("click", function(event) {
 
     alert("Etapa Concluída!");
 
-    window.location.href = "../telaPerfil/gerenciarvagOng.html";
+    window.location.href = "etaoa2C.html";
 }
 });
 const btnPerfil = document.getElementById("btnPerfil");
