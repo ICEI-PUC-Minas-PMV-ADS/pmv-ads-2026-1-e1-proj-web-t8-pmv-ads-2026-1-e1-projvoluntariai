@@ -1,4 +1,4 @@
-<img width="1344" height="577" alt="image" src="https://github.com/user-attachments/assets/a0579fcb-82d2-41f1-8029-7037cda5e65f" /># Programação de Funcionalidades
+# Programação de Funcionalidades
 
 ### Tela de cadastro de vagas - Etapa 1
 
