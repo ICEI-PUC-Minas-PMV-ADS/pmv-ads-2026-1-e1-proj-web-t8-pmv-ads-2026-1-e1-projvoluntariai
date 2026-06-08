@@ -1,4 +1,4 @@
-# Programação de Funcionalidades
+<img width="1344" height="577" alt="image" src="https://github.com/user-attachments/assets/a0579fcb-82d2-41f1-8029-7037cda5e65f" /># Programação de Funcionalidades
 
 ### Tela de cadastro de vagas - Etapa 1
 
@@ -12,7 +12,7 @@ Exemplo da Tela de cadastro de vagas - Etapa 1:
 
 #### Requisito atendido
 
-Rf-05: O sistema deve permitir que ONGs publiquem oportunidades de voluntariado.
+RF-05: O sistema deve permitir que ONGs publiquem oportunidades de voluntariado.
 
 #### Artefatos da Funcionalidade
 
@@ -39,7 +39,7 @@ Exemplo da Tela de cadastro de vagas - Etapa 2:
 
 #### Requisito atendido
 
-Rf-05: O sistema deve permitir que ONGs publiquem oportunidades de voluntariado.
+RF-05: O sistema deve permitir que ONGs publiquem oportunidades de voluntariado.
 
 #### Artefatos da Funcionalidade
 
@@ -66,7 +66,7 @@ Exemplo da Tela de cadastro de vagas - Etapa 2:
 
 #### Requisito atendido
 
-Rf-05: O sistema deve permitir que ONGs publiquem oportunidades de voluntariado.
+RF-05: O sistema deve permitir que ONGs publiquem oportunidades de voluntariado.
 
 #### Artefatos da Funcionalidade
 
@@ -92,8 +92,7 @@ Exemplo da Tela Vagas
 <img width="1366" height="625" alt="chrome_CGU3TF1WU5" src="https://github.com/user-attachments/assets/6dd48167-cf9b-4b03-bf78-d1b922f09d5a" />
 
 #### Requisito atendido
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+RF-06: O sistema deve permitir busca de oportunidades por localização e área de interesse.
 
 #### Artefatos da Funcionalidade
 
@@ -211,7 +210,7 @@ Responsável: Amanda Soares
 
 Nesta etapa, o usuário escolha entre ONG ou Pessoa Voluntária para iniciar seu cadastro. Após a seleção, e "Continuar" será direcionado para a tela de cadastro adequada ao perfil escolhido.
 
-Tela - Inicial de Cadastro de Usuários:
+Exemplo da tela de Cadastro de Usuários:
 
  <img width="1340" height="551" alt="Tela Cadastro Inicial" src="https://github.com/user-attachments/assets/dd2e8764-5122-4788-bc7f-f76f80c286ef" />
 
@@ -226,6 +225,68 @@ RF-01	O sistema deve permitir cadastro de usuários voluntário, ONG e PSC na pl
 ●  pagina-cadastroinicial.html
 
 ●  pagina-cadastroinicial.js
+
+#### Instruções de acesso
+
+A partir da página inicial, o usuário clica em "Login" no cabeçalho. As credenciais são verificadas contra os usuários salvos no localStorage (chave `users`). Quando "Lembrar-me" está marcado, o email é salvo na chave `emailLembrado` para preenchimento automático no próximo acesso. A recuperação de senha é acionada pelo link "Esqueci minha senha".
+
+<hr>
+
+### Tela - Cadastro de ONG
+
+Responsável: Thiago Menar de Sousa Moreira
+
+#### Instruções de acesso
+
+Nesta etapa, o usuário que escolhe a opção "Sou uma ONG" é direcionado para a página de cadastro de ONG e deve preencher com informações conforme solicitado
+
+Exemplo da tela de cadastro de ONG:
+ <img width="1357" height="634" alt="Captura de tela 2026-06-07 230354" src="https://github.com/user-attachments/assets/cdb4b7c8-ef51-47e3-a2cb-fbd1c84fb341" />
+
+
+#### Requisito atendido
+
+RF-01	O sistema deve permitir cadastro de usuários voluntário, ONG e PSC na plataforma.
+
+#### Artefatos da Funcionalidade
+
+●  pagina-cadastroOng.css
+
+●  pagina-cadastroOng.html
+
+●  pagina-cadastroOng.js
+
+#### Instruções de acesso
+O usuário deve entrar na página de cadastro por meio do login e escolher a opção "Sou uma ONG".
+
+<hr>
+
+### Tela - Cadastro de Voluntário
+
+Responsável: Denilson Emanoel Emerichek de Souza
+
+
+Nesta etapa, o usuário que escolhe a opção "Sou uma ONG" é direcionado para a página de cadastro de Voluntário e deve preencher com informações conforme solicitado
+
+Exemplo da tela de cadastro de Voluntário:
+ <img width="1340" height="621" alt="image" src="https://github.com/user-attachments/assets/48e7f4f2-b084-44ec-92b9-b24edfb49bb1" />
+
+
+
+#### Requisito atendido
+
+RF-01	O sistema deve permitir cadastro de usuários voluntário, ONG e PSC na plataforma.
+
+#### Artefatos da Funcionalidade
+
+●  pagina-cadastroVoluntario.css
+
+●  pagina-cadastroVoluntario.html
+
+●  pagina-cadastroVoluntario.js
+
+#### Instruções de acesso
+O usuário deve entrar na página de cadastro por meio do login e escolher a opção "Sou Voluntário".
 
 <hr>
 
@@ -311,4 +372,250 @@ RNF-04	O sistema deve ser responsivo (funcionar em dispositivos móveis e deskto
 Portanto, observa-se com os exemplos acima que existem oportunidades de melhoria relacionadas à responsividade da aplicação. Contudo, os conteúdos e funcionalidades principais permanecem acessíveis aos usuários, garantindo a utilização adequada da plataforma.
 
 <hr>
+
+### Tela - Editar dados ONG
+
+Responsável: Rikelme da Silva de Souza
+
+Nesta página, o  usuário consegue editar dados como email e senha. 
+
+Exemplo da tela de editar dados Ong:
+<img width="1332" height="613" alt="image" src="https://github.com/user-attachments/assets/17abba6c-7390-4c2f-b096-294a135b073d" />
+
+
+
+#### Requisito atendido
+
+RF-3:	O sistema deve permitir que voluntários criem e editem seus perfis com habilidades, interesses e disponibilidade.
+
+#### Artefatos da Funcionalidade
+
+●  editarDadosOng.css
+
+●  editarDadosOng.html
+
+●  editarDadosOng.js
+
+#### Instruções de acesso
+O usuário deve se cadastrar ou fazer login, entrar no perfil e clicar na opção "Editar dados" na sidebar.
+
+<hr>
+
+### Tela - Editar dados Voluntário
+
+Responsável: Amanda Luiza Soares
+
+
+Nesta página, o  usuário consegue editar dados como email, senha, estado e idade. 
+
+Exemplo da tela de editar dados Voluntário:
+<img width="1332" height="637" alt="image" src="https://github.com/user-attachments/assets/7952b0a9-141d-4dbd-a3ef-7971c3f24c46" />
+
+
+
+
+#### Requisito atendido
+
+RF-3:	O sistema deve permitir que voluntários criem e editem seus perfis com habilidades, interesses e disponibilidade.
+
+#### Artefatos da Funcionalidade
+
+●  editarDadosVolun.css
+
+●  editarDadosVolun.html
+
+●  editarDadosVolun.js
+
+#### Instruções de acesso
+O usuário deve se cadastrar ou fazer login, entrar no perfil e clicar na opção "Editar dados" na sidebar.
+
+<hr>
+
+#### Requisito atendido
+
+RF-3:	O sistema deve permitir que voluntários criem e editem seus perfis com habilidades, interesses e disponibilidade.
+
+#### Artefatos da Funcionalidade
+
+●  editarDadosOng.css
+
+●  editarDadosOng.html
+
+●  editarDadosOng.js
+
+#### Instruções de acesso
+O usuário deve se cadastrar ou fazer login, entrar no perfil e clicar na opção "Editar dados" na sidebar.
+
+<hr>
+
+### Tela - Perfil Voluntário
+
+Responsável: Amanda Caroline Pedrosa Marques
+
+
+Nesta página, o  usuário consegue verificar informações principais, como nome de usuário, foto de perfil, e outras informações, além de conseguir deslogar a conta no botão "sair".
+
+Exemplo da tela de perfil de voluntário:
+<img width="1333" height="626" alt="image" src="https://github.com/user-attachments/assets/854f6071-04fe-43e8-ad9d-f0b2609a97db" />
+
+
+
+#### Requisito atendido
+
+RF-3:	O sistema deve permitir que voluntários criem e editem seus perfis com habilidades, interesses e disponibilidade.
+
+#### Artefatos da Funcionalidade
+
+●  perfilVolunt.css
+
+●  perfilVolun.html
+
+●  perfilVolun.js
+
+#### Instruções de acesso
+O usuário deve se cadastrar ou fazer login, e irá ter acesso ao perfil automaticamente.
+
+<hr>
+
+
+### Tela - Perfil ONG
+
+Responsável: Bruno Pereira Gomes
+
+Nesta página, o  usuário consegue verificar informações principais, como nome de usuário, foto de perfil, e outras informações, além de conseguir deslogar a conta no botão "sair".
+
+Exemplo da tela de perfil de ONG:
+<img width="1334" height="630" alt="image" src="https://github.com/user-attachments/assets/5eedf24f-3d92-4162-9aac-7423b23480bf" />
+
+
+
+
+#### Requisito atendido
+
+RF-3:	O sistema deve permitir que voluntários criem e editem seus perfis com habilidades, interesses e disponibilidade.
+
+#### Artefatos da Funcionalidade
+
+●  PerfilONG.css
+
+●  PerfilONG.html
+
+●  PerfilONG.js
+
+#### Instruções de acesso
+O usuário deve se cadastrar ou fazer login, e irá ter acesso ao perfil automaticamente.
+
+<hr>
+
+### Tela - Editar Perfil ONG
+
+Responsável: Bruno Pereira Gomes
+
+Nesta página, o  usuário consegue alterar informações do perfil e editar foto de perfil e banner.
+
+Exemplo da tela de editar perfil de ONG:
+<img width="1335" height="632" alt="image" src="https://github.com/user-attachments/assets/af350b0a-0f21-4efd-915b-caa2a314aa86" />
+
+
+
+#### Requisito atendido
+
+RF-3:	O sistema deve permitir que voluntários criem e editem seus perfis com habilidades, interesses e disponibilidade.
+
+#### Artefatos da Funcionalidade
+
+●  EditarPerfilONG.css
+
+●  EditarPerfilONG.html
+
+●  EditarPerfilONG.js
+
+#### Instruções de acesso
+O usuário deve se cadastrar ou fazer login, entrar no perfil e clicar na opção "Editar Perfil" na sidebar.
+
+<hr>
+
+### Tela - Editar Perfil Voluntário
+
+Responsável: Amanda Caroline Pedrosa Marques
+
+
+Nesta página, o  usuário consegue alterar informações do perfil e editar foto de perfil e banner.
+
+Exemplo da tela de editar perfil de Voluntário:
+<img width="1328" height="640" alt="image" src="https://github.com/user-attachments/assets/5ce50787-33a3-4610-a728-c36102caa058" />
+
+
+#### Requisito atendido
+
+RF-3:	O sistema deve permitir que voluntários criem e editem seus perfis com habilidades, interesses e disponibilidade.
+
+#### Artefatos da Funcionalidade
+
+●  editarVolun.css
+
+●  editarPVolun.html
+
+●  editarVolun.js
+
+#### Instruções de acesso
+O usuário deve se cadastrar ou fazer login, entrar no perfil e clicar na opção "Editar Perfil" na sidebar.
+
+<hr>
+
+### Tela - Histórico de Trabalho
+
+Responsável: Amanda Caroline Pedrosa Marques  e  Denilson Emanoel Emerichek de Souza
+
+Nesta página o usuário consegue verificar o Histórico de trabalhos prestados com informações completas sobre a vaga.
+
+Exemplo da tela de  Histórico de Trabalho:
+<img width="1331" height="633" alt="image" src="https://github.com/user-attachments/assets/ac1115b5-6c7c-4e3f-b32d-1bd7c11dad5d" />
+
+
+#### Requisito atendido
+
+RF- 11:	O sistema deve permitir registro e acompanhamento de horas trabalhadas (especialmente PSC).
+
+#### Artefatos da Funcionalidade
+
+●  historicodtraVo.css
+
+●  historicodtraVo.html
+
+●  historicodtraVo.js
+
+#### Instruções de acesso
+O usuário deve se cadastrar ou fazer login, entrar no perfil e clicar na opção "Histórico de Trabalho" na sidebar.
+
+<hr>
+
+
+### Tela - Gerenciar Vagas ONG
+
+Responsável: Amanda Caroline Pedrosa Marques  e  Denilson Emanoel Emerichek de Souza
+
+Nesta página o usuário consegue gerenciar as vagas publicadas e criar mais vagas.
+
+Exemplo da tela de  Gerenciar Vagas:
+<img width="1331" height="603" alt="image" src="https://github.com/user-attachments/assets/5c69f718-f179-434a-a0f4-84ad90988171" />
+
+
+#### Requisito atendido
+
+RF- 05:	O sistema deve permitir que ONGs publiquem oportunidades de voluntariado.
+
+#### Artefatos da Funcionalidade
+
+●  gerenciarvagOng.css
+
+●  gerenciarvagOng.html
+
+●  gerenciarvagOng.js
+
+#### Instruções de acesso
+O usuário deve se cadastrar ou fazer login, entrar no perfil e clicar na opção "Gerenciar Vagas" na sidebar.
+
+<hr>
+
 
